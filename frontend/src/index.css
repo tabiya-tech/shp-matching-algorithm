@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tabiya-green: #00FF85;
+  --color-tabiya-navy: #002B49;
+  --color-tabiya-mint: #F0FFF7;
+}
+
+body {
+  @apply bg-[#F0FFF7] text-[#002B49] font-sans;
+}
