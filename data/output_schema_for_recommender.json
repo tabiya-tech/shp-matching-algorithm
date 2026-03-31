@@ -1,0 +1,1136 @@
+[
+  {
+    "user_id": "user_001",
+    "occupation_recommendations": [
+      {
+        "uuid": "1111_Nairobi",
+        "originUuid": "1111",
+        "rank": 1,
+        "occupation_label": "Elected political leaders (MPs, MCAs)",
+        "province": "Nairobi",
+        "is_eligible": true,
+        "justification": "Top preference matches: Task Content: Creative; Work Flexibility: High; Social Interaction: People",
+        "occupation_description": "Legislators determine, formulate, and direct policies of national, state, regional or local governments and international governmental agencies, and make, ratify, amend or repeal laws, public rules and regulations. They include elected and non-elected members of parliaments, councils and governments.",
+        "final_score": 0.4704,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.726,
+          "demand_score": 0.5,
+          "demand_label": null
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_300k_plus",
+            "job_value_label": "300K Plus",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_people",
+            "job_value_label": "People",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 1.0,
+            "contribution": 0.02,
+            "matched": true
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_high",
+            "job_value_label": "High",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 1.0,
+            "contribution": 0.15,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "uuid": "1114_Nairobi",
+        "originUuid": "1114",
+        "rank": 2,
+        "occupation_label": "Senior official in NGOs and associations",
+        "province": "Nairobi",
+        "is_eligible": true,
+        "justification": "Top preference matches: Task Content: Creative; Work Flexibility: High; Social Interaction: People",
+        "occupation_description": "Senior officials of special-interest organizations determine, formulate and direct the implementation of policies of special-interest organizations, such as political-party organizations, trade unions, employers' organizations, trade and industry associations, humanitarian or charity organizations, or sports associations, and represent their organizations and act on their behalf.",
+        "final_score": 0.4704,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.726,
+          "demand_score": 0.5,
+          "demand_label": null
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_300k_plus",
+            "job_value_label": "300K Plus",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_people",
+            "job_value_label": "People",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 1.0,
+            "contribution": 0.02,
+            "matched": true
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_high",
+            "job_value_label": "High",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 1.0,
+            "contribution": 0.15,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "uuid": "1212_Nairobi",
+        "originUuid": "1212",
+        "rank": 3,
+        "occupation_label": "Human resource manager",
+        "province": "Nairobi",
+        "is_eligible": true,
+        "justification": "Top preference matches: Task Content: Creative; Work Flexibility: High; Social Interaction: People",
+        "occupation_description": "Human resource managers, plan, direct and coordinate policies concerning the personnel, industrial relations and occupational health and safety activities of an enterprise or organization, or of enterprises that provide human resource services to other enterprises and organizations.",
+        "final_score": 0.4704,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.726,
+          "demand_score": 0.5,
+          "demand_label": null
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_180_300k",
+            "job_value_label": "180 300K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_people",
+            "job_value_label": "People",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 1.0,
+            "contribution": 0.02,
+            "matched": true
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_high",
+            "job_value_label": "High",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 1.0,
+            "contribution": 0.15,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "uuid": "1213_Nairobi",
+        "originUuid": "1213",
+        "rank": 4,
+        "occupation_label": "Policy and planning manager",
+        "province": "Nairobi",
+        "is_eligible": true,
+        "justification": "Top preference matches: Task Content: Creative; Work Flexibility: High; Social Interaction: People",
+        "occupation_description": "Policy and planning managers plan, organize, direct and coordinate policy advice and strategic planning activities within government or for non-government organizations and private sector agencies, or manage the activities of enterprises that provide policy and strategic planning services.",
+        "final_score": 0.4704,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.726,
+          "demand_score": 0.5,
+          "demand_label": null
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_180_300k",
+            "job_value_label": "180 300K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_people",
+            "job_value_label": "People",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 1.0,
+            "contribution": 0.02,
+            "matched": true
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_high",
+            "job_value_label": "High",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 1.0,
+            "contribution": 0.15,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "uuid": "1311_Nairobi",
+        "originUuid": "1311",
+        "rank": 5,
+        "occupation_label": "Agricultural and forestry production manager",
+        "province": "Nairobi",
+        "is_eligible": true,
+        "justification": "Top preference matches: Task Content: Creative; Work Flexibility: High; Social Interaction: People",
+        "occupation_description": "Agricultural and forestry production managers plan, direct, and coordinate production in large scale agricultural, horticultural and forestry operations such as plantations, large ranches, collective farms and agricultural cooperatives to grow and harvest crops, and breed and raise livestock.",
+        "final_score": 0.4704,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.726,
+          "demand_score": 0.5,
+          "demand_label": null
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_120_180k",
+            "job_value_label": "120 180K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_people",
+            "job_value_label": "People",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 1.0,
+            "contribution": 0.02,
+            "matched": true
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_high",
+            "job_value_label": "High",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 1.0,
+            "contribution": 0.15,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "opportunity_recommendations": [
+      {
+        "uuid": "job_001",
+        "URL": "www.example.com/job_001",
+        "rank": 1,
+        "opportunity_title": "Senior Python Developer",
+        "location": "Remote",
+        "employer": "TechCorp Solutions Ltd",
+        "employment_type": "Full-time",
+        "salary_text": "KES 80,000 - 120,000 per month",
+        "required_education": "Bachelor's degree in Computer Science or related field",
+        "required_experience": "3+ years in software development",
+        "closing_date": "2026-04-30",
+        "is_eligible": true,
+        "justification": "Top skill matches: Python \u2194 Haskell (sim 1.0). Top preference matches: Earnings Per Month: 70K; Task Content: Creative; Work Flexibility: High. Demand label: Very Low Expected Demand",
+        "opportunity_description": "full_time",
+        "contract_type": "full_time",
+        "final_score": 0.5968,
+        "score_breakdown": {
+          "total_skill_utility": 0.66,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 1.0,
+            "opt": 0.0,
+            "grp": 1.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.782
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "68934ca60f3f20b5b2ed9e4f",
+              "job_skill_label": "Haskell",
+              "best_user_skill_id": "68934ca60f3f20b5b2ed9e4f",
+              "best_user_skill_label": "Python",
+              "similarity": 1.0,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": [
+            {
+              "skill_group_id": "68934ca40f3f20b5b2ed9bc7",
+              "skill_group_label": null
+            }
+          ]
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.45,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_alone",
+            "job_value_label": "Alone",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_low",
+            "job_value_label": "Low",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "job_016",
+        "URL": "www.example.com/job_016",
+        "rank": 2,
+        "opportunity_title": "Frontend Developer",
+        "location": "Remote",
+        "employer": "WebDev Agency Kenya",
+        "employment_type": "Contract",
+        "salary_text": "KES 60,000 - 90,000 per month",
+        "required_education": "Diploma or degree in IT, Computer Science, or related field",
+        "required_experience": "1-2 years in frontend development",
+        "closing_date": "2026-05-15",
+        "is_eligible": true,
+        "justification": "Top skill matches: Python \u2194 Haskell (sim 1.0). Top preference matches: Earnings Per Month: 70K; Task Content: Creative; Work Flexibility: High. Demand label: Very Low Expected Demand",
+        "opportunity_description": "contract",
+        "contract_type": "contract",
+        "final_score": 0.5568,
+        "score_breakdown": {
+          "total_skill_utility": 0.56,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 1.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.782
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "68934ca60f3f20b5b2ed9e4f",
+              "job_skill_label": "Haskell",
+              "best_user_skill_id": "68934ca60f3f20b5b2ed9e4f",
+              "best_user_skill_label": "Python",
+              "similarity": 1.0,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.45,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_creative",
+            "job_value_label": "Creative",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 1.0,
+            "contribution": 0.2,
+            "matched": true
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_high",
+            "job_value_label": "High",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 1.0,
+            "contribution": 0.36,
+            "matched": true
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_alone",
+            "job_value_label": "Alone",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_low",
+            "job_value_label": "Low",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "job_008",
+        "URL": "www.example.com/job_008",
+        "rank": 3,
+        "opportunity_title": "Junior Accountant",
+        "location": "Nairobi",
+        "employer": "Nairobi Financial Services",
+        "employment_type": "Internship",
+        "salary_text": "KES 25,000 - 35,000 per month",
+        "required_education": "Bachelor's degree in Accounting, Finance, or related field",
+        "required_experience": "No experience required; recent graduates welcome",
+        "closing_date": "2026-04-20",
+        "is_eligible": true,
+        "justification": "Top skill matches: Python \u2194 enterprise risk management (sim 0.607). Top preference matches: Earnings Per Month: 30K; Career Growth: High. Demand label: Moderate Expected Demand",
+        "opportunity_description": "internship",
+        "contract_type": "internship",
+        "final_score": 0.5453,
+        "score_breakdown": {
+          "total_skill_utility": 0.5035,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.607,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6097
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "68934ca60f3f20b5b2ed9e60",
+              "job_skill_label": "enterprise risk management",
+              "best_user_skill_id": "68934ca60f3f20b5b2ed9e4f",
+              "best_user_skill_label": "Python",
+              "similarity": 0.607,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_30k",
+            "job_value_label": "30K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.33,
+            "contribution": 0.1485,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_routine",
+            "job_value_label": "Routine",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_fixed",
+            "job_value_label": "Fixed",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_alone",
+            "job_value_label": "Alone",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.4,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_low",
+            "job_value_label": "Low",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "job_012",
+        "URL": "www.example.com/job_012",
+        "rank": 4,
+        "opportunity_title": "Night Guard",
+        "location": "Nairobi",
+        "employer": "SecureGuard Services",
+        "employment_type": "Full-time",
+        "salary_text": "KES 12,000 - 18,000 per month",
+        "required_education": "KCSE Certificate (Form 4)",
+        "required_experience": "1 year in security or related field preferred",
+        "closing_date": "2026-04-10",
+        "is_eligible": true,
+        "justification": "Top skill matches: Git / Version Control \u2194 lead police investigations (sim 0.3501). Top preference matches: Earnings Per Month: 15K; Social Meaning: High. Demand label: Low Expected Demand",
+        "opportunity_description": "full_time",
+        "contract_type": "full_time",
+        "final_score": 0.4156,
+        "score_breakdown": {
+          "total_skill_utility": 0.375,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.3501,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.539
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "68934ca60f3f20b5b2ed9e53",
+              "job_skill_label": "lead police investigations",
+              "best_user_skill_id": "68934ca60f3f20b5b2ed9e50",
+              "best_user_skill_label": "Git / Version Control",
+              "similarity": 0.3501,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_15k",
+            "job_value_label": "15K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.1,
+            "contribution": 0.045,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_routine",
+            "job_value_label": "Routine",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_fixed",
+            "job_value_label": "Fixed",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_alone",
+            "job_value_label": "Alone",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_low",
+            "job_value_label": "Low",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_high",
+            "job_value_label": "High",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 1.0,
+            "contribution": 0.15,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "uuid": "job_015",
+        "URL": "www.example.com/job_015",
+        "rank": 5,
+        "opportunity_title": "Call Center Agent",
+        "location": "Nairobi",
+        "employer": "Nairobi Contact Centre Ltd",
+        "employment_type": "Full-time",
+        "salary_text": "KES 28,000 - 35,000 per month",
+        "required_education": "Diploma in Business, Communications, or related field",
+        "required_experience": "6 months customer service experience preferred",
+        "closing_date": "2026-05-01",
+        "is_eligible": false,
+        "justification": "Top preference matches: Earnings Per Month: 30K; Social Interaction: People. Demand label: Moderate Expected Demand",
+        "opportunity_description": "full_time",
+        "contract_type": "full_time",
+        "final_score": 0.3135,
+        "score_breakdown": {
+          "total_skill_utility": 0.0,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.1121,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.5,
+          "preference_score": 0.5337
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "68934ca60f3f20b5b2ed9e4c",
+              "job_skill_label": "identify available services",
+              "best_user_skill_id": "68934ca60f3f20b5b2ed9e4f",
+              "best_user_skill_label": "Python",
+              "similarity": 0.1121,
+              "meets_threshold": false
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_30k",
+            "job_value_label": "30K",
+            "user_weight": 0.9,
+            "beta": 0.5,
+            "encoded_value": 0.33,
+            "contribution": 0.1485,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": "task_routine",
+            "job_value_label": "Routine",
+            "user_weight": 1.0,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.0,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": "flex_fixed",
+            "job_value_label": "Fixed",
+            "user_weight": 0.9,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_people",
+            "job_value_label": "People",
+            "user_weight": 0.2,
+            "beta": 0.1,
+            "encoded_value": 1.0,
+            "contribution": 0.02,
+            "matched": true
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.8,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": "mean_low",
+            "job_value_label": "Low",
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "skill_gap_recommendations": [
+      {
+        "skill_id": "68934ca60f3f20b5b2ed9e49",
+        "skill_label": "supervise correctional procedures",
+        "proximity_score": 0.1419,
+        "job_unlock_count": 8,
+        "combined_score": 0.6568,
+        "reasoning": "Similar to your 'Git / Version Control' skill. Would help unlock or improve 8 jobs."
+      },
+      {
+        "skill_id": "68934ca60f3f20b5b2ed9e5d",
+        "skill_label": "teach housekeeping skills",
+        "proximity_score": 0.3517,
+        "job_unlock_count": 4,
+        "combined_score": 0.4407,
+        "reasoning": "Similar to your 'Git / Version Control' skill. Would help unlock or improve 4 jobs."
+      },
+      {
+        "skill_id": "68934ca60f3f20b5b2ed9e60",
+        "skill_label": "enterprise risk management",
+        "proximity_score": 0.607,
+        "job_unlock_count": 2,
+        "combined_score": 0.3928,
+        "reasoning": "Similar to your 'Python' skill. Would help unlock or improve 2 jobs."
+      },
+      {
+        "skill_id": "68934ca60f3f20b5b2ed9e4b",
+        "skill_label": "control compliance of railway vehicles regulations",
+        "proximity_score": 0.5722,
+        "job_unlock_count": 2,
+        "combined_score": 0.3789,
+        "reasoning": "Similar to your 'Python' skill. Would help unlock or improve 2 jobs."
+      },
+      {
+        "skill_id": "68934ca60f3f20b5b2ed9e5c",
+        "skill_label": "handle equipment while suspended",
+        "proximity_score": 0.5324,
+        "job_unlock_count": 2,
+        "combined_score": 0.363,
+        "reasoning": "Similar to your 'Python' skill. Would help unlock or improve 2 jobs."
+      }
+    ]
+  }
+]
