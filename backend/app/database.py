@@ -1,4 +1,4 @@
-
+import logging
 import os
 import json
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -16,28 +16,38 @@ if not MONGO_URL:
 client = AsyncIOMotorClient(MONGO_URL)
 db = client[DATABASE_NAME]
 
+logger = logging.getLogger(__name__)
+
+
 def get_database():
     return db
+
 
 async def get_all_jobs():
     """Helper to fetch all jobs from the collection."""
     cursor = db["jobs"].find({})
     return await cursor.to_list(length=1000)
 
+
+_cached_occupations = None
+
+
 async def get_all_occupations():
     """Helper to fetch all occupations from the collection, with fallback to local JSON if DB fails."""
-    try:
-        cursor = db["occupations"].find({})
-        return await cursor.to_list(length=1000)
-    except Exception as e:
-        # Fallback to local JSON file
-        json_path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "combined_occupation_database_with_wa.json")
+    global _cached_occupations
+
+    if _cached_occupations is None:
         try:
+            json_path = os.path.join(os.path.dirname(__file__), "..", "data", "combined_occupation_database_with_wa.json")
             with open(json_path, "r", encoding="utf-8") as f:
                 occupations = json.load(f)
-            return occupations
-        except Exception as file_e:
-            raise RuntimeError(f"Failed to fetch occupations from DB and fallback JSON: {e}, {file_e}")
+            _cached_occupations = occupations
+        except Exception as e:
+            logger.exception(e)
+            raise RuntimeError(f"Failed to fetch occupations from DB and fallback JSON: {e}")
+
+    return _cached_occupations
+
 
 async def close_mongo_connection():
     client.close()
