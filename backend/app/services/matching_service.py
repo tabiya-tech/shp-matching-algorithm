@@ -3,17 +3,17 @@ from __future__ import annotations
 import logging
 from typing import Any, Dict, Optional
 
-from app.config import GLOBAL_WEIGHTS
+from app.config import DEMAND_SCORE_MAPPING, GLOBAL_WEIGHTS, SCORING_MODE
 from app.database import get_all_jobs, get_all_occupations
-from app.services.demand_score import DemandScorer
 from app.services.preference_score import PreferenceScorer
 from app.services.skill_gap_analysis import analyze_skill_gaps
 from app.services.skill_score import SkillScorer
+from app.services.success_propensity import SuccessPropensityScorer
 
 # Initialize scorers once at module level
 scorer_skill = SkillScorer()
 scorer_pref = PreferenceScorer()
-scorer_demand = DemandScorer()
+scorer_success = SuccessPropensityScorer()
 
 
 def _norm(v: Optional[str]) -> str:
@@ -62,26 +62,49 @@ def _build_justification(match_details: dict, pref_details: list, demand_label: 
         f"{p['attribute'].replace('_', ' ').title()}: {p.get('job_value_label', 'N/A')}"
         for p in top_prefs
     ]) if top_prefs else ""
-    
+
     top_skills = match_details.get("essential_skill_matches", [])[:2]
     skill_text = ". ".join([
-        f"{s.get('best_user_skill_label', 'Unknown')} ↔ {s.get('job_skill_label', 'Unknown')} (sim {s.get('similarity', 0)})"
+        f"{s.get('best_user_skill_label', 'Unknown')} \u2194 {s.get('job_skill_label', 'Unknown')} (sim {s.get('similarity', 0)})"
         for s in top_skills if s.get('meets_threshold')
     ]) if top_skills else ""
-    
+
     parts = []
     if skill_text:
         parts.append(f"Top skill matches: {skill_text}")
     if pref_text:
         parts.append(f"Top preference matches: {pref_text}")
+
     if demand_label:
         parts.append(f"Demand label: {demand_label}")
-    
+
     return ". ".join(parts) if parts else f"Match Score: {round(float(score), 2)}"
 
 
-def _create_score_breakdown(skill_details: dict, pref_score: float, demand_score: float, demand_label: str) -> dict:
-    """Create the score breakdown dict."""
+def _create_score_breakdown_multiplicative(
+    u_hat: float,
+    p_hat_result: dict,
+    skill_details: dict,
+    pref_score_legacy: float,
+    *,
+    include_demand: bool = False,
+) -> dict:
+    """Interpretable score breakdown for the multiplicative (U*P) pipeline."""
+    breakdown = {
+        "total_skill_utility": round(float(skill_details.get("U_final", 0.0)), 4),
+        "skill_components": skill_details.get("components", {"loc": 0.0, "ess": 0.0, "opt": 0.0, "grp": 0.0}),
+        "skill_penalty_applied": round(float(skill_details.get("penalty", 0.0)), 4),
+        "preference_score": round(float(pref_score_legacy), 4),
+    }
+    if include_demand:
+        demand_label = p_hat_result.get("demand_label")
+        breakdown["demand_score"] = round(float(DEMAND_SCORE_MAPPING.get(demand_label, 0.5)), 4) if demand_label else 0.5
+        breakdown["demand_label"] = demand_label
+    return breakdown
+
+
+def _create_score_breakdown_additive(skill_details: dict, pref_score: float, demand_score: float, demand_label: str) -> dict:
+    """Legacy additive score breakdown (kept for A/B testing)."""
     return {
         "total_skill_utility": round(float(skill_details.get("U_final", 0.0)), 4),
         "skill_components": skill_details.get("components", {"loc": 0.0, "ess": 0.0, "opt": 0.0, "grp": 0.0}),
@@ -95,30 +118,49 @@ def _create_score_breakdown(skill_details: dict, pref_score: float, demand_score
 def _format_opportunity(item: dict, rank: int, recommendation: dict) -> dict:
     """Format a single opportunity recommendation."""
     skill_details = recommendation["skill_details"]
-    match_details = skill_details.get("match_details", {})
-    
+    match_details = recommendation["match_details"]
+    scoring_mode = recommendation.get("scoring_mode", "multiplicative")
+
+    if scoring_mode == "multiplicative":
+        breakdown = _create_score_breakdown_multiplicative(
+            recommendation["u_hat"],
+            recommendation["p_hat_result"],
+            skill_details,
+            recommendation["pref_details_score"],
+        )
+    else:
+        breakdown = _create_score_breakdown_additive(
+            skill_details,
+            recommendation["pref_details_score"],
+            recommendation.get("demand_score", 0.5),
+            recommendation.get("demand_label", "Unknown"),
+        )
+
     return {
         "uuid": item.get("uuid"),
         "URL": item.get("url") or item.get("URL") or f"www.example.com/{item.get('uuid')}",
         "rank": rank,
         "opportunity_title": item.get("opportunity_title"),
+        "opportunity_isco_occupation_group": item.get("opportunity_isco_occupation_group"),
+        "opportunity_isco_occupation_group_id": item.get("opportunity_isco_occupation_group_id"),
         "location": item.get("location"),
+        "employer": item.get("employer"),
+        "employment_type": item.get("employment_type"),
+        "salary_text": item.get("salary_text"),
+        "required_education": item.get("required_education"),
+        "required_experience": item.get("required_experience"),
+        "closing_date": item.get("closing_date"),
         "is_eligible": bool(skill_details.get("is_eligible", True)),
         "justification": _build_justification(
             match_details,
             recommendation["pref_details"],
-            recommendation["demand_label"],
-            recommendation["score"]
+            recommendation.get("demand_label", "Unknown"),
+            recommendation["score"],
         ),
         "opportunity_description": item.get("opportunity_description") or item.get("contract_type", "full_time"),
         "contract_type": item.get("contract_type"),
         "final_score": round(float(recommendation["score"]), 4),
-        "score_breakdown": _create_score_breakdown(
-            skill_details,
-            recommendation["pref_details_score"],
-            recommendation["demand_score"],
-            recommendation["demand_label"]
-        ),
+        "score_breakdown": breakdown,
         "matched_skills": {
             "essential_skill_matches": match_details.get("essential_skill_matches", []),
             "optional_exact_matches": match_details.get("optional_exact_matches", []),
@@ -131,8 +173,25 @@ def _format_opportunity(item: dict, rank: int, recommendation: dict) -> dict:
 def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
     """Format a single occupation recommendation."""
     skill_details = recommendation["skill_details"]
-    match_details = skill_details.get("match_details", {})
-    
+    match_details = recommendation["match_details"]
+    scoring_mode = recommendation.get("scoring_mode", "multiplicative")
+
+    if scoring_mode == "multiplicative":
+        breakdown = _create_score_breakdown_multiplicative(
+            recommendation["u_hat"],
+            recommendation["p_hat_result"],
+            skill_details,
+            recommendation["pref_details_score"],
+            include_demand=True,
+        )
+    else:
+        breakdown = _create_score_breakdown_additive(
+            skill_details,
+            recommendation["pref_details_score"],
+            recommendation.get("demand_score", 0.5),
+            recommendation.get("demand_label", "Unknown"),
+        )
+
     return {
         "uuid": item.get("uuid"),
         "originUuid": item.get("originUuid"),
@@ -143,17 +202,12 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
         "justification": _build_justification(
             match_details,
             recommendation["pref_details"],
-            recommendation["demand_label"],
-            recommendation["score"]
+            recommendation.get("demand_label", "Unknown"),
+            recommendation["score"],
         ),
         "occupation_description": item.get("occupation_description") or item.get("description"),
         "final_score": round(float(recommendation["score"]), 4),
-        "score_breakdown": _create_score_breakdown(
-            skill_details,
-            recommendation["pref_details_score"],
-            recommendation["demand_score"],
-            recommendation["demand_label"]
-        ),
+        "score_breakdown": breakdown,
         "matched_skills": {
             "essential_skill_matches": match_details.get("essential_skill_matches", []),
             "optional_exact_matches": match_details.get("optional_exact_matches", []),
@@ -166,49 +220,92 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
 def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k: int = 10):
     """
     Match user against items (opportunities or occupations) and return top recommendations.
-    
-    Args:
-        user: User profile dict
-        items: List of items to match against
-        item_type: "opportunity" or "occupation"
-        top_k: Number of top matches to return
-    
-    Returns:
-        List of formatted recommendations
+
+    Supports two scoring modes (controlled by config.SCORING_MODE):
+      - "multiplicative": final_score = u_hat * p_hat  (paper-aligned)
+      - "additive":       final_score = w1*S_skills + w2*S_pref + w3*S_demand  (legacy)
     """
     # Filter by location
     items = [item for item in items if _job_matches_user_location(item, user)]
-    
+
     if not items:
         return []
-    
+
+    scoring_mode = SCORING_MODE
+
+    # In legacy mode, import DemandScorer once (not per-item)
+    _demand_scorer = None
+    if scoring_mode != "multiplicative":
+        from app.services.demand_score import DemandScorer
+        _demand_scorer = DemandScorer()
+
     # Calculate scores for all items
     recommendations = []
     for item in items:
+        # --- Skill diagnostics (always computed for explainability) ---
         skill = scorer_skill.calculate_score(user, item)
+
+        # --- Preference / utility ---
         pref = scorer_pref.calculate_score(user, item)
-        demand = scorer_demand.calculate_score(item)
-        
-        final_score = (
-            GLOBAL_WEIGHTS["w1_skills"] * skill.get("U_final", 0.0)
-            + GLOBAL_WEIGHTS["w2_preference"] * pref.get("score", 0.0)
-            + GLOBAL_WEIGHTS["w3_market"] * demand.get("score", 0.5)
+
+        if scoring_mode == "multiplicative":
+            # --- Feasibility signals (Node2Vec-based, geometric mean) ---
+            feasibility = scorer_skill.calculate_feasibility(user, item)
+            # --- Success propensity (p_hat) ---
+            p_hat_result = scorer_success.calculate_score(user, item, feasibility)
+
+            u_hat = pref.get("u_hat", 0.5)
+            p_hat = p_hat_result.get("p_hat", 0.0)
+            final_score = u_hat * p_hat
+
+            recommendations.append({
+                "item": item,
+                "score": final_score,
+                "scoring_mode": scoring_mode,
+                "u_hat": u_hat,
+                "p_hat_result": p_hat_result,
+                "skill_details": skill,
+                "match_details": feasibility.get("match_details", skill.get("match_details", {})),
+                "pref_details": pref.get("details", []),
+                "pref_details_score": pref.get("score", 0.0),
+                "demand_label": p_hat_result.get("demand_label", "Unknown"),
+            })
+        else:
+            # Legacy additive mode
+            demand = _demand_scorer.calculate_score(item)
+            final_score = (
+                GLOBAL_WEIGHTS["w1_skills"] * skill.get("U_final", 0.0)
+                + GLOBAL_WEIGHTS["w2_preference"] * pref.get("score", 0.0)
+                + GLOBAL_WEIGHTS["w3_market"] * demand.get("score", 0.5)
+            )
+            recommendations.append({
+                "item": item,
+                "score": final_score,
+                "scoring_mode": scoring_mode,
+                "u_hat": pref.get("u_hat", 0.5),
+                "p_hat_result": {"p_hat": 0.0, "components": {}, "demand_label": demand.get("label", "Unknown")},
+                "skill_details": skill,
+                "match_details": skill.get("match_details", {}),
+                "pref_details": pref.get("details", []),
+                "pref_details_score": pref.get("score", 0.0),
+                "demand_score": demand.get("score", 0.5),
+                "demand_label": demand.get("label", "Unknown"),
+            })
+
+    # Sort by final score; use demand as tie-breaker in multiplicative mode
+    if scoring_mode == "multiplicative":
+        recommendations.sort(
+            key=lambda x: (
+                x["score"],
+                x["p_hat_result"].get("components", {}).get("market_opportunity", 0.0),
+            ),
+            reverse=True,
         )
-        
-        recommendations.append({
-            "item": item,
-            "score": final_score,
-            "skill_details": skill,
-            "pref_details": pref.get("details", []),
-            "pref_details_score": pref.get("score", 0.0),
-            "demand_score": demand.get("score", 0.5),
-            "demand_label": demand.get("label", "Unknown"),
-        })
-    
-    # Sort and take top K
-    recommendations.sort(key=lambda x: x["score"], reverse=True)
+    else:
+        recommendations.sort(key=lambda x: x["score"], reverse=True)
+
     top = recommendations[:top_k]
-    
+
     # Format based on item type
     formatter = _format_occupation if item_type == "occupation" else _format_opportunity
     return [formatter(r["item"], i, r) for i, r in enumerate(top, 1)]

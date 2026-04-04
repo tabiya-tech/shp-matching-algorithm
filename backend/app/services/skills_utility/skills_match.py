@@ -108,13 +108,35 @@ class SimilarityEngine:
 
     @staticmethod
     def best_mean_cos(op_mat: np.ndarray, js_mat: np.ndarray):
-        """Essential skill matching: best-match per required skill."""
+        """Essential skill matching: best-match per required skill (arithmetic mean)."""
         if op_mat.size == 0 or js_mat.size == 0:
             return 0.0, None
         S = op_mat @ js_mat.T
         np.maximum(S, 0.0, out=S) # Clip negative similarities
         rowmax = S.max(axis=1)    # Max similarity for each job skill
         return float(rowmax.mean()), rowmax
+
+    @staticmethod
+    def best_geometric_mean_cos(op_mat: np.ndarray, js_mat: np.ndarray, floor: float = 1e-6):
+        """Essential skill matching: geometric mean of best-match per required skill.
+
+        The geometric mean penalises missing a single essential skill much more
+        strongly than the arithmetic mean, which is the desired behaviour for the
+        recruiter-side feasibility signal (E_ij).
+
+        A small *floor* is applied to each per-skill similarity so that a single
+        zero does not collapse the entire product to zero — instead it drives the
+        score very close to zero while remaining differentiable.
+        """
+        if op_mat.size == 0 or js_mat.size == 0:
+            return 0.0, None
+        S = op_mat @ js_mat.T
+        np.maximum(S, 0.0, out=S)
+        rowmax = S.max(axis=1)
+        # Apply floor before taking log to avoid log(0)
+        floored = np.maximum(rowmax, floor)
+        geo_mean = float(np.exp(np.mean(np.log(floored))))
+        return geo_mean, rowmax
 
 # =============================================================================
 # 4) CORE UTILITY CALCULATION
@@ -241,4 +263,146 @@ def compute_U_complete(
             "optional_exact_matches": optional_exact_matches,
             "skill_group_matches": skill_group_matches
         }
+    }
+
+
+# =============================================================================
+# 5) FEASIBILITY SIGNALS  (recruiter-side, feeds into p_hat)
+# =============================================================================
+
+def compute_feasibility_signals(
+    js: Jobseeker,
+    op: Opportunity,
+    engine: SimilarityEngine,
+    gate_threshold: float = 0.35,
+    skill_labels: Optional[Dict[str, str]] = None,
+    user_skill_labels: Optional[Dict[str, str]] = None,
+    skill_group_labels: Optional[Dict[str, str]] = None,
+):
+    """Compute recruiter-side feasibility signals for the success-propensity proxy.
+
+    All per-skill similarities are still Node2Vec graph-based cosine distances
+    computed via *engine*.  This function only changes how those per-skill values
+    are **aggregated** (geometric mean for E_ij) and what they are used for
+    (feasibility / p_hat rather than utility).
+
+    Returns a dict with:
+        gate_passed     – bool, hard feasibility gate
+        essential_fit   – float, geometric-mean essential-skill coverage (E_ij)
+        optional_sim    – float, centroid cosine for optional skills
+        skill_group_recall – float, overlap fraction for skill groups
+        gap_share       – float, fraction of essentials below threshold
+        match_details   – dict, per-skill match info (same format as compute_U_complete)
+    """
+    skill_labels = skill_labels or {}
+    user_skill_labels = user_skill_labels or {}
+    skill_group_labels = skill_group_labels or {}
+
+    js_ids = list(js.skills_origin_uuids)
+    ess_ids = list(op.essential_skills_origin_uuids)
+    opt_ids = list(op.optional_skills_origin_uuids)
+
+    js_mat, js_ids_valid = engine._rows_with_ids(js_ids)
+    ess_mat, ess_ids_valid = engine._rows_with_ids(ess_ids)
+
+    # --- E_ij: essential skill coverage (geometric mean) ---
+    ess_geo, ess_rowmax = engine.best_geometric_mean_cos(ess_mat, js_mat)
+
+    # --- Gate & gap share ---
+    has_essential_reqs = len(ess_ids) > 0
+    if not has_essential_reqs:
+        # Job defines no essential skills → neutral: vacuously passes, full fit
+        gap_share = 0.0
+        gate_passed = True
+        ess_geo = 1.0
+    elif ess_rowmax is None or ess_rowmax.size == 0:
+        # Job has essential skills but we couldn't compute similarities
+        # (user has no skills, or skills not in embedding) → worst case
+        gap_share = 1.0
+        gate_passed = False
+        ess_geo = 0.0
+    else:
+        meets = ess_rowmax >= gate_threshold
+        gap_share = float((~meets).mean())
+        # The hard gate fires only when the *majority* of essential skills are
+        # unmet — i.e. more than half fall below threshold.  A single weak match
+        # among many strong ones is a partial gap, not a feasibility failure.
+        # True non-negotiables (certs, licences) would ideally be separate flags;
+        # until that data exists, a >50 % gap share is a reasonable proxy.
+        gate_passed = bool(gap_share <= 0.5)
+
+    # --- Optional skill similarity (centroid cosine) ---
+    js_mean = engine._mean_unit(js_mat)
+    opt_vec = engine._mean_unit(engine._rows(opt_ids))
+    opt_sim = (
+        max(0.0, float(js_mean @ opt_vec))
+        if js_mean is not None and opt_vec is not None
+        else 0.0
+    )
+
+    # --- Skill group recall ---
+    if op.skill_groups_origin_uuids:
+        inter = len(op.skill_groups_origin_uuids & js.skill_groups_origin_uuids)
+        grp_recall = inter / len(op.skill_groups_origin_uuids)
+    else:
+        grp_recall = 0.0
+
+    # --- Match details (reuse same format as compute_U_complete) ---
+    essential_skill_matches = []
+    if ess_mat.size > 0 and js_mat.size > 0:
+        S = ess_mat @ js_mat.T
+        np.maximum(S, 0.0, out=S)
+        rowmax = S.max(axis=1)
+        argmax = S.argmax(axis=1)
+        for i, ess_id in enumerate(ess_ids_valid):
+            best_idx = int(argmax[i])
+            best_js_id = js_ids_valid[best_idx] if js_ids_valid else None
+            sim = float(rowmax[i])
+            essential_skill_matches.append({
+                "job_skill_id": ess_id,
+                "job_skill_label": skill_labels.get(ess_id),
+                "best_user_skill_id": best_js_id,
+                "best_user_skill_label": user_skill_labels.get(best_js_id),
+                "similarity": round(sim, 4),
+                "meets_threshold": sim >= gate_threshold,
+            })
+    elif ess_ids_valid:
+        for ess_id in ess_ids_valid:
+            essential_skill_matches.append({
+                "job_skill_id": ess_id,
+                "job_skill_label": skill_labels.get(ess_id),
+                "best_user_skill_id": None,
+                "best_user_skill_label": None,
+                "similarity": 0.0,
+                "meets_threshold": False,
+            })
+
+    optional_exact_matches = []
+    for opt_id in sorted(set(opt_ids) & set(js_ids)):
+        optional_exact_matches.append({
+            "skill_id": opt_id,
+            "skill_label": skill_labels.get(opt_id) or user_skill_labels.get(opt_id),
+        })
+
+    skill_group_matches = []
+    for gid in sorted(op.skill_groups_origin_uuids & js.skill_groups_origin_uuids):
+        skill_group_matches.append({
+            "skill_group_id": gid,
+            "skill_group_label": skill_group_labels.get(gid),
+        })
+
+    return {
+        "gate_passed": gate_passed,
+        "essential_fit": round(ess_geo, 4),
+        "optional_sim": round(opt_sim, 4),
+        "skill_group_recall": round(grp_recall, 4),
+        "gap_share": round(gap_share, 4),
+        "has_essential_skills": len(ess_ids) > 0,
+        "has_optional_skills": len(opt_ids) > 0,
+        "has_skill_groups": len(op.skill_groups_origin_uuids) > 0,
+        "match_details": {
+            "essential_skill_matches": essential_skill_matches,
+            "optional_exact_matches": optional_exact_matches,
+            "skill_group_matches": skill_group_matches,
+        },
     }

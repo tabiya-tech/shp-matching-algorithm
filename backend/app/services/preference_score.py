@@ -1,3 +1,4 @@
+import math
 import re
 # src/preference_scorer.py
 from app.config import PREFERENCE_CONFIG
@@ -118,13 +119,30 @@ class PreferenceScorer:
                 "wa_score_sum": round(wa_score_sum, 4),
             })
 
-        SCALING_FACTOR = 0.2
-        scaled_sum = raw_score_sum * SCALING_FACTOR
-        final_pref_score = self.base_constant + scaled_sum
+        SCALING_FACTOR_LEGACY = 0.2
+        scaled_sum_legacy = raw_score_sum * SCALING_FACTOR_LEGACY
+
+        # --- u_hat: sigmoid-normalised utility in (0, 1) ---
+        # The sigmoid maps any raw sum to (0, 1) without an artificial base
+        # constant.  When raw_score_sum == 0 the sigmoid gives 0.5 (neutral),
+        # positive contributions push toward 1, negative toward 0.
+        #
+        # We use a steeper scaling factor than the legacy formula so that
+        # preference differences spread across a wider portion of (0, 1).
+        # With typical raw sums in [-1.6, +1.6], a factor of 2.0 maps that
+        # range to sigmoid inputs of [-3.2, +3.2] → u_hat in [~0.04, ~0.96],
+        # giving meaningful discriminative power.
+        SCALING_FACTOR_SIGMOID = 2.0
+        sigmoid_input = raw_score_sum * SCALING_FACTOR_SIGMOID
+        u_hat = 1.0 / (1.0 + math.exp(-sigmoid_input)) if abs(sigmoid_input) < 500 else (1.0 if sigmoid_input > 0 else 0.0)
+
+        # Legacy score kept for backward compatibility during migration
+        legacy_score = max(0.0, min(1.0, self.base_constant + scaled_sum_legacy))
 
         # Return BWS scores, type, and top_10_bws as part of the details for downstream use
         return {
-            "score": max(0.0, min(1.0, final_pref_score)),
+            "u_hat": round(u_hat, 4),
+            "score": legacy_score,
             "details": details,
             "bws_scores": bws_scores,
             "bws_score_type": bws_score_type,

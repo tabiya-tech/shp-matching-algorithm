@@ -10,6 +10,7 @@ from app.services.skills_utility.skills_match import (
     Opportunity,
     SimilarityEngine,
     compute_U_complete,
+    compute_feasibility_signals,
 )
 
 current_dir = Path(__file__).parent
@@ -56,9 +57,8 @@ class SkillScorer:
         except FileNotFoundError:
             self.skill_group_labels = {}
 
-    def calculate_score(self, user_profile: dict, job_posting: dict) -> dict:
-        """Returns the full dictionary of skill utility components."""
-
+    def _build_objects(self, user_profile: dict, job_posting: dict):
+        """Build Jobseeker / Opportunity dataclasses + user skill labels."""
         user_id = user_profile.get("user_id") or user_profile.get("youth_id")
         if not user_id:
             raise ValueError("user_profile must include user_id (or legacy youth_id)")
@@ -90,10 +90,32 @@ class SkillScorer:
             province=job_posting.get("province") or job_posting.get("location"),
         )
 
+        return js, op, user_skill_labels
+
+    def calculate_score(self, user_profile: dict, job_posting: dict) -> dict:
+        """Returns the full dictionary of skill utility components (legacy U_final)."""
+        js, op, user_skill_labels = self._build_objects(user_profile, job_posting)
         return compute_U_complete(
             js,
             op,
             self.engine,
+            skill_labels=self.skill_labels,
+            user_skill_labels=user_skill_labels,
+            skill_group_labels=self.skill_group_labels,
+        )
+
+    def calculate_feasibility(self, user_profile: dict, job_posting: dict) -> dict:
+        """Returns recruiter-side feasibility signals for the success-propensity proxy.
+
+        Uses the same Node2Vec embedding engine as calculate_score but aggregates
+        essential-skill similarities via geometric mean (stricter on gaps).
+        """
+        js, op, user_skill_labels = self._build_objects(user_profile, job_posting)
+        return compute_feasibility_signals(
+            js,
+            op,
+            self.engine,
+            gate_threshold=0.35,
             skill_labels=self.skill_labels,
             user_skill_labels=user_skill_labels,
             skill_group_labels=self.skill_group_labels,

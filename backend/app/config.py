@@ -1,11 +1,26 @@
 # src/config.py
 
 
-# 1. Global Weights (PDF Page 1, Section 1.1)
+# ---------------------------------------------------------------------------
+# Scoring mode: "multiplicative" (U*P, paper-aligned) or "additive" (legacy)
+# ---------------------------------------------------------------------------
+SCORING_MODE = "multiplicative"
+
+# Legacy additive weights — kept for backward-compatibility / A-B testing.
 GLOBAL_WEIGHTS = {
     "w1_skills": 0.40,
     "w2_preference": 0.40,
     "w3_market": 0.20
+}
+
+# ---------------------------------------------------------------------------
+# Success-propensity proxy config  (p_hat = G * E^alpha * R^beta * M^gamma)
+# ---------------------------------------------------------------------------
+SUCCESS_PROPENSITY_CONFIG = {
+    "alpha_essential": 0.5,      # exponent for essential-skill fit (E_ij)
+    "beta_readiness": 0.2,       # exponent for recruiter-side readiness (R_ij)
+    "gamma_market": 0.3,         # exponent for market opportunity (M_ij)
+    "gate_threshold": 0.35,      # similarity threshold for the hard gate
 }
 
 # 2. Demand Score Mapping (PDF Page 2, Top Table)
