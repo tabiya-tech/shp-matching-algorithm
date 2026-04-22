@@ -19,6 +19,21 @@ scorer_success = SuccessPropensityScorer()
 def _norm(v: Optional[str]) -> str:
     return str(v).strip().casefold() if v is not None else ""
 
+
+def _split_pref_details(pref_details: list) -> tuple:
+    """Separate standard preference entries from work-activity BWS entries."""
+    standard = []
+    wa_bws = None
+    for d in pref_details:
+        if d.get("attribute") == "work_activity_bws":
+            wa_bws = {
+                "wa_score_sum": d.get("wa_score_sum", 0.0),
+                "details": d.get("wa_details", []),
+            }
+        else:
+            standard.append(d)
+    return standard, wa_bws
+
 logger = logging.getLogger(__name__)
 
 def _job_matches_user_location(job: Dict[str, Any], user: Dict[str, Any]) -> bool:
@@ -90,7 +105,16 @@ def _create_score_breakdown_multiplicative(
     include_demand: bool = False,
 ) -> dict:
     """Interpretable score breakdown for the multiplicative (U*P) pipeline."""
+    components = p_hat_result.get("components", {})
     breakdown = {
+        "u_hat": round(float(u_hat), 4),
+        "p_hat": round(float(p_hat_result.get("p_hat", 0.0)), 4),
+        "p_hat_components": {
+            "gate": round(float(components.get("gate", 0.0)), 4),
+            "essential_fit": round(float(components.get("essential_fit", 0.0)), 4),
+            "recruiter_readiness": round(float(components.get("recruiter_readiness", 0.0)), 4),
+            "market_opportunity": round(float(components.get("market_opportunity", 0.0)), 4),
+        },
         "total_skill_utility": round(float(skill_details.get("U_final", 0.0)), 4),
         "skill_components": skill_details.get("components", {"loc": 0.0, "ess": 0.0, "opt": 0.0, "grp": 0.0}),
         "skill_penalty_applied": round(float(skill_details.get("penalty", 0.0)), 4),
@@ -120,6 +144,7 @@ def _format_opportunity(item: dict, rank: int, recommendation: dict) -> dict:
     skill_details = recommendation["skill_details"]
     match_details = recommendation["match_details"]
     scoring_mode = recommendation.get("scoring_mode", "multiplicative")
+    pref_standard, wa_bws = _split_pref_details(recommendation["pref_details"])
 
     if scoring_mode == "multiplicative":
         breakdown = _create_score_breakdown_multiplicative(
@@ -166,7 +191,8 @@ def _format_opportunity(item: dict, rank: int, recommendation: dict) -> dict:
             "optional_exact_matches": match_details.get("optional_exact_matches", []),
             "skill_group_matches": match_details.get("skill_group_matches", []),
         },
-        "matched_preferences": recommendation["pref_details"],
+        "matched_preferences": pref_standard,
+        "matched_work_activities": wa_bws,
     }
 
 
@@ -175,6 +201,7 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
     skill_details = recommendation["skill_details"]
     match_details = recommendation["match_details"]
     scoring_mode = recommendation.get("scoring_mode", "multiplicative")
+    pref_standard, wa_bws = _split_pref_details(recommendation["pref_details"])
 
     if scoring_mode == "multiplicative":
         breakdown = _create_score_breakdown_multiplicative(
@@ -213,7 +240,8 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
             "optional_exact_matches": match_details.get("optional_exact_matches", []),
             "skill_group_matches": match_details.get("skill_group_matches", []),
         },
-        "matched_preferences": recommendation["pref_details"],
+        "matched_preferences": pref_standard,
+        "matched_work_activities": wa_bws,
     }
 
 
@@ -273,10 +301,26 @@ def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k:
         else:
             # Legacy additive mode
             demand = _demand_scorer.calculate_score(item)
+
+            w1 = GLOBAL_WEIGHTS["w1_skills"]
+            w2 = GLOBAL_WEIGHTS["w2_preference"]
+            w3 = GLOBAL_WEIGHTS["w3_market"]
+
+            if not demand.get("present", False):
+                # Demand absent — redistribute its weight to skills + prefs
+                remaining = w1 + w2
+                if remaining > 0:
+                    w1 = w1 / remaining
+                    w2 = w2 / remaining
+                w3 = 0.0
+                demand_score_val = 0.0
+            else:
+                demand_score_val = demand.get("score", 0.5)
+
             final_score = (
-                GLOBAL_WEIGHTS["w1_skills"] * skill.get("U_final", 0.0)
-                + GLOBAL_WEIGHTS["w2_preference"] * pref.get("score", 0.0)
-                + GLOBAL_WEIGHTS["w3_market"] * demand.get("score", 0.5)
+                w1 * skill.get("U_final", 0.0)
+                + w2 * pref.get("score", 0.0)
+                + w3 * demand_score_val
             )
             recommendations.append({
                 "item": item,
@@ -288,7 +332,7 @@ def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k:
                 "match_details": skill.get("match_details", {}),
                 "pref_details": pref.get("details", []),
                 "pref_details_score": pref.get("score", 0.0),
-                "demand_score": demand.get("score", 0.5),
+                "demand_score": demand_score_val,
                 "demand_label": demand.get("label", "Unknown"),
             })
 
@@ -341,6 +385,7 @@ async def match_single_user(user: dict):
         scorer_skill.engine,
         scorer_skill.skill_labels,
         top_k=5,
+        resolve_id=scorer_skill._resolve_id,
     )
 
     return {

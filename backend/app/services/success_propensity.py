@@ -117,24 +117,35 @@ class SuccessPropensityScorer:
             has_optional_skills=feasibility.get("has_optional_skills", False),
             has_skill_groups=feasibility.get("has_skill_groups", False),
         )
-        m_ij = self._market_opportunity(job_posting)
 
-        # --- multiplicative combination ---
-        # p_hat = G * E^alpha * R^beta * M^gamma
-        # Each component is in [0, 1], so the product stays in [0, 1].
-        #
-        # Floor at 0.01 for E/R/M so that a missing component (e.g. no optional
-        # skills listed) doesn't zero out the entire product — it just drives
-        # p_hat very low while remaining non-zero and differentiable.
+        attributes = job_posting.get("attributes", {})
+        demand_label = attributes.get("expected_demand")
+        has_demand = demand_label and demand_label in self.demand_mapping
+
+        if has_demand:
+            m_ij = self.demand_mapping[demand_label]
+        else:
+            m_ij = None
+
+        # --- dynamic exponent redistribution ---
+        # When a component's data is absent, redistribute its exponent
+        # proportionally to the remaining components so that missing data
+        # doesn't drag the score down.
+        if m_ij is None:
+            remaining = alpha + beta
+            total = alpha + beta + gamma
+            if remaining > 0:
+                alpha = total * (alpha / remaining)
+                beta = total * (beta / remaining)
+            gamma = 0.0
+            m_ij = 1.0
+
+        # Floor at 0.01 so a zero component doesn't annihilate the product
         e_ij = max(e_ij, 0.01)
         r_ij = max(r_ij, 0.01)
         m_ij = max(m_ij, 0.01)
 
         p_hat = g_ij * (e_ij ** alpha) * (r_ij ** beta) * (m_ij ** gamma)
-
-        # Extract demand label for display
-        attributes = job_posting.get("attributes", {})
-        demand_label = attributes.get("expected_demand", "Unknown")
 
         return {
             "p_hat": round(p_hat, 4),

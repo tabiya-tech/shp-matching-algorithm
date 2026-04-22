@@ -33,47 +33,60 @@ DEMAND_SCORE_MAPPING = {
 }
 
 # 3. Preference Model Configuration (PDF Page 2 & 4)
+#
+# Each attribute has an "enabled" flag.  Set to False to exclude it from
+# scoring without removing the definition (easy to re-enable later).
+# The sigmoid scaling factor is computed dynamically from the enabled
+# attributes so the score range stays stable regardless of how many
+# attributes are active.
 PREFERENCE_CONFIG = {
     "base_constant": 0.5, # Fixed at 0.5 (PDF Page 2, Section 2)
     "attributes": {
         "earnings_per_month": {
+            "enabled": True,
             "type": "ordered_linear",
-            "beta": 0.5, # From Schema & PDF Page 4
+            "beta": 0.5,
             "mapping": {
-                "earn_15k": 0.10, 
-                "earn_30k": 0.33, 
-                "earn_50k": 0.67, 
+                "earn_15k": 0.10,
+                "earn_30k": 0.33,
+                "earn_50k": 0.67,
                 "earn_70k": 1.0
             }
         },
         "task_content": {
+            "enabled": False,
             "type": "dummy",
-            "beta": 0.2, # From Schema & PDF Page 4
+            "beta": 0.2,
             "active_level": "task_creative"
         },
         "physical_demand": {
+            "enabled": True,
             "type": "dummy",
-            "beta": -0.4, # From Schema & PDF Page 4
+            "beta": -0.4,
             "active_level": "phys_heavy"
         },
         "work_flexibility": {
+            "enabled": False,
             "type": "dummy",
-            "beta": 0.4, # From Schema & PDF Page 4
+            "beta": 0.4,
             "active_level": "flex_high"
         },
         "social_interaction": {
+            "enabled": True,
             "type": "dummy",
-            "beta": 0.1, # From Schema & PDF Page 4
+            "beta": 0.1,
             "active_level": "soc_people"
         },
         "career_growth": {
+            "enabled": True,
             "type": "dummy",
-            "beta": 0.5, # From Schema & PDF Page 4
+            "beta": 0.5,
             "active_level": "growth_high"
         },
         "social_meaning": {
+            "enabled": False,
             "type": "dummy",
-            "beta": 0.3, # From Schema & PDF Page 4
+            "beta": 0.3,
             "active_level": "mean_high"
         }
     }

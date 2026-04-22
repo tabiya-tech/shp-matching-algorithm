@@ -15,7 +15,8 @@ def analyze_skill_gaps(
     all_jobs: List[dict],
     engine,  # SimilarityEngine
     skill_labels: Dict[str, str],
-    top_k: int = 5
+    top_k: int = 5,
+    resolve_id=None,
 ) -> List[Dict]:
     """
     Analyzes skill gaps for a user by finding skills that:
@@ -28,75 +29,76 @@ def analyze_skill_gaps(
         engine: SimilarityEngine instance with embedding matrix
         skill_labels: Dict mapping skill IDs to preferred labels
         top_k: Number of recommendations to return
+        resolve_id: Optional callable to translate external IDs (ESCO)
+                     to the embedding model's internal ID space.
     
     Returns:
         List of dicts with skill_id, skill_label, proximity_score, 
         job_unlock_count, and reasoning
     """
-    
-    # 1. Extract user's existing skills
-    user_skill_ids = {
-        s.get("originUUID")
-        for s in user_profile.get("skills_vector", {}).get("top_skills", [])
-        if s.get("originUUID")
-    }
-    user_skill_labels = {
-        s.get("originUUID"): s.get("preferredLabel")
-        for s in user_profile.get("skills_vector", {}).get("top_skills", [])
-        if s.get("originUUID")
-    }
+    _resolve = resolve_id if resolve_id is not None else (lambda x: x)
+
+    # 1. Extract user's existing skills (resolved to internal IDs)
+    user_skill_ids: Set[str] = set()
+    user_skill_labels: Dict[str, str] = {}
+    for s in user_profile.get("skills_vector", {}).get("top_skills", []):
+        raw = s.get("originUUID")
+        if not raw:
+            continue
+        resolved = _resolve(raw)
+        user_skill_ids.add(resolved)
+        label = s.get("preferredLabel")
+        if label:
+            user_skill_labels[resolved] = label
     
     if not user_skill_ids:
         return []
     
-    # 2. Collect all candidate skills from all jobs (excluding user's skills)
-    candidate_skills = set()
+    # 2. Collect all candidate skills from all jobs, resolved to internal IDs
+    candidate_skills: Set[str] = set()
+    # Track original counts per resolved ID across jobs
+    _ess_sets: List[Set[str]] = []
+    _opt_sets: List[Set[str]] = []
     for job in all_jobs:
-        ess_skills = set(job.get("essential_skills_origin_uuids", []))
-        opt_skills = set(job.get("optional_skills_origin_uuids", []))
-        candidate_skills.update(ess_skills | opt_skills)
+        ess_resolved = {_resolve(s) for s in job.get("essential_skills_origin_uuids", []) if s}
+        opt_resolved = {_resolve(s) for s in job.get("optional_skills_origin_uuids", []) if s}
+        _ess_sets.append(ess_resolved)
+        _opt_sets.append(opt_resolved)
+        candidate_skills.update(ess_resolved | opt_resolved)
     
-    # Remove user's existing skills
-    candidate_skills = candidate_skills - user_skill_ids
+    candidate_skills -= user_skill_ids
     
     if not candidate_skills:
         return []
     
     # 3. Compute proximity score for each candidate
-    #    (similarity to user's closest existing skill)
     user_mat = engine._rows(list(user_skill_ids))
     user_skill_ids_list = list(user_skill_ids)
     
-    proximity_scores = {}
-    closest_user_skills = {}  # Maps candidate_id to (user_skill_id, similarity)
+    proximity_scores: Dict[str, float] = {}
+    closest_user_skills: Dict[str, tuple] = {}
     for cand_id in candidate_skills:
         cand_mat = engine._rows([cand_id])
         if cand_mat.size == 0 or user_mat.size == 0:
             proximity_scores[cand_id] = 0.0
             closest_user_skills[cand_id] = (None, 0.0)
         else:
-            S = cand_mat @ user_mat.T  # Shape: (1, num_user_skills)
+            S = cand_mat @ user_mat.T
             argmax_idx = int(np.argmax(S))
             max_sim = float(np.max(S))
             closest_user_skill_id = user_skill_ids_list[argmax_idx]
             proximity_scores[cand_id] = max(0.0, max_sim)
             closest_user_skills[cand_id] = (closest_user_skill_id, max(0.0, max_sim))
     
-    # 4. Compute job unlock potential for each candidate
-    job_unlock_counts = {}
+    # 4. Compute job unlock potential for each candidate (using pre-resolved sets)
+    job_unlock_counts: Dict[str, int] = {}
     for cand_id in candidate_skills:
         unlock_count = 0
-        for job in all_jobs:
-            ess_skills = set(job.get("essential_skills_origin_uuids", []))
-            opt_skills = set(job.get("optional_skills_origin_uuids", []))
-            
-            # Count if skill is essential (would improve eligibility/score significantly)
-            if cand_id in ess_skills:
-                unlock_count += 2  # Weight essential skills more
-            # Count if skill is optional (would improve score)
-            elif cand_id in opt_skills:
+        for ess_set, opt_set in zip(_ess_sets, _opt_sets):
+            if cand_id in ess_set:
+                unlock_count += 2
+            elif cand_id in opt_set:
                 unlock_count += 1
-        
         job_unlock_counts[cand_id] = unlock_count
     
     # 5. Combine scores (normalized)

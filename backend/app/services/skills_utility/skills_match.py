@@ -311,10 +311,11 @@ def compute_feasibility_signals(
     # --- Gate & gap share ---
     has_essential_reqs = len(ess_ids) > 0
     if not has_essential_reqs:
-        # Job defines no essential skills → neutral: vacuously passes, full fit
-        gap_share = 0.0
-        gate_passed = True
-        ess_geo = 1.0
+        # Job defines no essential skills → zero skill fit.
+        # Only jobs with actual essential skill matches should score here.
+        gap_share = 1.0
+        gate_passed = False
+        ess_geo = 0.0
     elif ess_rowmax is None or ess_rowmax.size == 0:
         # Job has essential skills but we couldn't compute similarities
         # (user has no skills, or skills not in embedding) → worst case

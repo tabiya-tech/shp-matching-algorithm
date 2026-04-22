@@ -26,6 +26,16 @@ class PreferenceScorer:
         self.config = PREFERENCE_CONFIG
         self.base_constant = self.config["base_constant"]
 
+        self._enabled_attrs = {
+            k: v for k, v in self.config["attributes"].items()
+            if v.get("enabled", True)
+        }
+
+        # Dynamic sigmoid scaling: sigmoid(max_raw * factor) ≈ 0.98
+        # so a perfect match on all enabled attributes reaches ~0.98.
+        max_positive_sum = sum(abs(s["beta"]) for s in self._enabled_attrs.values())
+        self._sigmoid_factor = 4.0 / max_positive_sum if max_positive_sum > 0 else 2.0
+
     @staticmethod
     def _humanize_label(value: str):
         if value is None:
@@ -48,13 +58,21 @@ class PreferenceScorer:
         user_weights = user_profile.get("preference_vector", {})
         job_attrs = job_posting.get("attributes", {})
 
-        # Optional ONET Work Activities BWS scores
-        bws_scores = user_profile.get("bws_scores", {})
-        top_10_bws = user_profile.get("top_10_bws", [])
+        # BWS scores may be at top level or nested inside preference_vector
+        bws_scores = (
+            user_profile.get("bws_scores")
+            or user_weights.get("bws_scores")
+            or {}
+        )
+        top_10_bws = (
+            user_profile.get("top_10_bws")
+            or user_weights.get("top_10_bws")
+            or []
+        )
         bws_score_type = self.detect_bws_score_type(bws_scores)
 
-        # Standard preference scoring (attributes)
-        for attr_key, settings in self.config["attributes"].items():
+        # Standard preference scoring (only enabled attributes)
+        for attr_key, settings in self._enabled_attrs.items():
             beta = settings["beta"]
             user_weight = user_weights.get(attr_key, 0.0)
             job_value_raw = job_attrs.get(attr_key)
@@ -123,17 +141,10 @@ class PreferenceScorer:
         scaled_sum_legacy = raw_score_sum * SCALING_FACTOR_LEGACY
 
         # --- u_hat: sigmoid-normalised utility in (0, 1) ---
-        # The sigmoid maps any raw sum to (0, 1) without an artificial base
-        # constant.  When raw_score_sum == 0 the sigmoid gives 0.5 (neutral),
-        # positive contributions push toward 1, negative toward 0.
-        #
-        # We use a steeper scaling factor than the legacy formula so that
-        # preference differences spread across a wider portion of (0, 1).
-        # With typical raw sums in [-1.6, +1.6], a factor of 2.0 maps that
-        # range to sigmoid inputs of [-3.2, +3.2] → u_hat in [~0.04, ~0.96],
-        # giving meaningful discriminative power.
-        SCALING_FACTOR_SIGMOID = 2.0
-        sigmoid_input = raw_score_sum * SCALING_FACTOR_SIGMOID
+        # Scaling factor is computed at init from enabled attributes so that
+        # a perfect match always reaches ~0.98 regardless of how many
+        # attributes are active.
+        sigmoid_input = raw_score_sum * self._sigmoid_factor
         u_hat = 1.0 / (1.0 + math.exp(-sigmoid_input)) if abs(sigmoid_input) < 500 else (1.0 if sigmoid_input > 0 else 0.0)
 
         # Legacy score kept for backward compatibility during migration
