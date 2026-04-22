@@ -1,0 +1,4254 @@
+[
+  {
+    "user_id": "69d9724656cfa731d376985f",
+    "full_name": "Kenya Seeker",
+    "city": "Nairobi",
+    "num_skills": 15,
+    "opportunity_recommendations": [
+      {
+        "uuid": "69c18bfe7f0c00e65d78b5d2",
+        "URL": "https://www.careerjet.co.ke/jobad/ke7576e81a0b252c9df1fea9023c0e8293",
+        "rank": 1,
+        "opportunity_title": "Customer Service Representative",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Avery Dennison",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Company DescriptionAvery Dennison Corporation (NYSE: AVY) is a global materials science and digital identification solutions company that provides a wide range of branding and information solutions that optimize labor and supply chain efficiency, reduce waste, advance sustainability, circularity and transparency, and better connect brands and consumers. Our products and solutions include labeling and functional materials, radio frequency identification (RFID) inlays and tags, software applications that connect the physical and digital, and a variety of products and solutions that enhance branded packaging and carry or display information that improves the customer experience. Serving an array of industries worldwide \u2014 including home and personal care, apparel, general retail, e-commerce, logistics, food and grocery, pharmaceuticals and automotive \u2014 we employ approximately 35,000 employees in more than 50 countries. Our reported sales in 2023 were $8.4 billion. Learn more at www.averydennison.com.AVERY DENNISON IS PROUD TO BE CERTIFIED GREAT PLACE TO WORK INAUSTRALIA, CHINA, INDIA, JAPAN, SINGAPORE, MALAYSIA, THAILAND AND VIETNAM.Job DescriptionABOUT ROLE:Scope and General purpose of the role:The incumbent is required to oversee the functions of: receiving and capturing orders, check that the pricing, quantity and slitting pattern is correct. The incumbent is also required to maintain good relationships with all customers to grow the business and promote new products. The incumbent\u2019s job purpose is not limited to the above mentioned.YOUR RESPONSIBILITIES WILL INCLUDE:SALES TARGETS:Compile an order in-take report and submit to the CSR Manager on a daily basisPromote and sell the slow moving and warehouse 32 stock to customers while contributing to team effort by accomplishing related results as required.CUSTOMER CENTRICITY:Liaise with the operations and dispatch staff to ensure that customer requirements are metResolve product/service queries by clarifying customer complaints and logging on salesforce.com on a daily basisUpdate customer price lists when price changes occurEnsure that internal staff have all the relevant information so that invoicing can be done timeouslyManage incoming calls and ensure that all customer demands are metDirect customer queries to the relevant partyCheck the inventory on hand on a daily basis based on customer forecastConduct an MDI (Managing Daily Initiative) on a weekly basis with the dispatch, production, receiving and sales staff to address problem areas within each departmentRecommend potential products and services to customersMaintaining a positive, empathetic and professional attitude toward customers at all timesResponding promptly to customer inquiriesORDER PROCESSING:Load customer orders on the MFGpro system to create a sales orderCreate a job card based on the sales orderEnsure that all orders are accurately created and timeously distributed to the production departmentRequest the a time frame from the Production Supervisor regarding urgent ordersCommunicate the time frame to the Dispatch Supervisor to ensure that delivery occurs within the allocated deadlinesLiaise with the Finance department regarding customers that are on holdSend correspondence to the Finance Department regarding customers accounts that are suspendedProvide customers feedback in terms of urgent orders as well as materials that are out of stockGENERAL:Participate and assist with stock take as requiredESSENTIAL SKILLS REQUIRED:Sound Telephonic skillsCustomer liaison skillsGood Listening skillsExcellent verbal and written communication skillsAnalytical problem solving skillsMulti-tasking and able to work under pressureAttention to detailWHAT WE WILL BE LOOKING FOR IN YOU:Applied learningBuilding customer loyaltyBuilding partnershipsContinues learningContributing to successCustomer focusDecision makingEnergyStress toleranceInitiating actionExperience in handling exports queries, documentation and coordination with internal and external agencies.Experience working with customer support.Sound knowledge and working experience on Microsoft Excel (intermediate level).QualificationsFORMAL QUALIFICATIONS:Relevant QualificationAt least 3-5 years experience within a B2B environment.Additional InformationPlease note that if you have not heard from the HR Department within 30 days of this advert closing, your application has unfortunately been unsuccessful.AVERY DENNISON IS AN EQUAL EMPLOYMENT OPPORTUNITY PROVIDERAvery Dennison",
+        "contract_type": null,
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863117f0c00e65d78af72",
+        "URL": "https://www.careerjet.co.ke/jobad/ke8cdb5463fc6ca5083837dc92146d6d7e",
+        "rank": 2,
+        "opportunity_title": "Director, Information Security at Human Rights Watch",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Human Rights Watch",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Responsibilities:Design, manage, and supervise all aspects of the Information Security program including work plan development and implementation, priority and objective development, monitoring and evaluation, budget monitoring and management, reporting, and collaboration with donors and other partners;Implement and maintain an information security risk management program, and work closely with the Director of Physical Security to implement cohesive security risk management frameworks within Departments across HRW;Advise on technical security concepts pertaining to network security, email security, remote data and third party security;Develop and manage global information security policies, standards, guidelines and procedures to assess, balance, and minimize risk and ensure the confidentiality, integrity, and availability of systems and data.Lead information security planning processes and implementation to establish and/or enhance an inclusive and comprehensive information security program in support of all information systems and technologies;Education and Experience: A level of education that when combined with your professional experience will adequately show you have the capability to lead information security at HRW.We anticipate that successful candidates will have around 10 years of experience in the Information Security field, and around 5 years of management experience, but are eager to hear from candidates who feel confident that they can perform well in this role even if they do not have this level of experience, and particularly if they are from backgrounds underrepresented in the field. Candidates who have relevant academic degrees or security certifications are encouraged to apply, but this is a plus - not a requirement.Related Skills and Knowledge:3-5 years experience in managing a team.Extensive knowledge of information security and risk management, ideally in the context of an international organization or in journalism with practical experience in high risk and complex operating environments.Security management experience and/or prior director level role in a related field is required.Working knowledge of the risks associated with human rights and/or civil society activism and/or journalism globally is requiredMethod of ApplicationInterested and qualified? Go to to applyMyjobmag",
+        "contract_type": null,
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863117f0c00e65d78af4d",
+        "URL": "https://www.careerjet.co.ke/jobad/ke1807b70a6ce0bac6c8cf99d826ab25e4",
+        "rank": 3,
+        "opportunity_title": "Senior Legal Officer MNT 13",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Multimedia University",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job SummaryRequirements for AppointmentFor Appointment to this grade a candidate must:Served in the grade of Legal Officer for a minimum period of three (3) years.Master's Degree in Law.Have a Valid Practicing Certificate from Law Society of Kenya. Diploma in Law from Council of Legal Education.Certificate in Computer Applications from a recognized institution. Demonstrated merit and ability as reflected in work performance and results.ResponsibilitiesFuzu",
+        "contract_type": null,
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863117f0c00e65d78af4c",
+        "URL": "https://www.careerjet.co.ke/jobad/kec1cfe257d7faef17eed5cc78957f5627",
+        "rank": 4,
+        "opportunity_title": "Receivables Accountant",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "AAR Healthcare",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job SummaryQualificationsEducationBachelor of Commerce in Finance, Accounting, or a related fieldProfessional qualifications such as CPA II, CPS II, ACCA IIJob Experience3-years\u2019 experience in a busy set up.ResponsibilitiesVerify the accuracy and completeness of invoices before dispatch to insurers and corporate clients.Reconciling and maintaining accurate statements from corporate clients in updated and actual status.Ensuring efficient and timely delivery of invoices in all the available means (physical or online) to corporate clients as per the hospitals set targets.Conduct regular reconciliations of client accounts to ensure the accuracy and transparency of debt records.Identify and address the causes of claim rejections from insurance providers and corporate partnersCollect outstanding receivables from corporate clients and individual patients.Ensuring timely receipting and allocation of all invoices as per the credit policy.Fuzu",
+        "contract_type": null,
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78aec7",
+        "URL": "https://www.careerjet.co.ke/jobad/ke5834f20f820b20aca7a99af77ca84f41",
+        "rank": 5,
+        "opportunity_title": "Enterprise IT Account Manager BFSI, Government & Insurance",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Career Directions Limited (CDL)",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job Title:Enterprise IT Account Manager \u2013 BFSI, Government & InsuranceNumber of Vacancies:2Industry: ITLocation:KenyaJob Profile:Managing Existing Customer AccountsDeveloping additional business opportunities in the assigned accountsDeveloping new targeted accountsManaging complete sales cycle right from prospecting, relationship management up to payment collectionsWorking on the sales target and reporting on quarterly basis to attain the sales targetTo manage relationship between customer and the companyCollaborate with internal departments to ensure customer expectations are met.Help customers solve difficult business challenges by aligning our value proposition with their business objectives.Requirements Work Experience:Minimum 5-10 years of work experience in the area of Enterprise IT Products & Services SalesMinimum 5-10 years of Account Management experienceMust have Enterprise IT products (No Laptop, printers experience will be considered.) & support Sales / Account Management (Selling experience in BFSI, Government, Insurance)The candidate should have experience working in an organization where the minimum sales target handled is at least USD 1 million in gross profit.Candidate Profile:Work experience in the area of Enterprise IT Products & Services SalesMinimum 5-10 years of Account Management experience is a mustWorking experience in working in East Africa will be an advantageProven track record in sales is a requirementProven track record is account management is a requirementCertification from OEM (i.e., Oracle, cisco, Checkpoint, Fortinet, NetApp, Dell EMC, Pure Storage etc.)Education:IT/Business related degree.Career Directions Limited (CDL)",
+        "contract_type": null,
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ae14",
+        "URL": "https://www.careerjet.co.ke/jobad/kee3358238cca4a1dac49a72facf4b5321",
+        "rank": 6,
+        "opportunity_title": "Senior Internal Auditor MNT 13",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Multimedia University",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job SummaryRequirements for AppointmentFor Appointment to this grade a candidate must:Served in the grade of Internal Auditor for a minimum period of three (3) years.Master's Degree in relevant field.Be registered with the Institute of Certified Public Accountants (ICPAK), Institute of Internal Auditors or any other recognized professional body.Certificate in Computer Applications from a recognized institution.Demonstrated merit and ability as reflected in work performance and results.ResponsibilitiesFuzu",
+        "contract_type": null,
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ac0c",
+        "URL": "https://www.brightermonday.co.ke/listings/marketing-manager-renewable-energy-zanzibar-gwvekr",
+        "rank": 7,
+        "opportunity_title": "MARKETING MANAGER- RENEWABLE ENERGY-ZANZIBAR",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday Consulting",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryAt least 3 years of expereince in similar roleMin Qualification:DiplomaExperience Level:Mid levelExperience Length:3 yearsJob descriptions & requirementsDuties and Responsibilities:\u25cf Market Analysis and Strategy:o Conducting thorough market research to understand the needs, preferences, and behaviour of potential customers in Zanzibar;o Identifying target audiences and developing tailored marketing strategies;o Analysing competitor activity and market trends.\u25cf Brand Management:o Building and maintaining a strong brand image that resonates with the local population;o Ensuring consistent brand messaging across all marketing channels.\u25cf Field Marketing:o Conducting face-to-face interactions with potential customers;o Outreaching to places with possible clients.\u25cf Digital Marketing:o Developing and executing digital marketing campaigns, including social media marketing, SEO, and online advertising;",
+        "contract_type": "Full-time",
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78abf5",
+        "URL": "https://www.brightermonday.co.ke/listings/group-product-manager-gpm-pmxzq4",
+        "rank": 8,
+        "opportunity_title": "Group Product Manager Pharma",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday Consulting",
+        "employment_type": "Full-time",
+        "salary_text": "competitive",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryThe GPM is expected to lead and inspire team, manage multiple high-impact initiatives, and act as a strategic advisor to the business unit, ensuring alignment with overall organizational goals and driving consistent performance outcomes.Min Qualification:BachelorsExperience Level:Senior levelExperience Length:10 yearsJob descriptions & requirementsName: Job Grade: G9BJob Title: Group Product Manager Function: MarketingLocation: KenyaJob SummaryThe Group Product Manager (GPM) provides strategic leadership and end-to-end ownership of the country brand portfolio, driving the development and execution of HCP-focused marketing strategies that deliver sustained revenue growth, market share expansion, and long-term profitability.The GPM partners with cross-functional stakeholders, translates market intelligence into actionable strategies, and shapes KOL engagement and development to strengthen brand positioning and competitive advantage. The role is accountable for rigorous KPI governance, excellence in execution, and continuous optimization of marketing initiatives.Areas of Responsibility",
+        "contract_type": "Full-time",
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abe5",
+        "URL": "https://www.brightermonday.co.ke/listings/technical-marketing-executive-specification-sales-q2mp2n",
+        "rank": 9,
+        "opportunity_title": "Technical Marketing Executive",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday Consulting",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryWe are seeking a proactive and technically-minded Marketing Executive to drive the specification of our premium roof insulation products. Your primary mission is to engage with key decision-makers in the construction industry\u2014including Architects, Structural Engineers, Quantity Surveyors (QS), and Project Consultants\u2014to ensure our products are writMin Qualification:BachelorsExperience Level:Mid levelExperience Length:2 yearsJob descriptions & requirementsKey ResponsibilitiesSpecification Sales: Conduct technical presentations and \"Lunch & Learn\" sessions for architectural firms and engineering consultancies to demonstrate the value and performance of our insulation solutions.Relationship Management: Build and maintain a \"specification pipeline\" by nurturing long-term relationships with consultants and key influencers in the construction sector.Technical Advisory: Act as a subject matter expert, assisting architects and engineers with U-value calculations, thermal performance queries, and compliance with building regulations.Project Tracking: Monitor upcoming construction projects and tenders to identify opportunities for product integration at the early design stage.Market Intelligence: Provide feedback on competitor activity, pricing trends, and new regulatory requirements within the insulation and energy-efficiency market.",
+        "contract_type": "Full-time",
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abce",
+        "URL": "https://www.brightermonday.co.ke/listings/business-development-executive-wpqmvm",
+        "rank": 10,
+        "opportunity_title": "Business Development Executive",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday.com Ltd",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryBrightermonday Kenya is looking for exceptional Business Development Professionals to join our growing team!Min Qualification:BachelorsExperience Level:Mid levelExperience Length:3 yearsJob descriptions & requirementsJob Description: Do you have experience engaging human capital teams and building strong commercial relationships? Does the idea of engaging top HR Professionals and Corporate Executives sound exciting? Brightermonday Kenya is looking for exceptional Business Development Professionals to join our growing team!Our VisionAfrica\u2019s solution to bridging the talent gap.Job MissionYou shall be responsible for making outbound telephone calls to sell to, grow and service corporates that constitute BrighterMonday\u2019s strategic accounts business. You will showcase the available products to these key markets and form relationships within these key markets to ensurethat Sales targets are met by you which shall then translate to the team effort. The position holder will be expected to establish new business and ensure client satisfaction. The ideal candidate should have an understanding of the recruitment process, besides sales.",
+        "contract_type": "Full-time",
+        "final_score": 0.4666,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.53
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.25,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.125,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.12,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.13,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.05,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.05,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.05,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.025,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.09,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "skill_gap_recommendations": [
+      {
+        "skill_id": "687671b5ebd2bf665349aabf",
+        "skill_label": "communication",
+        "proximity_score": 0.4561,
+        "job_unlock_count": 222,
+        "combined_score": 0.7825,
+        "reasoning": "Similar to your 'CSS' skill. Would help unlock or improve 222 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349da64",
+        "skill_label": "use microsoft office",
+        "proximity_score": 0.7751,
+        "job_unlock_count": 98,
+        "combined_score": 0.5749,
+        "reasoning": "Similar to your 'PostgreSQL' skill. Would help unlock or improve 98 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349d700",
+        "skill_label": "sales strategies",
+        "proximity_score": 0.5665,
+        "job_unlock_count": 101,
+        "combined_score": 0.4996,
+        "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 101 jobs."
+      },
+      {
+        "skill_id": "687671b9ebd2bf665349bdae",
+        "skill_label": "English",
+        "proximity_score": 0.5609,
+        "job_unlock_count": 73,
+        "combined_score": 0.4217,
+        "reasoning": "Similar to your 'service-oriented modelling' skill. Would help unlock or improve 73 jobs."
+      },
+      {
+        "skill_id": "687671baebd2bf665349caa1",
+        "skill_label": "database management systems",
+        "proximity_score": 0.9494,
+        "job_unlock_count": 14,
+        "combined_score": 0.4176,
+        "reasoning": "Similar to your 'PostgreSQL' skill. Would help unlock or improve 14 jobs."
+      }
+    ],
+    "elapsed_s": 0.13
+  },
+  {
+    "user_id": "69dd125ce54cb24b18d28d9d",
+    "full_name": "Job Seeker",
+    "city": "ny",
+    "num_skills": 18,
+    "opportunity_recommendations": [
+      {
+        "uuid": "69b863117f0c00e65d78afd7",
+        "URL": "https://www.careerjet.co.ke/jobad/ke3fc4dbfc83417642d7db5fa820db8a69",
+        "rank": 1,
+        "opportunity_title": "Programmes Coordinator NGO Job Women Win",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": null,
+        "employment_type": null,
+        "salary_text": "competitive",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Programmes Coordinator NGO Job Women WinProgrammes Coordinator NGO Job Women WinNGO Jobs. Women Win JobsPOSITION SUMMARYThe Ignita Coordinator supports the operational delivery of Ignita's portfolio, working closely with the Ignita team to ensure smooth workflows across programmes, grantmaking, and partnership development. This rolemanages several smaller projects independently while supporting broader portfolio work through coordination,execution, and administrative excellence. The Coordinator supports strong communication between internal teams and external partners, maintaining technical quality and attention to detail across all work.Read More>>>ABOUT YOUEducation: At least a university degree in a relevant field e.g. Gender, International Development, Human Rights,Business Administration, Finance, etc.Experience: In addition to Coordinator level competencies (as described above), the candidate should have:3-5 years in philanthropy, international development, women's rights, or related fieldsExperience in administrative, coordination, or operations roles with exposure to grant management, project coordination (workplans, budgets, deadlines), or nonprofit operationsStrong organisational skills with attention to detail and ability to manage multiple projects simultaneouslyGood communication skills including writing and coordination with diverse stakeholdersFeminist mindset with understanding of grassroots organisations and affinity for feminist approachesAbility to work in international, remote environmentsProactive, self-motivated, and eager to learn and develop new skillsPreferred (nice-to-have):Fiscal hosting or fiscal sponsorship experienceExperience with grant management systems (e.g., Salesforce)Travel: Ability and willingness to travel approximately 20% of the time. This includes ensuring availability to attend Women Win in-person team meetings, retreats and project required travel.Read More>>>How to ApplyPlease send thefollowing to1.Applying for jobs you qualify for but your AI CV isn't getting interviews? Many professionals are using AI to write their CVs and cover letters - only to discover they are still not getting interviews.We can help you identify what's missing and re-package your CV for interviews. .2.Register your CV with us today for a better job. Upload your CV to be considered for jobs that match your skills, experience and career level. - It's free.3.Stay relevant in a competitive job market. Register for short professional courses starting next month.4.Pass Your Next Job Interview With Confidence Learn how to confidently sell your value and negotiate best salary in interviews. Interview with confidence.Related Posts , ,How C.S.S Got Me A Job..AI CV Not Getting You Interviews?Professional CV Review + 3 Months of Free Recruitment SupportMany professionals are using AI to write their CVs, expecting it to improve their chances of getting interviews - only to discover they are still not getting interviews.Let our recruitment team review your CV, fix what's missing, and help position you for opportunities.Corporate Staffing",
+        "contract_type": null,
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ae8c",
+        "URL": "https://www.careerjet.co.ke/jobad/keb2f858f653dd9259a72795c3052acf3a",
+        "rank": 2,
+        "opportunity_title": "Finance Manager Job Cornerstone Preparatory Academy",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": null,
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": null,
+        "contract_type": null,
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ae5f",
+        "URL": "https://www.careerjet.co.ke/jobad/ke5dd7598e31cbee17a056acadf511419e",
+        "rank": 3,
+        "opportunity_title": "Re-advertisement: Health Specialist , P-4, Fixed Term Position, Nairobi, Kenya",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": "Unicef",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "In order to continue, we need to verify that you're not a robot. This requires JavaScript. Enable JavaScript and then reload the page.Unicef",
+        "contract_type": null,
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ae5d",
+        "URL": "https://www.careerjet.co.ke/jobad/ke93e7a6d2de05feb08ab80ccd94b6ba93",
+        "rank": 4,
+        "opportunity_title": "Programme Associate, G-6, TA , #00136536, Global Programme Division, Child Protection/Migration COE, Nairobi Kenya, ESAR",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": "Unicef",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "In order to continue, we need to verify that you're not a robot. This requires JavaScript. Enable JavaScript and then reload the page.Unicef",
+        "contract_type": null,
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ae5e",
+        "URL": "https://www.careerjet.co.ke/jobad/ked79af8039a3207630d671a4b42d6c0dc",
+        "rank": 5,
+        "opportunity_title": "Re-advertisement Batch recruitment Driver, G-2, Fixed Term Position, Kenya, Nairobi #00090689 Open to internal and external candidates",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": "Unicef",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+        "opportunity_description": "In order to continue, we need to verify that you're not a robot. This requires JavaScript. Enable JavaScript and then reload the page.Unicef",
+        "contract_type": null,
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78abed",
+        "URL": "https://www.brightermonday.co.ke/listings/administration-supervisor-manufacturing-chinese-speaking-q2mm5v",
+        "rank": 6,
+        "opportunity_title": "Administration Supervisor Manufacturing",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Rest of Kenya",
+        "employer": "Toconno Paints Limited",
+        "employment_type": "Full-time",
+        "salary_text": "KSh 75,000 - 90,000",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryThis role supports the daily administrative operations of our manufacturing facility and acts as a key communication bridge between Chinese management and local staff. The successful candidate must be fluent in Chinese (Mandarin) and English, and will provide translation, coordination, and administrative support to ensure smooth factory and officeMin Qualification:BachelorsExperience Level:Mid levelExperience Length:2 yearsJob descriptions & requirementsKey Responsibilities: \u2022 Act as the primary administrative support for Chinese management at the factory. \u2022 Provide accurate spoken and written translation between Chinese (Mandarin) and English in meetings, daily communication, emails, and documents. \u2022 Coordinate administrative matters including attendance records, office supplies, travel arrangements, and basic HR documentation. \u2022 Liaise with local authorities and service providers when required (e.g. inspections, permits), under management guidance. \u2022 Assist in organizing factory visits, meetings, and internal communications. \u2022 Maintain proper filing of administrative and operational documents. \u2022 Support general office and factory administrative tasks as assigned.Requirements: \u2022 Fluency in Chinese (Mandarin) is mandatory; proficiency in English is required. \u2022 Bachelor\u2019s degree or Diploma in Business Administration, Management, or a related field.",
+        "contract_type": "Full-time",
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abe1",
+        "URL": "https://www.brightermonday.co.ke/listings/travel-agent-jqnv7r",
+        "rank": 7,
+        "opportunity_title": "Travel Agent",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "Anonymous Employer",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+        "opportunity_description": "Job summaryJoin our Nairobi-based travel company as a Travel Consultant. Design bespoke safaris across East Africa, manage bookings, and deliver exceptional client service. Ideal for someone organized, knowledgeable about regional travel, and passionate about creating unforgettable experiences.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:3 yearsWorking Hours:Full TimeJob descriptions & requirementsWe are a fast-growing, boutique travel agency based in Nairobi, specializing in tailor-made safaris and unique travel experiences across Kenya and East Africa. We pride ourselves on providing exceptional, personalized service to our clients from around the world, ensuring unforgettable journeys that showcase the best of Africa.Job SummaryWe are seeking a highly motivated and customer-oriented Travel Consultant to join our Nairobi-based team. The ideal candidate will be responsible for planning, selling, and coordinating custom travel itineraries. You\u2019ll interact with both local and international clients, manage bookings with suppliers, and play a key role in delivering world-class service and experiences.",
+        "contract_type": "Full-time",
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abdf",
+        "URL": "https://www.brightermonday.co.ke/listings/implementation-and-enrollment-specialist-pmxkv4",
+        "rank": 8,
+        "opportunity_title": "Implementation and Enrollment Specialist",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "Med Bill, L.L.C",
+        "employment_type": "Contract",
+        "salary_text": "KSh 60,000 - 75,000",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+        "opportunity_description": "Job summaryMedbill is a Durable Medical Equipment Billing Company based in the US. This is a remote contracting position. The Implementation and Enrollment Specialists will support the implementation process of new onboarding clients and support the successful implementation of our DME software, TrueSight.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:3 yearsWorking Hours:Full TimeJob descriptions & requirementsImplementation of Systems and Serviceso   Collaborate with the Implementation Manager to align execution goals and achieve project milestones.o   Work closely with customers to understand their needs.o   Support new customers beginning when they sign the contract through the software launch date.o   Configure software settings for customers in preparation for software go-live dates.\u00b7   Documenting and Reporting",
+        "contract_type": "Contract",
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b80f297f0c00e65d78a7e7",
+        "URL": "https://jobwebkenya.com/jobs/branch-manager-kiambu-directline-assurance-company-limited/",
+        "rank": 9,
+        "opportunity_title": "Branch Manager- Kiambu",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": "Directline Assurance Company Limited",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Web server is returning an unknown error Error code 520Visit cloudflare.com for more information.2026-03-16 14:08:51 UTCYouBrowserWorkingNewarkCloudflareWorkingjobwebkenya.comHostErrorWhat happened?There is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed.What can I do?If you are a visitor of this website:Please try again in a few minutes.If you are the owner of this website:There is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatically investigates the cause. To help support the investigation, you can pull the corresponding error log from your web server and submit it our support team. Please include the Ray ID (which is at the bottom of this error page). Additional troubleshooting resources.Cloudflare Ray ID: 9dd4550c0d108cc8 \u2022 Your IP: Click to reveal \u2022 Performance & security by Cloudflare",
+        "contract_type": "Full-time",
+        "final_score": 0.5939,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69c18bfe7f0c00e65d78b604",
+        "URL": "https://jobwebkenya.com/jobs/health-safety-officer-ampersand-e-mobility-limited-2/",
+        "rank": 10,
+        "opportunity_title": "Health and Safety Officer",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Kenya",
+        "employer": "Ampersand E-mobility Limited",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": "2026-04-04",
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Physical Demand: Heavy; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "16 Mar 2026Health and Safety Officer at Ampersand E-mobility LimitedRecruit candidates with Ease. 100% recruitment control with Employer Dashboard.We have the largest Job seeker visits by alexa rankings. Post a JobCompany: Ampersand E-mobility LimitedLocation: KenyaState: NairobiJob type: Full-TimeJob category: Healthcare/Medical Jobs in KenyaResubmit your Resume Today. Click Here to StartWe have started building our professional LinkedIn page. FollowJob DescriptionAmpersand is Africas first and leading integrated electric motorcycle and transport energy solution. We offer East Africa\u2019s five million taxi motorcyclists a commercial electric motorcycle that is cheaper from day one, provides better overall user experience and requires minimal customer behaviour change. Using technology adapted for the local market \u2026Health and Safety OfficerDiscover moreProfessional portfolio creationEducationFreelance Job PortalThe  Health & Safety Officer will lead the implementation and continuous improvement of workplace  health, safety, and environmental practices across all Ampersand sites. The role is responsible for ensuring compliance with all relevant regulations and other statutory authorities, while building a strong culture of safety across the organization.Key responsibilitiesHealthDevelop and implement workplace health and safety policies and procedures aligned with Kenyan Occupational Safety and Health regulations and environmental requirements.Ensure compliance with statutory bodies including DOSH, NEMA, county authorities, and other relevant regulators through timely reporting, audits, and inspections.Conduct regular safety inspections and risk assessments across workplace stations to identify hazards and implement mitigation measures.Investigate incidents, accidents, and near-misses, identify root causes, and implement corrective and preventive actions to reduce recurrence.Develop and deliver practical safety awareness initiatives, including induction, toolbox talks, emergency preparedness training, and role-specific safety briefings.Establish and maintain incident reporting and safety performance tracking systems including safety metrics, logs, and compliance documentation.Develop and maintain emergency response plans including fire safety procedures, evacuation protocols, and emergency drills.Ensure proper use, availability, and management of Personal Protective Equipment (PPE) across all operational teams.Collaborate with operations teams to embed safe work procedures into daily workflows and operational processes.Support environmental compliance initiatives, including waste management, battery handling protocols, and environmental safety reporting.Prepare the organisation for, and coordinate, all external inspections and audits by ensuring findings are documented, and drive timely resolution of all cited deficiencies.Promote a strong safety culture across the organization, encouraging proactive hazard reporting and employee engagement in safety initiatives.Minimum requirements:Corporate Hiring PackagesDiscover moreDigital marketing trainingLinkedIn profile optimizationFinancial literacy coursesBachelor\u2019s Degree in Occupational Health & Safety, Environmental  Science, Engineering, or related field.Minimum of three (3) years of experience in occupational health & safety, preferably in manufacturing, energy, automotive, or industrial operations.Strong knowledge of occupational safety and environmental regulations.Practical and resourceful with the ability to implement cost-effective solutions.Excellent communication and interpersonal skills both written and verbal to engage effectively with customers and technical teams to enforce safety without creating resistance.Highly organized, detail-oriented, and able to manage multiple priorities simultaneously.Self-driven and proactive, with a positive attitude and commitment to customer satisfaction.Don't Keep Share!:WhatsAppMethod of ApplicationSubmit your CV and Application on Company Website : Click HereClosing Date : April 4, 2026Discover morehealthDiscover moreConsultingMapsResume template packsHealthRecruitment Solutions",
+        "contract_type": "Full-time",
+        "final_score": 0.59,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.5976
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 1.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.5,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.02,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_heavy",
+            "job_value_label": "Heavy",
+            "user_weight": 0.03,
+            "beta": -0.4,
+            "encoded_value": 1.0,
+            "contribution": -0.012,
+            "matched": true
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.03,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.0,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.0,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.0,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "skill_gap_recommendations": [
+      {
+        "skill_id": "687671b5ebd2bf665349aabf",
+        "skill_label": "communication",
+        "proximity_score": 0.4527,
+        "job_unlock_count": 222,
+        "combined_score": 0.7811,
+        "reasoning": "Similar to your 'build predictive models' skill. Would help unlock or improve 222 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349da64",
+        "skill_label": "use microsoft office",
+        "proximity_score": 0.6133,
+        "job_unlock_count": 98,
+        "combined_score": 0.5102,
+        "reasoning": "Similar to your 'machine learning' skill. Would help unlock or improve 98 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349d700",
+        "skill_label": "sales strategies",
+        "proximity_score": 0.5382,
+        "job_unlock_count": 101,
+        "combined_score": 0.4882,
+        "reasoning": "Similar to your 'business intelligence' skill. Would help unlock or improve 101 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349cd84",
+        "skill_label": "implement sales strategies",
+        "proximity_score": 0.5532,
+        "job_unlock_count": 72,
+        "combined_score": 0.4159,
+        "reasoning": "Similar to your 'business intelligence' skill. Would help unlock or improve 72 jobs."
+      },
+      {
+        "skill_id": "687671b9ebd2bf665349bdae",
+        "skill_label": "English",
+        "proximity_score": 0.5378,
+        "job_unlock_count": 73,
+        "combined_score": 0.4124,
+        "reasoning": "Similar to your 'machine learning' skill. Would help unlock or improve 73 jobs."
+      }
+    ],
+    "elapsed_s": 0.08
+  },
+  {
+    "user_id": "69de8f75f2ccdfe7f4e7dc18",
+    "full_name": "Hamz Cohan",
+    "city": "Lusaka",
+    "num_skills": 18,
+    "opportunity_recommendations": [
+      {
+        "uuid": "69b8630f7f0c00e65d78abe1",
+        "URL": "https://www.brightermonday.co.ke/listings/travel-agent-jqnv7r",
+        "rank": 1,
+        "opportunity_title": "Travel Agent",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "Anonymous Employer",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+        "opportunity_description": "Job summaryJoin our Nairobi-based travel company as a Travel Consultant. Design bespoke safaris across East Africa, manage bookings, and deliver exceptional client service. Ideal for someone organized, knowledgeable about regional travel, and passionate about creating unforgettable experiences.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:3 yearsWorking Hours:Full TimeJob descriptions & requirementsWe are a fast-growing, boutique travel agency based in Nairobi, specializing in tailor-made safaris and unique travel experiences across Kenya and East Africa. We pride ourselves on providing exceptional, personalized service to our clients from around the world, ensuring unforgettable journeys that showcase the best of Africa.Job SummaryWe are seeking a highly motivated and customer-oriented Travel Consultant to join our Nairobi-based team. The ideal candidate will be responsible for planning, selling, and coordinating custom travel itineraries. You\u2019ll interact with both local and international clients, manage bookings with suppliers, and play a key role in delivering world-class service and experiences.",
+        "contract_type": "Full-time",
+        "final_score": 0.5428,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.57
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abdf",
+        "URL": "https://www.brightermonday.co.ke/listings/implementation-and-enrollment-specialist-pmxkv4",
+        "rank": 2,
+        "opportunity_title": "Implementation and Enrollment Specialist",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "Med Bill, L.L.C",
+        "employment_type": "Contract",
+        "salary_text": "KSh 60,000 - 75,000",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+        "opportunity_description": "Job summaryMedbill is a Durable Medical Equipment Billing Company based in the US. This is a remote contracting position. The Implementation and Enrollment Specialists will support the implementation process of new onboarding clients and support the successful implementation of our DME software, TrueSight.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:3 yearsWorking Hours:Full TimeJob descriptions & requirementsImplementation of Systems and Serviceso   Collaborate with the Implementation Manager to align execution goals and achieve project milestones.o   Work closely with customers to understand their needs.o   Support new customers beginning when they sign the contract through the software launch date.o   Configure software settings for customers in preparation for software go-live dates.\u00b7   Documenting and Reporting",
+        "contract_type": "Contract",
+        "final_score": 0.5428,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.57
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78ab93",
+        "URL": "https://www.brightermonday.co.ke/listings/accounts-receivable-specialist-9j4kkn",
+        "rank": 3,
+        "opportunity_title": "Accounts Receivable Medical Billing Specialist",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "Med Bill, L.L.C",
+        "employment_type": "Contract",
+        "salary_text": "KSh 45,000 - 60,000",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 50K. Demand label: Unknown",
+        "opportunity_description": "Job summaryMedbill is a U.S.-based Durable Medical Equipment (DME) billing company delivering innovative billing solutions to DME providers. The AR Specialist plays a key role in ensuring timely collection and supporting efficient revenue cycle operations. This role is responsible for resolving billing upholding strong attention to detail and professionalism.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:5 yearsWorking Hours:Full TimeJob descriptions & requirementsMain Job Tasks and Responsibilities\u00b7        Report customer account details for non-payments, delayed payments and other irregularities\u00b7        Check and maintain customer files and records with proper documentation under billing\u00b7        Develop and maintain up to date knowledge base for assigned payors\u00b7        Ensure safe custody of all customer documents and details\u00b7        Serve and protect Company image by adhering to professional standards, HIPAA policies and procedures\u00b7        Perform other duties as assigned",
+        "contract_type": "Contract",
+        "final_score": 0.4996,
+        "score_breakdown": {
+          "total_skill_utility": 0.06,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.5469
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_50k",
+            "job_value_label": "50K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 0.67,
+            "contribution": 0.2345,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_med",
+            "job_value_label": "Med",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69c18bfe7f0c00e65d78b5ab",
+        "URL": "https://www.brightermonday.co.ke/listings/sales-manager-it-network-solutions-kenya-remote-local-market-focus-9j42jx",
+        "rank": 4,
+        "opportunity_title": "Sales Manager IT & Network Solutions",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "SOLUTION MALL PTE. LTD",
+        "employment_type": "Part-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top skill matches: collaborate through digital technologies \u2194 ICT infrastructure (sim 0.6258). collaborate through digital technologies \u2194 ICT networking hardware (sim 0.5986). Top preference matches: Earnings Per Month: 50K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryWe are hiring a part-time, commission-based Sales Manager in Kenya to develop B2B business for IT and network solutions. Candidates should have experience in technical sales, strong local market knowledge, and business connections with resellers, integrators, contractors, or enterprise customers.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:2 yearsJob descriptions & requirementsAbout SolutionMallSolutionMall is a China-based B2B platform providing professional technical products and integrated solutions to system integrators, engineering firms, enterprises, and project buyers.We are hiring a part-time, commission-based Sales Manager to support business growth in Kenya. This role focuses on B2B sales of IT and network-related products and solutions, including networking equipment, enterprise IT infrastructure, structured cabling, low-voltage systems, and related technical solutions.Key ResponsibilitiesIdentify and approach qualified prospects in Kenya, including resellers, system integrators, contractors, SMEs, enterprise buyers, schools, and commercial project customersUnderstand customer requirements and convert demand into sales opportunities",
+        "contract_type": "Part-time",
+        "final_score": 0.445,
+        "score_breakdown": {
+          "total_skill_utility": 0.3251,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.5301,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.6169
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "687671bdebd2bf665349d260",
+              "job_skill_label": "ICT infrastructure",
+              "best_user_skill_id": "687671b5ebd2bf665349af83",
+              "best_user_skill_label": "collaborate through digital technologies",
+              "similarity": 0.6258,
+              "meets_threshold": true
+            },
+            {
+              "job_skill_id": "687671beebd2bf665349db1f",
+              "job_skill_label": "ICT networking hardware",
+              "best_user_skill_id": "687671b5ebd2bf665349af83",
+              "best_user_skill_label": "collaborate through digital technologies",
+              "similarity": 0.5986,
+              "meets_threshold": true
+            },
+            {
+              "job_skill_id": "687671baebd2bf665349c714",
+              "job_skill_label": "computer equipment",
+              "best_user_skill_id": "687671b5ebd2bf665349b2a1",
+              "best_user_skill_label": "machine learning",
+              "similarity": 0.3659,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_50k",
+            "job_value_label": "50K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 0.67,
+            "contribution": 0.2345,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abde",
+        "URL": "https://www.brightermonday.co.ke/listings/executive-assistant-20pz7e",
+        "rank": 5,
+        "opportunity_title": "Executive Assistant",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "STAY TOGETHER SUITES",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top skill matches: machine learning \u2194 make decisions (sim 0.3576). Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryWe are looking for someone who thinks like a chief of staff. Someone who sees problems before they become emergencies, builds systems instead of just following them, and takes pride in making a high performing operation look effortless. If you thrive in fast moving environments, love bringing order to complexity, and want a role where your impact is felt every single day, keep reading.Min Qualification:MastersExperience Level:Mid levelExperience Length:5 yearsJob descriptions & requirementsReal Estate | Healthcare | Personal OperationsRemote | Full Time | Pacific Standard TimeThe OpportunityYou will serve as the right hand to a business owner who operates a real estate portfolio, a growing medical practice in Newport Beach, California, and an active personal life preparing for a major family milestone. This is not a task management role. This is a strategic partnership where you will own systems, drive projects forward, and make the kind of decisions that keep everything running smoothly without being asked.What You Will Own",
+        "contract_type": "Full-time",
+        "final_score": 0.3896,
+        "score_breakdown": {
+          "total_skill_utility": 0.2388,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.3576,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.64
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "687671bdebd2bf665349d395",
+              "job_skill_label": "make decisions",
+              "best_user_skill_id": "687671b5ebd2bf665349b2a1",
+              "best_user_skill_label": "machine learning",
+              "similarity": 0.3576,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69c18bfe7f0c00e65d78b5ac",
+        "URL": "https://www.brightermonday.co.ke/listings/sales-manager-energy-power-solutions-kenya-nprkpv",
+        "rank": 6,
+        "opportunity_title": "Sales Manager Energy & Power Solutions",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "SOLUTION MALL PTE. LTD",
+        "employment_type": "Part-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top skill matches: ML (computer programming) \u2194 energy storage systems (sim 0.5501). Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryWe are hiring a full-time Sales Manager in Kenya to develop B2B business for energy and power solutions. Candidates should have experience in technical sales, strong local market knowledge, and business connections with EPC firms, contractors, distributors, industrial buyers, or project stakeholders.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:2 yearsJob descriptions & requirementsAbout SolutionMallSolutionMall is a global B2B cross-border platform delivering end-to-end energy and power system solutions for integrators, EPCs, contractors, distributors, and industrial buyers.We support projects from requirement discovery and solution matching to product supply, integration coordination, and delivery support, covering MV/LV distribution, switchgear, transformers, protection and control, substation-related equipment, renewables, and energy storage systems.We operate as a remote-first, online team, enabling efficient cross-border coordination and project support.Role SummaryWe are hiring a Sales Manager to develop B2B opportunities for energy and power solutions in Kenya. This role focuses on identifying qualified prospects, converting demand into RFQs and quotations, coordinating proposals with internal teams, and helping close contracts through an end-to-end delivery workflow.Key Responsibilities",
+        "contract_type": "Part-time",
+        "final_score": 0.2139,
+        "score_breakdown": {
+          "total_skill_utility": 0.3384,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.5501,
+            "opt": 0.017,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.64
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "687671b9ebd2bf665349bd77",
+              "job_skill_label": "energy storage systems",
+              "best_user_skill_id": "687671baebd2bf665349c955",
+              "best_user_skill_label": "ML (computer programming)",
+              "similarity": 0.5501,
+              "meets_threshold": true
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69c18bfe7f0c00e65d78b5ad",
+        "URL": "https://www.brightermonday.co.ke/listings/sales-manager-vwn0w5",
+        "rank": 7,
+        "opportunity_title": "Sales manager \uff08Smart City & Security IoT Solutions \uff09",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Remote",
+        "employer": "SOLUTION MALL PTE. LTD",
+        "employment_type": "Part-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": false,
+        "justification": "Top preference matches: Earnings Per Month: 50K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryWe are hiring a part-time, commission-based Sales Manager in Kenya to develop B2B business in smart city, security, and IoT solutions. Candidates should have local industry networks, strong business development skills, and experience working with integrators, distributors, EPC contractors, or enterprise buyers.Min Qualification:BachelorsExperience Level:Mid levelExperience Length:2 yearsJob descriptions & requirementsAbout SolutionMallSolutionMall is a China-based B2B platform providing professional technical products and integrated solutions to system integrators, engineering firms, enterprises, and government projects.We specialize in smart city, security, and IoT solutions, including video surveillance, access control, perimeter security, smart lighting, traffic monitoring, public safety systems, and IoT platform integration. We are expanding our presence in Kenya and are looking for a local Sales Manager to support business growth.Role SummaryWe are hiring a part-time, commission-based Sales Manager to support SolutionMall\u2019s growth in Kenya. This role focuses on business development in the smart city, security, and IoT sectors. You will promote SolutionMall\u2019s integrated solutions to government departments, municipalities, utilities, engineering firms, system integrators, distributors, and enterprise clients across Kenya.Key ResponsibilitiesIdentify and engage qualified prospects in the smart city, security, and IoT sectors",
+        "contract_type": "Part-time",
+        "final_score": 0.0,
+        "score_breakdown": {
+          "total_skill_utility": 0.0,
+          "skill_components": {
+            "loc": 0.3,
+            "ess": 0.2691,
+            "opt": 0.3405,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.5,
+          "preference_score": 0.6169
+        },
+        "matched_skills": {
+          "essential_skill_matches": [
+            {
+              "job_skill_id": "687671bdebd2bf665349d377",
+              "job_skill_label": "smart city features",
+              "best_user_skill_id": "687671bdebd2bf665349d60d",
+              "best_user_skill_label": "develop predictive models",
+              "similarity": 0.2691,
+              "meets_threshold": false
+            }
+          ],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_50k",
+            "job_value_label": "50K",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 0.67,
+            "contribution": 0.2345,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.5,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.7,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.5,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "skill_gap_recommendations": [
+      {
+        "skill_id": "687671b5ebd2bf665349aabf",
+        "skill_label": "communication",
+        "proximity_score": 0.4527,
+        "job_unlock_count": 222,
+        "combined_score": 0.7811,
+        "reasoning": "Similar to your 'build predictive models' skill. Would help unlock or improve 222 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349da64",
+        "skill_label": "use microsoft office",
+        "proximity_score": 0.6133,
+        "job_unlock_count": 98,
+        "combined_score": 0.5102,
+        "reasoning": "Similar to your 'machine learning' skill. Would help unlock or improve 98 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349d700",
+        "skill_label": "sales strategies",
+        "proximity_score": 0.5382,
+        "job_unlock_count": 101,
+        "combined_score": 0.4882,
+        "reasoning": "Similar to your 'business intelligence' skill. Would help unlock or improve 101 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349cd84",
+        "skill_label": "implement sales strategies",
+        "proximity_score": 0.5532,
+        "job_unlock_count": 72,
+        "combined_score": 0.4159,
+        "reasoning": "Similar to your 'business intelligence' skill. Would help unlock or improve 72 jobs."
+      },
+      {
+        "skill_id": "687671b9ebd2bf665349bdae",
+        "skill_label": "English",
+        "proximity_score": 0.5378,
+        "job_unlock_count": 73,
+        "combined_score": 0.4124,
+        "reasoning": "Similar to your 'machine learning' skill. Would help unlock or improve 73 jobs."
+      }
+    ],
+    "elapsed_s": 0.07
+  },
+  {
+    "user_id": "69dfecf5fbb9295ba2ab087b",
+    "full_name": "Tabiya Admin",
+    "city": "Nairobi",
+    "num_skills": 11,
+    "opportunity_recommendations": [
+      {
+        "uuid": "69c18bfe7f0c00e65d78b5d2",
+        "URL": "https://www.careerjet.co.ke/jobad/ke7576e81a0b252c9df1fea9023c0e8293",
+        "rank": 1,
+        "opportunity_title": "Customer Service Representative",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Avery Dennison",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Company DescriptionAvery Dennison Corporation (NYSE: AVY) is a global materials science and digital identification solutions company that provides a wide range of branding and information solutions that optimize labor and supply chain efficiency, reduce waste, advance sustainability, circularity and transparency, and better connect brands and consumers. Our products and solutions include labeling and functional materials, radio frequency identification (RFID) inlays and tags, software applications that connect the physical and digital, and a variety of products and solutions that enhance branded packaging and carry or display information that improves the customer experience. Serving an array of industries worldwide \u2014 including home and personal care, apparel, general retail, e-commerce, logistics, food and grocery, pharmaceuticals and automotive \u2014 we employ approximately 35,000 employees in more than 50 countries. Our reported sales in 2023 were $8.4 billion. Learn more at www.averydennison.com.AVERY DENNISON IS PROUD TO BE CERTIFIED GREAT PLACE TO WORK INAUSTRALIA, CHINA, INDIA, JAPAN, SINGAPORE, MALAYSIA, THAILAND AND VIETNAM.Job DescriptionABOUT ROLE:Scope and General purpose of the role:The incumbent is required to oversee the functions of: receiving and capturing orders, check that the pricing, quantity and slitting pattern is correct. The incumbent is also required to maintain good relationships with all customers to grow the business and promote new products. The incumbent\u2019s job purpose is not limited to the above mentioned.YOUR RESPONSIBILITIES WILL INCLUDE:SALES TARGETS:Compile an order in-take report and submit to the CSR Manager on a daily basisPromote and sell the slow moving and warehouse 32 stock to customers while contributing to team effort by accomplishing related results as required.CUSTOMER CENTRICITY:Liaise with the operations and dispatch staff to ensure that customer requirements are metResolve product/service queries by clarifying customer complaints and logging on salesforce.com on a daily basisUpdate customer price lists when price changes occurEnsure that internal staff have all the relevant information so that invoicing can be done timeouslyManage incoming calls and ensure that all customer demands are metDirect customer queries to the relevant partyCheck the inventory on hand on a daily basis based on customer forecastConduct an MDI (Managing Daily Initiative) on a weekly basis with the dispatch, production, receiving and sales staff to address problem areas within each departmentRecommend potential products and services to customersMaintaining a positive, empathetic and professional attitude toward customers at all timesResponding promptly to customer inquiriesORDER PROCESSING:Load customer orders on the MFGpro system to create a sales orderCreate a job card based on the sales orderEnsure that all orders are accurately created and timeously distributed to the production departmentRequest the a time frame from the Production Supervisor regarding urgent ordersCommunicate the time frame to the Dispatch Supervisor to ensure that delivery occurs within the allocated deadlinesLiaise with the Finance department regarding customers that are on holdSend correspondence to the Finance Department regarding customers accounts that are suspendedProvide customers feedback in terms of urgent orders as well as materials that are out of stockGENERAL:Participate and assist with stock take as requiredESSENTIAL SKILLS REQUIRED:Sound Telephonic skillsCustomer liaison skillsGood Listening skillsExcellent verbal and written communication skillsAnalytical problem solving skillsMulti-tasking and able to work under pressureAttention to detailWHAT WE WILL BE LOOKING FOR IN YOU:Applied learningBuilding customer loyaltyBuilding partnershipsContinues learningContributing to successCustomer focusDecision makingEnergyStress toleranceInitiating actionExperience in handling exports queries, documentation and coordination with internal and external agencies.Experience working with customer support.Sound knowledge and working experience on Microsoft Excel (intermediate level).QualificationsFORMAL QUALIFICATIONS:Relevant QualificationAt least 3-5 years experience within a B2B environment.Additional InformationPlease note that if you have not heard from the HR Department within 30 days of this advert closing, your application has unfortunately been unsuccessful.AVERY DENNISON IS AN EQUAL EMPLOYMENT OPPORTUNITY PROVIDERAvery Dennison",
+        "contract_type": null,
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863117f0c00e65d78af72",
+        "URL": "https://www.careerjet.co.ke/jobad/ke8cdb5463fc6ca5083837dc92146d6d7e",
+        "rank": 2,
+        "opportunity_title": "Director, Information Security at Human Rights Watch",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Human Rights Watch",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Responsibilities:Design, manage, and supervise all aspects of the Information Security program including work plan development and implementation, priority and objective development, monitoring and evaluation, budget monitoring and management, reporting, and collaboration with donors and other partners;Implement and maintain an information security risk management program, and work closely with the Director of Physical Security to implement cohesive security risk management frameworks within Departments across HRW;Advise on technical security concepts pertaining to network security, email security, remote data and third party security;Develop and manage global information security policies, standards, guidelines and procedures to assess, balance, and minimize risk and ensure the confidentiality, integrity, and availability of systems and data.Lead information security planning processes and implementation to establish and/or enhance an inclusive and comprehensive information security program in support of all information systems and technologies;Education and Experience: A level of education that when combined with your professional experience will adequately show you have the capability to lead information security at HRW.We anticipate that successful candidates will have around 10 years of experience in the Information Security field, and around 5 years of management experience, but are eager to hear from candidates who feel confident that they can perform well in this role even if they do not have this level of experience, and particularly if they are from backgrounds underrepresented in the field. Candidates who have relevant academic degrees or security certifications are encouraged to apply, but this is a plus - not a requirement.Related Skills and Knowledge:3-5 years experience in managing a team.Extensive knowledge of information security and risk management, ideally in the context of an international organization or in journalism with practical experience in high risk and complex operating environments.Security management experience and/or prior director level role in a related field is required.Working knowledge of the risks associated with human rights and/or civil society activism and/or journalism globally is requiredMethod of ApplicationInterested and qualified? Go to to applyMyjobmag",
+        "contract_type": null,
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863117f0c00e65d78af4d",
+        "URL": "https://www.careerjet.co.ke/jobad/ke1807b70a6ce0bac6c8cf99d826ab25e4",
+        "rank": 3,
+        "opportunity_title": "Senior Legal Officer MNT 13",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Multimedia University",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job SummaryRequirements for AppointmentFor Appointment to this grade a candidate must:Served in the grade of Legal Officer for a minimum period of three (3) years.Master's Degree in Law.Have a Valid Practicing Certificate from Law Society of Kenya. Diploma in Law from Council of Legal Education.Certificate in Computer Applications from a recognized institution. Demonstrated merit and ability as reflected in work performance and results.ResponsibilitiesFuzu",
+        "contract_type": null,
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863117f0c00e65d78af4c",
+        "URL": "https://www.careerjet.co.ke/jobad/kec1cfe257d7faef17eed5cc78957f5627",
+        "rank": 4,
+        "opportunity_title": "Receivables Accountant",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "AAR Healthcare",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job SummaryQualificationsEducationBachelor of Commerce in Finance, Accounting, or a related fieldProfessional qualifications such as CPA II, CPS II, ACCA IIJob Experience3-years\u2019 experience in a busy set up.ResponsibilitiesVerify the accuracy and completeness of invoices before dispatch to insurers and corporate clients.Reconciling and maintaining accurate statements from corporate clients in updated and actual status.Ensuring efficient and timely delivery of invoices in all the available means (physical or online) to corporate clients as per the hospitals set targets.Conduct regular reconciliations of client accounts to ensure the accuracy and transparency of debt records.Identify and address the causes of claim rejections from insurance providers and corporate partnersCollect outstanding receivables from corporate clients and individual patients.Ensuring timely receipting and allocation of all invoices as per the credit policy.Fuzu",
+        "contract_type": null,
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78aec7",
+        "URL": "https://www.careerjet.co.ke/jobad/ke5834f20f820b20aca7a99af77ca84f41",
+        "rank": 5,
+        "opportunity_title": "Enterprise IT Account Manager BFSI, Government & Insurance",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Career Directions Limited (CDL)",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job Title:Enterprise IT Account Manager \u2013 BFSI, Government & InsuranceNumber of Vacancies:2Industry: ITLocation:KenyaJob Profile:Managing Existing Customer AccountsDeveloping additional business opportunities in the assigned accountsDeveloping new targeted accountsManaging complete sales cycle right from prospecting, relationship management up to payment collectionsWorking on the sales target and reporting on quarterly basis to attain the sales targetTo manage relationship between customer and the companyCollaborate with internal departments to ensure customer expectations are met.Help customers solve difficult business challenges by aligning our value proposition with their business objectives.Requirements Work Experience:Minimum 5-10 years of work experience in the area of Enterprise IT Products & Services SalesMinimum 5-10 years of Account Management experienceMust have Enterprise IT products (No Laptop, printers experience will be considered.) & support Sales / Account Management (Selling experience in BFSI, Government, Insurance)The candidate should have experience working in an organization where the minimum sales target handled is at least USD 1 million in gross profit.Candidate Profile:Work experience in the area of Enterprise IT Products & Services SalesMinimum 5-10 years of Account Management experience is a mustWorking experience in working in East Africa will be an advantageProven track record in sales is a requirementProven track record is account management is a requirementCertification from OEM (i.e., Oracle, cisco, Checkpoint, Fortinet, NetApp, Dell EMC, Pure Storage etc.)Education:IT/Business related degree.Career Directions Limited (CDL)",
+        "contract_type": null,
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ae14",
+        "URL": "https://www.careerjet.co.ke/jobad/kee3358238cca4a1dac49a72facf4b5321",
+        "rank": 6,
+        "opportunity_title": "Senior Internal Auditor MNT 13",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "Multimedia University",
+        "employment_type": null,
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job SummaryRequirements for AppointmentFor Appointment to this grade a candidate must:Served in the grade of Internal Auditor for a minimum period of three (3) years.Master's Degree in relevant field.Be registered with the Institute of Certified Public Accountants (ICPAK), Institute of Internal Auditors or any other recognized professional body.Certificate in Computer Applications from a recognized institution.Demonstrated merit and ability as reflected in work performance and results.ResponsibilitiesFuzu",
+        "contract_type": null,
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78ac0c",
+        "URL": "https://www.brightermonday.co.ke/listings/marketing-manager-renewable-energy-zanzibar-gwvekr",
+        "rank": 7,
+        "opportunity_title": "MARKETING MANAGER- RENEWABLE ENERGY-ZANZIBAR",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday Consulting",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryAt least 3 years of expereince in similar roleMin Qualification:DiplomaExperience Level:Mid levelExperience Length:3 yearsJob descriptions & requirementsDuties and Responsibilities:\u25cf Market Analysis and Strategy:o Conducting thorough market research to understand the needs, preferences, and behaviour of potential customers in Zanzibar;o Identifying target audiences and developing tailored marketing strategies;o Analysing competitor activity and market trends.\u25cf Brand Management:o Building and maintaining a strong brand image that resonates with the local population;o Ensuring consistent brand messaging across all marketing channels.\u25cf Field Marketing:o Conducting face-to-face interactions with potential customers;o Outreaching to places with possible clients.\u25cf Digital Marketing:o Developing and executing digital marketing campaigns, including social media marketing, SEO, and online advertising;",
+        "contract_type": "Full-time",
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b863107f0c00e65d78abf5",
+        "URL": "https://www.brightermonday.co.ke/listings/group-product-manager-gpm-pmxzq4",
+        "rank": 8,
+        "opportunity_title": "Group Product Manager Pharma",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday Consulting",
+        "employment_type": "Full-time",
+        "salary_text": "competitive",
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryThe GPM is expected to lead and inspire team, manage multiple high-impact initiatives, and act as a strategic advisor to the business unit, ensuring alignment with overall organizational goals and driving consistent performance outcomes.Min Qualification:BachelorsExperience Level:Senior levelExperience Length:10 yearsJob descriptions & requirementsName: Job Grade: G9BJob Title: Group Product Manager Function: MarketingLocation: KenyaJob SummaryThe Group Product Manager (GPM) provides strategic leadership and end-to-end ownership of the country brand portfolio, driving the development and execution of HCP-focused marketing strategies that deliver sustained revenue growth, market share expansion, and long-term profitability.The GPM partners with cross-functional stakeholders, translates market intelligence into actionable strategies, and shapes KOL engagement and development to strengthen brand positioning and competitive advantage. The role is accountable for rigorous KPI governance, excellence in execution, and continuous optimization of marketing initiatives.Areas of Responsibility",
+        "contract_type": "Full-time",
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_peers",
+            "job_value_label": "Peers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abe5",
+        "URL": "https://www.brightermonday.co.ke/listings/technical-marketing-executive-specification-sales-q2mp2n",
+        "rank": 9,
+        "opportunity_title": "Technical Marketing Executive",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday Consulting",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryWe are seeking a proactive and technically-minded Marketing Executive to drive the specification of our premium roof insulation products. Your primary mission is to engage with key decision-makers in the construction industry\u2014including Architects, Structural Engineers, Quantity Surveyors (QS), and Project Consultants\u2014to ensure our products are writMin Qualification:BachelorsExperience Level:Mid levelExperience Length:2 yearsJob descriptions & requirementsKey ResponsibilitiesSpecification Sales: Conduct technical presentations and \"Lunch & Learn\" sessions for architectural firms and engineering consultancies to demonstrate the value and performance of our insulation solutions.Relationship Management: Build and maintain a \"specification pipeline\" by nurturing long-term relationships with consultants and key influencers in the construction sector.Technical Advisory: Act as a subject matter expert, assisting architects and engineers with U-value calculations, thermal performance queries, and compliance with building regulations.Project Tracking: Monitor upcoming construction projects and tenders to identify opportunities for product integration at the early design stage.Market Intelligence: Provide feedback on competitor activity, pricing trends, and new regulatory requirements within the insulation and energy-efficiency market.",
+        "contract_type": "Full-time",
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      },
+      {
+        "uuid": "69b8630f7f0c00e65d78abce",
+        "URL": "https://www.brightermonday.co.ke/listings/business-development-executive-wpqmvm",
+        "rank": 10,
+        "opportunity_title": "Business Development Executive",
+        "opportunity_isco_occupation_group": null,
+        "opportunity_isco_occupation_group_id": null,
+        "location": "Nairobi",
+        "employer": "BrighterMonday.com Ltd",
+        "employment_type": "Full-time",
+        "salary_text": null,
+        "required_education": null,
+        "required_experience": null,
+        "closing_date": null,
+        "is_eligible": true,
+        "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+        "opportunity_description": "Job summaryBrightermonday Kenya is looking for exceptional Business Development Professionals to join our growing team!Min Qualification:BachelorsExperience Level:Mid levelExperience Length:3 yearsJob descriptions & requirementsJob Description: Do you have experience engaging human capital teams and building strong commercial relationships? Does the idea of engaging top HR Professionals and Corporate Executives sound exciting? Brightermonday Kenya is looking for exceptional Business Development Professionals to join our growing team!Our VisionAfrica\u2019s solution to bridging the talent gap.Job MissionYou shall be responsible for making outbound telephone calls to sell to, grow and service corporates that constitute BrighterMonday\u2019s strategic accounts business. You will showcase the available products to these key markets and form relationships within these key markets to ensurethat Sales targets are met by you which shall then translate to the team effort. The position holder will be expected to establish new business and ensure client satisfaction. The ideal candidate should have an understanding of the recruitment process, besides sales.",
+        "contract_type": "Full-time",
+        "final_score": 0.6243,
+        "score_breakdown": {
+          "total_skill_utility": 0.2,
+          "skill_components": {
+            "loc": 1.0,
+            "ess": 0.0,
+            "opt": 0.0,
+            "grp": 0.0
+          },
+          "skill_penalty_applied": 0.0,
+          "preference_score": 0.62
+        },
+        "matched_skills": {
+          "essential_skill_matches": [],
+          "optional_exact_matches": [],
+          "skill_group_matches": []
+        },
+        "matched_preferences": [
+          {
+            "attribute": "earnings_per_month",
+            "job_value": "earn_70k",
+            "job_value_label": "70K",
+            "user_weight": 0.5,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.25,
+            "matched": true
+          },
+          {
+            "attribute": "task_content",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.2,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "physical_demand",
+            "job_value": "phys_light",
+            "job_value_label": "Light",
+            "user_weight": 0.3,
+            "beta": -0.4,
+            "encoded_value": 0.0,
+            "contribution": -0.0,
+            "matched": false
+          },
+          {
+            "attribute": "work_flexibility",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.5,
+            "beta": 0.4,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "social_interaction",
+            "job_value": "soc_customers",
+            "job_value_label": "Customers",
+            "user_weight": 0.3,
+            "beta": 0.1,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          },
+          {
+            "attribute": "career_growth",
+            "job_value": "growth_high",
+            "job_value_label": "High",
+            "user_weight": 0.7,
+            "beta": 0.5,
+            "encoded_value": 1.0,
+            "contribution": 0.35,
+            "matched": true
+          },
+          {
+            "attribute": "social_meaning",
+            "job_value": null,
+            "job_value_label": null,
+            "user_weight": 0.3,
+            "beta": 0.3,
+            "encoded_value": 0.0,
+            "contribution": 0.0,
+            "matched": false
+          }
+        ]
+      }
+    ],
+    "skill_gap_recommendations": [
+      {
+        "skill_id": "687671b5ebd2bf665349aabf",
+        "skill_label": "communication",
+        "proximity_score": 0.4527,
+        "job_unlock_count": 222,
+        "combined_score": 0.7811,
+        "reasoning": "Similar to your 'build predictive models' skill. Would help unlock or improve 222 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349d700",
+        "skill_label": "sales strategies",
+        "proximity_score": 0.5665,
+        "job_unlock_count": 101,
+        "combined_score": 0.4996,
+        "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 101 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349da64",
+        "skill_label": "use microsoft office",
+        "proximity_score": 0.4644,
+        "job_unlock_count": 98,
+        "combined_score": 0.4506,
+        "reasoning": "Similar to your 'business intelligence' skill. Would help unlock or improve 98 jobs."
+      },
+      {
+        "skill_id": "687671bdebd2bf665349cd84",
+        "skill_label": "implement sales strategies",
+        "proximity_score": 0.5532,
+        "job_unlock_count": 72,
+        "combined_score": 0.4159,
+        "reasoning": "Similar to your 'business intelligence' skill. Would help unlock or improve 72 jobs."
+      },
+      {
+        "skill_id": "687671b9ebd2bf665349bdae",
+        "skill_label": "English",
+        "proximity_score": 0.5177,
+        "job_unlock_count": 73,
+        "combined_score": 0.4044,
+        "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 73 jobs."
+      }
+    ],
+    "elapsed_s": 0.11
+  }
+]

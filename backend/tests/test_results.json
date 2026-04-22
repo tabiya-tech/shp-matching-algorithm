@@ -1,0 +1,5357 @@
+{
+  "summary": {
+    "passed": 43,
+    "failed": 5
+  },
+  "tests": [
+    {
+      "test": "TC1-user_id",
+      "status": "PASS",
+      "detail": "test_user_baseline"
+    },
+    {
+      "test": "TC1-has_opps",
+      "status": "PASS",
+      "detail": "5 opps"
+    },
+    {
+      "test": "TC1-top5_max",
+      "status": "PASS",
+      "detail": "5 <= 5"
+    },
+    {
+      "test": "TC1-has_gaps",
+      "status": "PASS",
+      "detail": "5 gaps"
+    },
+    {
+      "test": "TC1-rank_1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "TC1-has_score",
+      "status": "PASS",
+      "detail": "score=0.6868"
+    },
+    {
+      "test": "TC1-has_breakdown",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "TC1-nairobi_loc",
+      "status": "PASS",
+      "detail": "loc=Nairobi"
+    },
+    {
+      "test": "TC1-all_nairobi",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "TC1-skills_empty_due_to_uuid_mismatch",
+      "status": "PASS",
+      "detail": "job UUIDs (ESCO) don't exist in embedding model"
+    },
+    {
+      "test": "TC1-baseline_score",
+      "status": "PASS",
+      "detail": "score=0.6868 vs saved=0.691"
+    },
+    {
+      "test": "TC2-has_results",
+      "status": "PASS",
+      "detail": "5 opps"
+    },
+    {
+      "test": "TC2-same_as_baseline",
+      "status": "PASS",
+      "detail": "baseline=0.6868 no_skills=0.6868 (expect same since job UUIDs mismatch)"
+    },
+    {
+      "test": "TC3-no_opps",
+      "status": "FAIL",
+      "detail": "5 opps (expect 0 for Johannesburg)"
+    },
+    {
+      "test": "TC4-has_results",
+      "status": "PASS",
+      "detail": "5 opps"
+    },
+    {
+      "test": "TC4-relevant_location",
+      "status": "PASS",
+      "detail": "locations: ['Kisumu', 'Remote', 'Remote']"
+    },
+    {
+      "test": "TC8-error",
+      "status": "PASS",
+      "detail": "ValueError: user must include user_id"
+    },
+    {
+      "test": "TC9-fewer_than_nairobi",
+      "status": "PASS",
+      "detail": "Mombasa=5 vs Nairobi=5"
+    },
+    {
+      "test": "TC9-locations",
+      "status": "PASS",
+      "detail": "locs: ['Remote', 'Remote', 'Mombasa']"
+    },
+    {
+      "test": "TC10-final_high>low",
+      "status": "PASS",
+      "detail": "high(0.7155) > low(0.4062)"
+    },
+    {
+      "test": "TC11-field-total_skill_utility",
+      "status": "PASS",
+      "detail": "total_skill_utility=0.2"
+    },
+    {
+      "test": "TC11-field-skill_components",
+      "status": "PASS",
+      "detail": "skill_components={'loc': 1.0, 'ess': 0.0, 'opt': 0.0, 'grp': 0.0}"
+    },
+    {
+      "test": "TC11-field-preference_score",
+      "status": "PASS",
+      "detail": "preference_score=0.67"
+    },
+    {
+      "test": "TC11-ranks",
+      "status": "PASS",
+      "detail": "ranks=[1, 2, 3, 4, 5]"
+    },
+    {
+      "test": "TC11-scores_desc",
+      "status": "PASS",
+      "detail": "scores=[0.6868, 0.6868, 0.6868, 0.6868, 0.6868]"
+    },
+    {
+      "test": "TC11-pref_count",
+      "status": "PASS",
+      "detail": "7 prefs (expect 7)"
+    },
+    {
+      "test": "TC11-phc-gate",
+      "status": "FAIL",
+      "detail": "gate=None"
+    },
+    {
+      "test": "TC11-phc-essential_fit",
+      "status": "FAIL",
+      "detail": "essential_fit=None"
+    },
+    {
+      "test": "TC11-phc-recruiter_readiness",
+      "status": "FAIL",
+      "detail": "recruiter_readiness=None"
+    },
+    {
+      "test": "TC11-phc-market_opportunity",
+      "status": "FAIL",
+      "detail": "market_opportunity=None"
+    },
+    {
+      "test": "TC12b-nairobi_with_skills",
+      "status": "PASS",
+      "detail": "302 Nairobi jobs have essential skills"
+    },
+    {
+      "test": "TC12b-esco_resolved",
+      "status": "PASS",
+      "detail": "ESCO UUIDs successfully resolved to internal IDs in embedding"
+    },
+    {
+      "test": "TC12b-ess_fit_nonzero",
+      "status": "PASS",
+      "detail": "essential_fit produces non-trivial values (not just 0 or 1)"
+    },
+    {
+      "test": "TC12b-gate_fires",
+      "status": "PASS",
+      "detail": "gate correctly fails for poor skill matches"
+    },
+    {
+      "test": "TC13-bounds",
+      "status": "PASS",
+      "detail": "all scores in [0, 1]"
+    },
+    {
+      "test": "TC14-has_gaps",
+      "status": "PASS",
+      "detail": "5 recommendations"
+    },
+    {
+      "test": "TC14-max5",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "TC14-field-skill_id",
+      "status": "PASS",
+      "detail": "skill_id=687671b5ebd2bf665349aabf"
+    },
+    {
+      "test": "TC14-field-skill_label",
+      "status": "PASS",
+      "detail": "skill_label=communication"
+    },
+    {
+      "test": "TC14-field-proximity_score",
+      "status": "PASS",
+      "detail": "proximity_score=0.2792"
+    },
+    {
+      "test": "TC14-field-job_unlock_count",
+      "status": "PASS",
+      "detail": "job_unlock_count=215"
+    },
+    {
+      "test": "TC14-field-combined_score",
+      "status": "PASS",
+      "detail": "combined_score=0.7117"
+    },
+    {
+      "test": "TC14-field-reasoning",
+      "status": "PASS",
+      "detail": "reasoning=Similar to your 'SQL' skill. Would help unlock or improve 21"
+    },
+    {
+      "test": "TC14-descending",
+      "status": "PASS",
+      "detail": "scores=[0.7117, 0.5288, 0.4331, 0.4108, 0.39]"
+    },
+    {
+      "test": "TC14-nonzero_proximity",
+      "status": "PASS",
+      "detail": "proximity scores: [0.2792, 0.6802, 0.5665, 0.5177, 0.961]"
+    },
+    {
+      "test": "TC14-readable_labels",
+      "status": "PASS",
+      "detail": "labels: ['communication', 'use microsoft office', 'sales strategies', 'English', 'use scripting programming']"
+    },
+    {
+      "test": "TC15-all_same_score",
+      "status": "PASS",
+      "detail": "1 unique scores out of 5 (expect all identical due to skill+demand data gaps)"
+    },
+    {
+      "test": "TC15-all_same_u_hat",
+      "status": "PASS",
+      "detail": "1 unique u_hat values (preference-only, same job attrs)"
+    }
+  ],
+  "responses": {
+    "baseline": {
+      "user_id": "test_user_baseline",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5d2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5d2",
+          "rank": 1,
+          "opportunity_title": "Customer Service Representative",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af72",
+          "URL": "www.example.com/69b863117f0c00e65d78af72",
+          "rank": 2,
+          "opportunity_title": "Director, Information Security at Human Rights Watch",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4d",
+          "URL": "www.example.com/69b863117f0c00e65d78af4d",
+          "rank": 3,
+          "opportunity_title": "Senior Legal Officer MNT 13",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4c",
+          "URL": "www.example.com/69b863117f0c00e65d78af4c",
+          "rank": 4,
+          "opportunity_title": "Receivables Accountant",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863107f0c00e65d78aec7",
+          "URL": "www.example.com/69b863107f0c00e65d78aec7",
+          "rank": 5,
+          "opportunity_title": "Enterprise IT Account Manager BFSI, Government & Insurance",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": [
+        {
+          "skill_id": "687671b5ebd2bf665349aabf",
+          "skill_label": "communication",
+          "proximity_score": 0.2792,
+          "job_unlock_count": 215,
+          "combined_score": 0.7117,
+          "reasoning": "Similar to your 'SQL' skill. Would help unlock or improve 215 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349da64",
+          "skill_label": "use microsoft office",
+          "proximity_score": 0.6802,
+          "job_unlock_count": 92,
+          "combined_score": 0.5288,
+          "reasoning": "Similar to your 'manage database' skill. Would help unlock or improve 92 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349d700",
+          "skill_label": "sales strategies",
+          "proximity_score": 0.5665,
+          "job_unlock_count": 74,
+          "combined_score": 0.4331,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 74 jobs."
+        },
+        {
+          "skill_id": "687671b9ebd2bf665349bdae",
+          "skill_label": "English",
+          "proximity_score": 0.5177,
+          "job_unlock_count": 73,
+          "combined_score": 0.4108,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 73 jobs."
+        },
+        {
+          "skill_id": "687671b9ebd2bf665349ba7f",
+          "skill_label": "use scripting programming",
+          "proximity_score": 0.961,
+          "job_unlock_count": 2,
+          "combined_score": 0.39,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 2 jobs."
+        }
+      ]
+    },
+    "no_skills": {
+      "user_id": "test_no_skills",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5d2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5d2",
+          "rank": 1,
+          "opportunity_title": "Customer Service Representative",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af72",
+          "URL": "www.example.com/69b863117f0c00e65d78af72",
+          "rank": 2,
+          "opportunity_title": "Director, Information Security at Human Rights Watch",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4d",
+          "URL": "www.example.com/69b863117f0c00e65d78af4d",
+          "rank": 3,
+          "opportunity_title": "Senior Legal Officer MNT 13",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4c",
+          "URL": "www.example.com/69b863117f0c00e65d78af4c",
+          "rank": 4,
+          "opportunity_title": "Receivables Accountant",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863107f0c00e65d78aec7",
+          "URL": "www.example.com/69b863107f0c00e65d78aec7",
+          "rank": 5,
+          "opportunity_title": "Enterprise IT Account Manager BFSI, Government & Insurance",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": []
+    },
+    "johannesburg": {
+      "user_id": "test_johannesburg",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69b8630f7f0c00e65d78abe1",
+          "URL": "www.example.com/69b8630f7f0c00e65d78abe1",
+          "rank": 1,
+          "opportunity_title": "Travel Agent",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": "Full-time",
+          "contract_type": "Full-time",
+          "final_score": 0.5057,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.55
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b8630f7f0c00e65d78abdf",
+          "URL": "www.example.com/69b8630f7f0c00e65d78abdf",
+          "rank": 2,
+          "opportunity_title": "Implementation and Enrollment Specialist",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": "Contract",
+          "contract_type": "Contract",
+          "final_score": 0.5057,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.55
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5ab",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5ab",
+          "rank": 3,
+          "opportunity_title": "Sales Manager IT & Network Solutions",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": false,
+          "justification": "Top skill matches: Python (computer programming) \u2194 ICT networking hardware (sim 0.3906). Top preference matches: Earnings Per Month: 50K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Part-time",
+          "contract_type": "Part-time",
+          "final_score": 0.3241,
+          "score_breakdown": {
+            "total_skill_utility": 0.062,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.3373,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.1667,
+            "preference_score": 0.5835
+          },
+          "matched_skills": {
+            "essential_skill_matches": [
+              {
+                "job_skill_id": "687671beebd2bf665349db1f",
+                "job_skill_label": "ICT networking hardware",
+                "best_user_skill_id": "687671bdebd2bf665349d1aa",
+                "best_user_skill_label": "Python (computer programming)",
+                "similarity": 0.3906,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349c714",
+                "job_skill_label": "computer equipment",
+                "best_user_skill_id": "687671bdebd2bf665349d1aa",
+                "best_user_skill_label": "Python (computer programming)",
+                "similarity": 0.2282,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d260",
+                "job_skill_label": "ICT infrastructure",
+                "best_user_skill_id": "687671bdebd2bf665349d1aa",
+                "best_user_skill_label": "Python (computer programming)",
+                "similarity": 0.3932,
+                "meets_threshold": true
+              }
+            ],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_50k",
+              "job_value_label": "50K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.67,
+              "contribution": 0.1675,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5ac",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5ac",
+          "rank": 4,
+          "opportunity_title": "Sales Manager Energy & Power Solutions",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top skill matches: Python (computer programming) \u2194 energy storage systems (sim 0.6029). Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Part-time",
+          "contract_type": "Part-time",
+          "final_score": 0.1836,
+          "score_breakdown": {
+            "total_skill_utility": 0.3615,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.6029,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.6
+          },
+          "matched_skills": {
+            "essential_skill_matches": [
+              {
+                "job_skill_id": "687671b9ebd2bf665349bd77",
+                "job_skill_label": "energy storage systems",
+                "best_user_skill_id": "687671bdebd2bf665349d1aa",
+                "best_user_skill_label": "Python (computer programming)",
+                "similarity": 0.6029,
+                "meets_threshold": true
+              }
+            ],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5ad",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5ad",
+          "rank": 5,
+          "opportunity_title": "Sales manager \uff08Smart City & Security IoT Solutions \uff09",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": false,
+          "justification": "Top preference matches: Earnings Per Month: 50K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Part-time",
+          "contract_type": "Part-time",
+          "final_score": 0.0,
+          "score_breakdown": {
+            "total_skill_utility": 0.0,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0583,
+              "opt": 0.2209,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.5,
+            "preference_score": 0.5835
+          },
+          "matched_skills": {
+            "essential_skill_matches": [
+              {
+                "job_skill_id": "687671bdebd2bf665349d377",
+                "job_skill_label": "smart city features",
+                "best_user_skill_id": "687671bdebd2bf665349d1aa",
+                "best_user_skill_label": "Python (computer programming)",
+                "similarity": 0.0583,
+                "meets_threshold": false
+              }
+            ],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_50k",
+              "job_value_label": "50K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.67,
+              "contribution": 0.1675,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": [
+        {
+          "skill_id": "687671b5ebd2bf665349aabf",
+          "skill_label": "communication",
+          "proximity_score": 0.2707,
+          "job_unlock_count": 215,
+          "combined_score": 0.7083,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 215 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349da64",
+          "skill_label": "use microsoft office",
+          "proximity_score": 0.4571,
+          "job_unlock_count": 92,
+          "combined_score": 0.4396,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 92 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349d700",
+          "skill_label": "sales strategies",
+          "proximity_score": 0.5665,
+          "job_unlock_count": 74,
+          "combined_score": 0.4331,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 74 jobs."
+        },
+        {
+          "skill_id": "687671b9ebd2bf665349bdae",
+          "skill_label": "English",
+          "proximity_score": 0.5177,
+          "job_unlock_count": 73,
+          "combined_score": 0.4108,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 73 jobs."
+        },
+        {
+          "skill_id": "687671b9ebd2bf665349ba7f",
+          "skill_label": "use scripting programming",
+          "proximity_score": 0.961,
+          "job_unlock_count": 2,
+          "combined_score": 0.39,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 2 jobs."
+        }
+      ]
+    },
+    "kisumu": {
+      "user_id": "test_kisumu",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69b863107f0c00e65d78ae31",
+          "URL": "www.example.com/69b863107f0c00e65d78ae31",
+          "rank": 1,
+          "opportunity_title": "Parts Supervisor Kisumu",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Kisumu",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.5939,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.6
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b8630f7f0c00e65d78abe1",
+          "URL": "www.example.com/69b8630f7f0c00e65d78abe1",
+          "rank": 2,
+          "opportunity_title": "Travel Agent",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": "Full-time",
+          "contract_type": "Full-time",
+          "final_score": 0.5057,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.55
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b8630f7f0c00e65d78abdf",
+          "URL": "www.example.com/69b8630f7f0c00e65d78abdf",
+          "rank": 3,
+          "opportunity_title": "Implementation and Enrollment Specialist",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": "Contract",
+          "contract_type": "Contract",
+          "final_score": 0.5057,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.55
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5ad",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5ad",
+          "rank": 4,
+          "opportunity_title": "Sales manager \uff08Smart City & Security IoT Solutions \uff09",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 50K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Part-time",
+          "contract_type": "Part-time",
+          "final_score": 0.0,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5835
+          },
+          "matched_skills": {
+            "essential_skill_matches": [
+              {
+                "job_skill_id": "687671bdebd2bf665349d377",
+                "job_skill_label": "smart city features",
+                "best_user_skill_id": null,
+                "best_user_skill_label": null,
+                "similarity": 0.0,
+                "meets_threshold": false
+              }
+            ],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_50k",
+              "job_value_label": "50K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 0.67,
+              "contribution": 0.1675,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5ac",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5ac",
+          "rank": 5,
+          "opportunity_title": "Sales Manager Energy & Power Solutions",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Part-time",
+          "contract_type": "Part-time",
+          "final_score": 0.0,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.6
+          },
+          "matched_skills": {
+            "essential_skill_matches": [
+              {
+                "job_skill_id": "687671b9ebd2bf665349bd77",
+                "job_skill_label": "energy storage systems",
+                "best_user_skill_id": null,
+                "best_user_skill_label": null,
+                "similarity": 0.0,
+                "meets_threshold": false
+              }
+            ],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.5,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.5,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.25,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": []
+    },
+    "high_prefs": {
+      "user_id": "test_high_prefs",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5d2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5d2",
+          "rank": 1,
+          "opportunity_title": "Customer Service Representative",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.7155,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.7
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 1.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af72",
+          "URL": "www.example.com/69b863117f0c00e65d78af72",
+          "rank": 2,
+          "opportunity_title": "Director, Information Security at Human Rights Watch",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.7155,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.7
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 1.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4d",
+          "URL": "www.example.com/69b863117f0c00e65d78af4d",
+          "rank": 3,
+          "opportunity_title": "Senior Legal Officer MNT 13",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.7155,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.7
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 1.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4c",
+          "URL": "www.example.com/69b863117f0c00e65d78af4c",
+          "rank": 4,
+          "opportunity_title": "Receivables Accountant",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.7155,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.7
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 1.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863107f0c00e65d78aec7",
+          "URL": "www.example.com/69b863107f0c00e65d78aec7",
+          "rank": 5,
+          "opportunity_title": "Enterprise IT Account Manager BFSI, Government & Insurance",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.7155,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.7
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 1.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 1.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.5,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": []
+    },
+    "low_prefs": {
+      "user_id": "test_low_prefs",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5d2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5d2",
+          "rank": 1,
+          "opportunity_title": "Customer Service Representative",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 1.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78afe4",
+          "URL": "www.example.com/69b863117f0c00e65d78afe4",
+          "rank": 2,
+          "opportunity_title": "Administrative Assistant",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 1.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af8a",
+          "URL": "www.example.com/69b863117f0c00e65d78af8a",
+          "rank": 3,
+          "opportunity_title": "Lead Generator at Absa Bank Limited",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 30K. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_30k",
+              "job_value_label": "30K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.33,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 1.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af72",
+          "URL": "www.example.com/69b863117f0c00e65d78af72",
+          "rank": 4,
+          "opportunity_title": "Director, Information Security at Human Rights Watch",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 1.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4d",
+          "URL": "www.example.com/69b863117f0c00e65d78af4d",
+          "rank": 5,
+          "opportunity_title": "Senior Legal Officer MNT 13",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 1.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": []
+    },
+    "neutral": {
+      "user_id": "test_neutral",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5d2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5d2",
+          "rank": 1,
+          "opportunity_title": "Customer Service Representative",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5b2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5b2",
+          "rank": 2,
+          "opportunity_title": "LOAN OFFICER",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 30K; Physical Demand: Heavy; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Full-time",
+          "contract_type": "Full-time",
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_30k",
+              "job_value_label": "30K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.33,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_heavy",
+              "job_value_label": "Heavy",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 1.0,
+              "contribution": -0.0,
+              "matched": true
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78afe4",
+          "URL": "www.example.com/69b863117f0c00e65d78afe4",
+          "rank": 3,
+          "opportunity_title": "Administrative Assistant",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af8a",
+          "URL": "www.example.com/69b863117f0c00e65d78af8a",
+          "rank": 4,
+          "opportunity_title": "Lead Generator at Absa Bank Limited",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 30K. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_30k",
+              "job_value_label": "30K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.33,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af72",
+          "URL": "www.example.com/69b863117f0c00e65d78af72",
+          "rank": 5,
+          "opportunity_title": "Director, Information Security at Human Rights Watch",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.4062,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.0,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.0,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.0,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.0,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": []
+    },
+    "mombasa": {
+      "user_id": "test_mombasa",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69b8630f7f0c00e65d78abe1",
+          "URL": "www.example.com/69b8630f7f0c00e65d78abe1",
+          "rank": 1,
+          "opportunity_title": "Travel Agent",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": "Full-time",
+          "contract_type": "Full-time",
+          "final_score": 0.5775,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.59
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b8630f7f0c00e65d78abdf",
+          "URL": "www.example.com/69b8630f7f0c00e65d78abdf",
+          "rank": 2,
+          "opportunity_title": "Implementation and Enrollment Specialist",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Remote",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K. Demand label: Unknown",
+          "opportunity_description": "Contract",
+          "contract_type": "Contract",
+          "final_score": 0.5775,
+          "score_breakdown": {
+            "total_skill_utility": 0.06,
+            "skill_components": {
+              "loc": 0.3,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.59
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863107f0c00e65d78abe9",
+          "URL": "www.example.com/69b863107f0c00e65d78abe9",
+          "rank": 3,
+          "opportunity_title": "Brand Ambassador Mombasa",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Mombasa",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 30K. Demand label: Unknown",
+          "opportunity_description": "Full-time",
+          "contract_type": "Full-time",
+          "final_score": 0.466,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.5297
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_30k",
+              "job_value_label": "30K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 0.33,
+              "contribution": 0.1485,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_med",
+              "job_value_label": "Med",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78aee4",
+          "URL": "www.example.com/69b863117f0c00e65d78aee4",
+          "rank": 4,
+          "opportunity_title": "Backend Developer/Node.js",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Mombasa",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.2734,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863107f0c00e65d78abe6",
+          "URL": "www.example.com/69b863107f0c00e65d78abe6",
+          "rank": 5,
+          "opportunity_title": "ICT Manager",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Mombasa",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": "Full-time",
+          "contract_type": "Full-time",
+          "final_score": 0.2734,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": []
+    },
+    "many_skills": {
+      "user_id": "test_many_skills",
+      "occupation_recommendations": [],
+      "opportunity_recommendations": [
+        {
+          "uuid": "69c18bfe7f0c00e65d78b5d2",
+          "URL": "www.example.com/69c18bfe7f0c00e65d78b5d2",
+          "rank": 1,
+          "opportunity_title": "Customer Service Representative",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af72",
+          "URL": "www.example.com/69b863117f0c00e65d78af72",
+          "rank": 2,
+          "opportunity_title": "Director, Information Security at Human Rights Watch",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4d",
+          "URL": "www.example.com/69b863117f0c00e65d78af4d",
+          "rank": 3,
+          "opportunity_title": "Senior Legal Officer MNT 13",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "Peers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863117f0c00e65d78af4c",
+          "URL": "www.example.com/69b863117f0c00e65d78af4c",
+          "rank": 4,
+          "opportunity_title": "Receivables Accountant",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        },
+        {
+          "uuid": "69b863107f0c00e65d78aec7",
+          "URL": "www.example.com/69b863107f0c00e65d78aec7",
+          "rank": 5,
+          "opportunity_title": "Enterprise IT Account Manager BFSI, Government & Insurance",
+          "opportunity_isco_occupation_group": null,
+          "opportunity_isco_occupation_group_id": null,
+          "location": "Nairobi",
+          "employer": null,
+          "employment_type": null,
+          "salary_text": null,
+          "required_education": null,
+          "required_experience": null,
+          "closing_date": null,
+          "is_eligible": true,
+          "justification": "Top preference matches: Earnings Per Month: 70K; Career Growth: High. Demand label: Unknown",
+          "opportunity_description": null,
+          "contract_type": null,
+          "final_score": 0.6868,
+          "score_breakdown": {
+            "total_skill_utility": 0.2,
+            "skill_components": {
+              "loc": 1.0,
+              "ess": 0.0,
+              "opt": 0.0,
+              "grp": 0.0
+            },
+            "skill_penalty_applied": 0.0,
+            "preference_score": 0.67
+          },
+          "matched_skills": {
+            "essential_skill_matches": [],
+            "optional_exact_matches": [],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "70K",
+              "user_weight": 0.9,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.45,
+              "matched": true
+            },
+            {
+              "attribute": "task_content",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 1.0,
+              "beta": 0.2,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_light",
+              "job_value_label": "Light",
+              "user_weight": 0.0,
+              "beta": -0.4,
+              "encoded_value": 0.0,
+              "contribution": -0.0,
+              "matched": false
+            },
+            {
+              "attribute": "work_flexibility",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.9,
+              "beta": 0.4,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_customers",
+              "job_value_label": "Customers",
+              "user_weight": 0.2,
+              "beta": 0.1,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "High",
+              "user_weight": 0.8,
+              "beta": 0.5,
+              "encoded_value": 1.0,
+              "contribution": 0.4,
+              "matched": true
+            },
+            {
+              "attribute": "social_meaning",
+              "job_value": null,
+              "job_value_label": null,
+              "user_weight": 0.5,
+              "beta": 0.3,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ]
+        }
+      ],
+      "skill_gap_recommendations": [
+        {
+          "skill_id": "687671bdebd2bf665349da64",
+          "skill_label": "use microsoft office",
+          "proximity_score": 0.6802,
+          "job_unlock_count": 92,
+          "combined_score": 0.8721,
+          "reasoning": "Similar to your 'manage database' skill. Would help unlock or improve 92 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349d700",
+          "skill_label": "sales strategies",
+          "proximity_score": 0.5665,
+          "job_unlock_count": 74,
+          "combined_score": 0.7092,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 74 jobs."
+        },
+        {
+          "skill_id": "687671b9ebd2bf665349bdae",
+          "skill_label": "English",
+          "proximity_score": 0.5177,
+          "job_unlock_count": 73,
+          "combined_score": 0.6832,
+          "reasoning": "Similar to your 'Python (computer programming)' skill. Would help unlock or improve 73 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349d219",
+          "skill_label": "office software",
+          "proximity_score": 0.611,
+          "job_unlock_count": 49,
+          "combined_score": 0.564,
+          "reasoning": "Similar to your 'manage database' skill. Would help unlock or improve 49 jobs."
+        },
+        {
+          "skill_id": "687671bdebd2bf665349d82d",
+          "skill_label": "accounting",
+          "proximity_score": 0.3939,
+          "job_unlock_count": 62,
+          "combined_score": 0.5619,
+          "reasoning": "Similar to your 'solve problems' skill. Would help unlock or improve 62 jobs."
+        }
+      ]
+    }
+  }
+}
