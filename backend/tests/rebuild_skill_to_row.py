@@ -12,9 +12,9 @@ import subprocess
 import io
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-S2R_PATH = ROOT / "app/services/skills_utility/Output/skill_to_row.json"
-NEW_CSV = ROOT / "app/services/skills_utility/skills.csv"
+ROOT = Path(__file__).resolve().parents[1]  # .../backend
+S2R_PATH = ROOT / "resources/models/skill_to_row.json"
+NEW_CSV = ROOT / "resources/skill_taxonomy/skills.csv"
 
 # 1. Load current skill_to_row.json (old internal IDs -> row indices)
 with open(S2R_PATH) as f:

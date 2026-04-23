@@ -64,9 +64,9 @@ curl -X POST "http://127.0.0.1:8000/match" -H "Content-Type: application/json" -
 │   │   ├── main.py         # FastAPI routes & CORS configuration
 │   │   ├── schemas.py      # Pydantic data models
 │   │   └── config.py       # Global weights and score mappings
-│   └── data/               # Model weights (.pt) and skill mappings
+│   └── resources/          # Occupation DB, skill taxonomy CSVs, embedding artifacts
 ├── frontend
-│   ├── public/data/        # supply.jsonl and demand.jsonl (Local DB)
+│   ├── public/data/        # supply.jsonl (symlink to repo data/; local dev)
 │   ├── src
 │   │   ├── components/     # UI elements (MatchCard, SearchableSelect)
 │   │   ├── views/          # Jobseeker, Employer, and Policy dashboards

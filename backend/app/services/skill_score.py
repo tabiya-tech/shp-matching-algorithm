@@ -6,24 +6,33 @@ import json
 import csv
 import numpy as np
 
+from app.config import (
+    EMBEDDING_MODEL_PATH,
+    GATE_SIMILARITY_THRESHOLD,
+    SKILL_GROUPS_CSV_PATH,
+    SKILLS_CSV_PATH,
+    SKILL_HIERARCHY_CSV_PATH,
+    SKILL_TO_ROW_PATH,
+)
 from app.services.skills_utility.skills_match import (
     Jobseeker,
     Opportunity,
     SimilarityEngine,
     compute_U_complete,
     compute_feasibility_signals,
+    compute_utility_and_feasibility_pair,
 )
 
-current_dir = Path(__file__).parent
 logger = logging.getLogger(__name__)
 
 
 class SkillScorer:
     def __init__(self):
-        self.MODEL_PATH = current_dir / "skills_utility/Output/skill_embedding_model.pt"
-        self.MAPPING_PATH = current_dir / "skills_utility/Output/skill_to_row.json"
-        self.SKILLS_CSV_PATH = current_dir / "skills_utility/skills.csv"
-        self.SKILL_GROUPS_CSV_PATH = current_dir / "skills_utility/skill_groups.csv"
+        self.MODEL_PATH = Path(EMBEDDING_MODEL_PATH)
+        self.MAPPING_PATH = Path(SKILL_TO_ROW_PATH)
+        self.SKILLS_CSV_PATH = Path(SKILLS_CSV_PATH)
+        self.SKILL_GROUPS_CSV_PATH = Path(SKILL_GROUPS_CSV_PATH)
+        self.HIERARCHY_CSV_PATH = Path(SKILL_HIERARCHY_CSV_PATH)
 
         state = torch.load(self.MODEL_PATH, map_location="cpu")
         W = state["state_dict"]["embedding.weight"].numpy()
@@ -76,7 +85,6 @@ class SkillScorer:
         except FileNotFoundError:
             self.skill_group_labels = {}
 
-        self.HIERARCHY_CSV_PATH = current_dir / "skills_utility/skill_hierarchy.csv"
         self._skill_to_groups: dict[str, set[str]] = {}
         try:
             with open(self.HIERARCHY_CSV_PATH, "r", encoding="utf-8") as f:
@@ -202,8 +210,22 @@ class SkillScorer:
             js,
             op,
             self.engine,
-            gate_threshold=0.35,
+            gate_threshold=GATE_SIMILARITY_THRESHOLD,
             skill_labels=self.skill_labels,
             user_skill_labels=user_skill_labels,
             skill_group_labels=self.skill_group_labels,
         )
+
+    def score_utility_and_feasibility(self, user_profile: dict, job_posting: dict) -> tuple[dict, dict]:
+        """Single embedding pass for multiplicative mode (U + feasibility for p_hat)."""
+        js, op, user_skill_labels = self._build_objects(user_profile, job_posting)
+        u, f = compute_utility_and_feasibility_pair(
+            js,
+            op,
+            self.engine,
+            skill_labels=self.skill_labels,
+            user_skill_labels=user_skill_labels,
+            skill_group_labels=self.skill_group_labels,
+            gate_threshold=GATE_SIMILARITY_THRESHOLD,
+        )
+        return u, f

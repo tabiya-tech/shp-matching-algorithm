@@ -709,5 +709,77 @@
         "4.A.4.a.8", "4.A.2.b.4", "4.A.4.b.3", "4.A.4.a.3", "4.A.4.b.6"
       ]
     }
+  },
+  {
+    "_description": "Skill groups: software / apps development (ID from skill_groups.csv; child skills in hierarchy under this group).",
+    "_test_focus": "Explicit skill_groups_origin_uuids aligned with IT skills (same group as derived-from-skills for Python/JS/SQL).",
+    "user_id": "sg_domain_software_nairobi",
+    "city": "Nairobi",
+    "province": "Nairobi",
+    "skills_vector": {
+      "top_skills": [
+        { "preferredLabel": "Python (computer programming)", "originUUID": "687671bdebd2bf665349d1aa", "proficiency": 0.95 },
+        { "preferredLabel": "JavaScript", "originUUID": "687671b5ebd2bf665349b33b", "proficiency": 0.90 },
+        { "preferredLabel": "SQL", "originUUID": "687671b5ebd2bf665349b956", "proficiency": 0.85 }
+      ]
+    },
+    "skill_groups_origin_uuids": ["687671b3ebd2bf665349a426"],
+    "preference_vector": {
+      "earnings_per_month": 0.9,
+      "task_content": 1.0,
+      "physical_demand": 0.0,
+      "work_flexibility": 0.9,
+      "social_interaction": 0.3,
+      "career_growth": 0.9,
+      "social_meaning": 0.4
+    }
+  },
+  {
+    "_description": "Skill groups: nursing and midwifery (ESCO ISCED). Skills are real CHILDIDs under this group in skill_hierarchy.csv.",
+    "_test_focus": "Health domain; group 687671b3ebd2bf665349a45e",
+    "user_id": "sg_domain_nursing_nairobi",
+    "city": "Nairobi",
+    "province": "Nairobi",
+    "skills_vector": {
+      "top_skills": [
+        { "preferredLabel": "techniques of blood-sampling", "originUUID": "687671b4ebd2bf665349a6f0", "proficiency": 0.9 },
+        { "preferredLabel": "clinical reports", "originUUID": "687671b4ebd2bf665349a7d3", "proficiency": 0.85 },
+        { "preferredLabel": "childbirth", "originUUID": "687671b5ebd2bf665349a99c", "proficiency": 0.8 }
+      ]
+    },
+    "skill_groups_origin_uuids": ["687671b3ebd2bf665349a45e"],
+    "preference_vector": {
+      "earnings_per_month": 0.7,
+      "task_content": 0.5,
+      "physical_demand": 0.6,
+      "work_flexibility": 0.5,
+      "social_interaction": 0.7,
+      "career_growth": 0.8,
+      "social_meaning": 0.9
+    }
+  },
+  {
+    "_description": "Skill groups: building and civil engineering. Skills are real CHILDIDs under this group in skill_hierarchy.csv.",
+    "_test_focus": "Built environment / construction domain; group 687671b3ebd2bf665349a440",
+    "user_id": "sg_domain_civil_nairobi",
+    "city": "Nairobi",
+    "province": "Nairobi",
+    "skills_vector": {
+      "top_skills": [
+        { "preferredLabel": "acoustical engineering", "originUUID": "687671b4ebd2bf665349a80c", "proficiency": 0.88 },
+        { "preferredLabel": "compaction techniques", "originUUID": "687671b5ebd2bf665349a8d2", "proficiency": 0.85 },
+        { "preferredLabel": "types of insulation material", "originUUID": "687671b5ebd2bf665349a8ea", "proficiency": 0.82 }
+      ]
+    },
+    "skill_groups_origin_uuids": ["687671b3ebd2bf665349a440"],
+    "preference_vector": {
+      "earnings_per_month": 0.75,
+      "task_content": 0.6,
+      "physical_demand": 0.7,
+      "work_flexibility": 0.4,
+      "social_interaction": 0.4,
+      "career_growth": 0.7,
+      "social_meaning": 0.5
+    }
   }
 ]

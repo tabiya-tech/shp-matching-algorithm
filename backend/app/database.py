@@ -1,8 +1,13 @@
 import logging
 import os
 import json
+import time
+from typing import Any, Dict, List, Optional
+
 from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
+
+from app.config import MONGO_JOBS_COLLECTION, OCCUPATION_JSON_PATH
 
 load_dotenv()
 
@@ -34,8 +39,7 @@ def _load_wa_lookup():
     if _wa_lookup is not None:
         return _wa_lookup, _wa_averages
 
-    json_path = os.path.join(os.path.dirname(__file__), "..", "data", "combined_occupation_database_with_wa.json")
-    with open(json_path, "r", encoding="utf-8") as f:
+    with open(OCCUPATION_JSON_PATH, "r", encoding="utf-8") as f:
         raw = json.load(f)
 
     per_occ = {}
@@ -115,98 +119,178 @@ def get_database():
     return db
 
 
-async def get_all_jobs():
-    """Fetch jobs by joining RankedJobs (skills + attributes) with ScrapedJobs (metadata).
+# Only jobs intended to be shown / matched; keeps Mongo transfers and Python work small.
+# Recommended index: { "is_active": 1 } (plus compounds if you add more filters)
+RANKED_JOBS_ACTIVE_FILTER: Dict[str, Any] = {"is_active": True}
 
-    RankedJobs contains:
-      - llm_classified_skills.essential/optional[].tabiya_skill_id  (matches embedding)
-      - llm_job_attributes.attributes  (preference-scoring attributes)
-    ScrapedJobs contains:
-      - title, location, employer, employment_type, description, etc.
+
+def _ms(t0: float) -> float:
+    return (time.perf_counter() - t0) * 1000.0
+
+
+def _str_or_empty(v: Any) -> str:
+    if v is None:
+        return ""
+    return str(v).strip() if isinstance(v, str) else str(v)
+
+
+def build_job_dict_from_ranked(rd: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Build the flat job dict used by matching from one stored job document.
+
+    Listing metadata (title, employer, location, …) comes from ``classifier_metadata``.
+    Skills and preference attributes come from ``llm_classified_skills`` and ``llm_job_attributes``.
+
+    ``onet_work_activities`` and ``skill_groups_origin_uuids`` must be present on the document
+    (e.g. ``RankedJobsEnriched`` produced by the enrichment script / reranker). They are not
+    computed at request time.
+
+    Returns ``None`` if the job should be skipped (document ``is_active`` is False).
     """
-    scraped_cursor = db["ScrapedJobs"].find({})
-    scraped_docs = await scraped_cursor.to_list(length=5000)
-    scraped_map = {str(s["_id"]): s for s in scraped_docs}
+    if rd.get("is_active") is False:
+        return None
 
-    ranked_cursor = db["RankedJobs"].find({})
-    ranked_docs = await ranked_cursor.to_list(length=5000)
+    meta = rd.get("classifier_metadata") or {}
+    job_id = str(rd.get("job_id", ""))
 
-    jobs = []
+    lcs = rd.get("llm_classified_skills", {})
+    essential_ids = [
+        s["tabiya_skill_id"]
+        for s in lcs.get("essential", [])
+        if s.get("tabiya_skill_id")
+    ]
+    optional_ids = [
+        s["tabiya_skill_id"]
+        for s in lcs.get("optional", [])
+        if s.get("tabiya_skill_id")
+    ]
+
+    llm_attrs = rd.get("llm_job_attributes", {})
+    attributes = llm_attrs.get("attributes", {})
+
+    city = _str_or_empty(meta.get("city"))
+    county = _str_or_empty(meta.get("county"))
+    loc_parts = [p for p in (city, county) if p]
+    location = " ".join(loc_parts) if loc_parts else ""
+
+    onet_wa = list(rd.get("onet_work_activities") or [])
+    raw_sgu = rd.get("skill_groups_origin_uuids")
+    if raw_sgu is None:
+        skill_groups: List[str] = []
+    elif isinstance(raw_sgu, list):
+        skill_groups = [str(x) for x in raw_sgu]
+    else:
+        skill_groups = [str(raw_sgu)]
+
+    raw_closing = meta.get("closing_date")
+    closing_s = "" if raw_closing is None else str(raw_closing)
+    et = meta.get("employment_type") or "full_time"
+
+    return {
+        "uuid": job_id,
+        "opportunity_title": meta.get("title") or "Unknown",
+        "location": location,
+        "city": city,
+        "province": county,
+        "employer": meta.get("employer"),
+        "employment_type": meta.get("employment_type"),
+        "salary_text": meta.get("salary"),
+        "closing_date": closing_s,
+        "contract_type": et,
+        "url": meta.get("application_url"),
+        "essential_skills_origin_uuids": essential_ids,
+        "optional_skills_origin_uuids": optional_ids,
+        "skill_groups_origin_uuids": skill_groups,
+        "attributes": attributes,
+        "opportunity_description": meta.get("job_description") or meta.get("description") or "",
+        "onet_work_activities": onet_wa,
+    }
+
+
+async def get_all_jobs():
+    """Load jobs from ``MONGO_JOBS_COLLECTION`` (enriched rows: onet WA + skill groups on document)."""
+    out, _ = await get_all_jobs_with_timing()
+    return out
+
+
+async def get_all_jobs_with_timing():
+    """Same as get_all_jobs; returns (jobs, timing_dict) for observability.
+
+    Reads from ``MONGO_JOBS_COLLECTION`` (default ``RankedJobsEnriched``). Only documents with
+    top-level ``is_active`` equal to true are loaded.
+
+    timing_dict keys:
+      mongo_ranked_find_ms, python_build_jobs_ms, n_ranked_raw, n_jobs, n_skipped_inactive, total_ms
+    """
+    t_total = time.perf_counter()
+    t0 = time.perf_counter()
+    ranked_cursor = db[MONGO_JOBS_COLLECTION].find(RANKED_JOBS_ACTIVE_FILTER)
+    ranked_docs = [d async for d in ranked_cursor]
+    mongo_ranked_find_ms = _ms(t0)
+
+    t0 = time.perf_counter()
+    jobs: List[dict] = []
+    skipped = 0
     for rd in ranked_docs:
-        job_id = str(rd.get("job_id", ""))
-        scraped = scraped_map.get(job_id, {})
+        built = build_job_dict_from_ranked(rd)
+        if built is None:
+            skipped += 1
+            continue
+        jobs.append(built)
 
-        lcs = rd.get("llm_classified_skills", {})
-        essential_ids = [
-            s["tabiya_skill_id"]
-            for s in lcs.get("essential", [])
-            if s.get("tabiya_skill_id")
-        ]
-        optional_ids = [
-            s["tabiya_skill_id"]
-            for s in lcs.get("optional", [])
-            if s.get("tabiya_skill_id")
-        ]
-
-        llm_attrs = rd.get("llm_job_attributes", {})
-        attributes = llm_attrs.get("attributes", {})
-
-        location = scraped.get("location") or ""
-
-        # Enrich work activities with importance/level from occupation taxonomy
-        wa_items = rd.get("work_activity", {}).get("items", [])
-        classified_occs = rd.get("classified_occupations", [])
-        onet_wa = _enrich_work_activities(wa_items, classified_occs) if wa_items else []
-
-        jobs.append({
-            "uuid": job_id,
-            "opportunity_title": scraped.get("title", "Unknown"),
-            "location": location,
-            "city": location,
-            "province": location,
-            "employer": scraped.get("employer"),
-            "employment_type": scraped.get("employment_type"),
-            "salary_text": scraped.get("salary_text"),
-            "closing_date": str(scraped.get("closing_date", "")),
-            "contract_type": scraped.get("employment_type", "full_time"),
-            "url": scraped.get("application_url"),
-            "essential_skills_origin_uuids": essential_ids,
-            "optional_skills_origin_uuids": optional_ids,
-            "skill_groups_origin_uuids": [],
-            "attributes": attributes,
-            "opportunity_description": scraped.get("description", ""),
-            "onet_work_activities": onet_wa,
-        })
-
-    logger.info("Loaded %d jobs from RankedJobs + ScrapedJobs", len(jobs))
-    return jobs
+    python_build_jobs_ms = _ms(t0)
+    total_ms = _ms(t_total)
+    logger.info(
+        "Loaded %d active jobs from %s (matched=%d, skipped_in_build=%d)",
+        len(jobs),
+        MONGO_JOBS_COLLECTION,
+        len(ranked_docs),
+        skipped,
+    )
+    return jobs, {
+        "mongo_ranked_find_ms": mongo_ranked_find_ms,
+        "python_build_jobs_ms": python_build_jobs_ms,
+        "n_ranked_raw": len(ranked_docs),
+        "n_jobs": len(jobs),
+        "n_skipped_inactive": skipped,
+        "get_all_jobs_total_ms": total_ms,
+    }
 
 
 _cached_occupations = None
 
 
 async def get_all_occupations():
-    """Load occupations from local JSON and flatten into the format expected by _match_items.
+    out, _ = await get_all_occupations_with_timing()
+    return out
 
-    The raw JSON has nested structure:
-      { occupation: {code, preferred_label, ...},
-        skills: {essential: {uuids, labels}, optional: {uuids, labels}},
-        counties_data: [{county, job_attributes}, ...] }
 
-    We flatten each occupation × county into one item with:
-      uuid, occupation_label, city, province, essential_skills_origin_uuids,
-      optional_skills_origin_uuids, attributes, etc.
+async def get_all_occupations_with_timing():
+    """Load occupations; returns (flat_list, timing_dict).
+
+    On cache hit, occupation_file_read_ms is 0 and occupation_cache_hit is True.
     """
     global _cached_occupations
+    t_total = time.perf_counter()
 
-    if _cached_occupations is None:
-        try:
-            json_path = os.path.join(os.path.dirname(__file__), "..", "data", "combined_occupation_database_with_wa.json")
-            with open(json_path, "r", encoding="utf-8") as f:
-                raw_occupations = json.load(f)
+    if _cached_occupations is not None:
+        total_ms = _ms(t_total)
+        return _cached_occupations, {
+            "occupation_cache_hit": True,
+            "occupation_file_read_ms": 0.0,
+            "occupation_json_parse_and_flatten_ms": 0.0,
+            "n_occupation_rows": len(_cached_occupations),
+            "get_all_occupations_total_ms": total_ms,
+        }
 
-            flattened = []
-            for entry in raw_occupations:
+    try:
+        t0 = time.perf_counter()
+        with open(OCCUPATION_JSON_PATH, "r", encoding="utf-8") as f:
+            raw_occupations = json.load(f)
+        file_read_and_json_ms = _ms(t0)
+
+        t1 = time.perf_counter()
+        flattened = []
+        for entry in raw_occupations:
                 occ = entry.get("occupation", {})
                 skills = entry.get("skills", {})
                 ess_uuids = skills.get("essential", {}).get("uuids", []) if isinstance(skills.get("essential"), dict) else []
@@ -262,16 +346,67 @@ async def get_all_occupations():
                         "skill_groups_origin_uuids": [],
                         "attributes": attributes,
                         "onet_work_activities": onet_wa,
-                    })
+                })
 
-            _cached_occupations = flattened
-            logger.info("Loaded %d occupation-county items from %d raw occupations", len(flattened), len(raw_occupations))
-        except Exception as e:
-            logger.exception(e)
-            raise RuntimeError(f"Failed to load occupations: {e}")
-
-    return _cached_occupations
+        flatten_ms = _ms(t1)
+        _cached_occupations = flattened
+        total_ms = _ms(t_total)
+        logger.info("Loaded %d occupation-county items from %d raw occupations", len(flattened), len(raw_occupations))
+        return _cached_occupations, {
+            "occupation_cache_hit": False,
+            "occupation_file_read_ms": file_read_and_json_ms,
+            "occupation_json_parse_and_flatten_ms": flatten_ms,
+            "n_occupation_rows": len(flattened),
+            "n_raw_occupation_entries": len(raw_occupations),
+            "get_all_occupations_total_ms": total_ms,
+        }
+    except Exception as e:
+        logger.exception(e)
+        raise RuntimeError(f"Failed to load occupations: {e}")
 
 
 async def close_mongo_connection():
     client.close()
+
+
+def _env_warmup_flag(name: str, default: bool = True) -> bool:
+    v = (os.getenv(name) or "").strip().lower()
+    if not v:
+        return default
+    return v in ("1", "true", "yes", "on")
+
+
+async def warmup_on_startup() -> None:
+    """Ping Mongo and preload heavy one-time caches. Called from FastAPI lifespan (not per /match).
+
+    Toggle with ``MONGO_WARMUP_ON_STARTUP``, ``WARMUP_OCCUPATIONS_CACHE``, ``WARMUP_WA_LOOKUP``
+    (see ``.env.example``). WA lookup defaults to off — jobs use pre-enriched ``onet_work_activities``.
+    """
+    if _env_warmup_flag("MONGO_WARMUP_ON_STARTUP", True):
+        t0 = time.perf_counter()
+        try:
+            await db.command("ping")
+            logger.info("Mongo warmup: ping ok (%.2f ms)", _ms(t0))
+        except Exception:
+            logger.exception("Mongo warmup: ping failed")
+    else:
+        logger.info("Mongo warmup skipped (MONGO_WARMUP_ON_STARTUP=0)")
+
+    if _env_warmup_flag("WARMUP_OCCUPATIONS_CACHE", True):
+        t0 = time.perf_counter()
+        try:
+            await get_all_occupations()
+            logger.info("Occupation cache warmup: ok (%.2f ms)", _ms(t0))
+        except Exception:
+            logger.exception("Occupation cache warmup failed")
+    else:
+        logger.info("Occupation cache warmup skipped (WARMUP_OCCUPATIONS_CACHE=0)")
+
+    if _env_warmup_flag("WARMUP_WA_LOOKUP", False):
+        try:
+            _load_wa_lookup()
+            logger.info("WA taxonomy lookup: built at startup")
+        except Exception:
+            logger.exception("WA lookup warmup failed")
+    else:
+        logger.info("WA lookup warmup skipped (enriched jobs carry onet_work_activities; set WARMUP_WA_LOOKUP=1 to force)")

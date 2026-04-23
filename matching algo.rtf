@@ -1,0 +1,96 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Arial-BoldMT;\f2\froman\fcharset0 Times-Roman;
+\f3\fswiss\fcharset0 Arial-ItalicMT;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;\red251\green251\blue251;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c98824\c98824\c98824;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww17600\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa373\qj\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 As our database grows, calculating this full\'a0 U_hat\'d7p_hat\uc0\u8203 \'a0 formula for every single user-job pair will eventually become a massive computation and latency bottleneck. My optimal suggestion here is use a 
+\f1\b two-stage recommendation funnel
+\f0\b0  to maintain scalability:\cb1 \
+\pard\pardeftab720\qj\partightenfactor0
+\cf0 \cb2 For our current implementation this fits like this : \cb1 \uc0\u8232 
+\f1\b \cb2 Stage 0: Database Retrieval & Hard Filters:\'a0\'a0
+\f2\b0\fs24 \
+
+\f0\fs29\fsmilli14667 Before we load any data into memory for ML scoring, we must push as much filtering down to the database layer as possible.
+\f2\fs24 \
+\pard\pardeftab720\sa293\qj\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 In our\'a0 database we are not deleting the expired jobs because they are required for analytics we are only controlling this via a is_active boolean filter.\'a0
+\f2\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls1\ilvl0
+\f1\b\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Active flag:
+\f0\b0  we only fetch those jobs for which is_active == true.\'a0 This will also handle the case of\'a0 expired jobs recommendations.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa293\qj\partightenfactor0
+\ls1\ilvl0
+\f1\b \cf0 \cb2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Location Bounding:
+\f0\b0  Apply the existing location/radius filter here.\cb1 \
+\pard\pardeftab720\qj\partightenfactor0
+
+\f1\b \cf0 \cb2 Stage 1: Feasibility & Success Propensity (
+\f0\b0 p_hat
+\f1\b ) \cb1 \uc0\u8232 
+\f0\b0 \cb2 For the jobs that survive Stage 0, we evaluate them purely from the recruiter's perspective: 
+\f3\i Is this candidate actually viable for this role?
+\f2\i0\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls2\ilvl0
+\f1\b\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Compute:
+\f0\b0  Calculate only what is required for the\'a0 p_hat and Sort by the P_hat score and keep only the 
+\f1\b Top-N 
+\f0\b0 \'a0(e.g., top 500\'961,000 jobs).\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa293\qj\partightenfactor0
+\ls2\ilvl0
+\f1\b \cf0 \cb2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Output of Stage 1:
+\f0\b0  A heavily reduced, rank-ordered list of highly feasible jobs, with the p_hat.\cb1 \
+\pard\pardeftab720\qj\partightenfactor0
+
+\f1\b \cf0 \cb2 Stage 2: Seeker Utility (
+\f0\b0 u_hat
+\f1\b ) & Final Ranking\'a0
+\f2\b0\fs24 \
+\pard\pardeftab720\qj\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 Now that we have a shortlist of jobs we 
+\f3\i know
+\f0\i0  the candidate is qualified for, we spend our compute cycles figuring out from 
+\f3\i the jobs for which the candidate is eligible which ones the candidate will actually want?.
+\f2\i0\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls3\ilvl0
+\f1\b\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Compute:
+\f0\b0  Run the \cb4 PreferenceScorer\cb2  to calculate u^ (soft preferences like salary, commute flexibility, work environment) 
+\f1\b only
+\f0\b0  on the 
+\f1\b Top-N
+\f0\b0  shortlisted.\cb1 \
+\ls3\ilvl0
+\f1\b \cb2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Final Score:
+\f0\b0  Calculate \cb4 final_score = u_hat * p_hat\cb2  (using the already cached\'a0 from Stage 1).\cb1 \
+\ls3\ilvl0
+\f1\b \cb2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Explainability Payload:
+\f0\b0  Re-sort the shortlist by the new \cb4 final_score\cb2 .and pick the final Top K that we actually return to the frontend (e.g., the top 50 jobs), we construct the full \cb4 score_breakdown\cb2  and \cb4 matched_preferences\cb2  diagnostic payload so the UI can explain 
+\f3\i why
+\f0\i0  the job was recommended.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf0 Output of Stage 2:
+\f0\b0  The final API response containing the heavily optimized recommendations, with a clear internal data contract noting that}

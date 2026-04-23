@@ -19,6 +19,11 @@ import argparse
 from pathlib import Path
 from unittest.mock import MagicMock
 
+from dotenv import load_dotenv
+
+# Load backend/.env before any app imports (paths, MONGO_*).
+load_dotenv(Path(__file__).resolve().parent / ".env")
+
 # ── 0. Fix OpenMP conflict on Windows with multiple conda packages ────────────
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -38,11 +43,12 @@ import app.config  # must be imported before skill_score/matching_service
 import app.services.preference_score
 import app.services.demand_score
 import app.services.skill_score
+from app.config import OCCUPATION_JSON_PATH
 
-# ── 4. Load local JSONL data ──────────────────────────────────────────────────
+# ── 4. Load local JSONL data (override with SUPPLY_JSONL_PATH / DEMAND_JSONL_PATH) ──
 REPO_ROOT = Path(__file__).parent.parent
-SUPPLY_PATH = REPO_ROOT / "data" / "supply.jsonl"
-DEMAND_PATH = REPO_ROOT / "data" / "demand.jsonl"
+SUPPLY_PATH = Path(os.getenv("SUPPLY_JSONL_PATH", str(REPO_ROOT / "data" / "supply.jsonl")))
+DEMAND_PATH = Path(os.getenv("DEMAND_JSONL_PATH", str(REPO_ROOT / "data" / "demand.jsonl")))
 
 
 def load_jsonl(path: Path) -> list:
@@ -52,7 +58,7 @@ def load_jsonl(path: Path) -> list:
 
 JOBS = load_jsonl(DEMAND_PATH)
 
-OCCUPATION_DB_PATH = REPO_ROOT / "data" / "combined_occupation_database_with_wa.json"
+OCCUPATION_DB_PATH = Path(OCCUPATION_JSON_PATH)
 with open(OCCUPATION_DB_PATH, "r", encoding="utf-8") as _f:
     _raw_occupations = json.load(_f)
 

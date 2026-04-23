@@ -2,7 +2,7 @@
 Real-data integration test for the matching service.
 
 Uses:
-  - RankedJobs collection (joined with ScrapedJobs) as job source
+  - RankedJobs collection (classifier_metadata + llm fields on the same document)
     → tabiya_skill_id used directly (matches retrained embedding model)
     → llm_job_attributes for preference-scoring attributes
   - Real user profiles from KenyaJobs_dev.users (mapped_skills + preference_vector)
@@ -40,66 +40,19 @@ def get_mongo_client():
 
 
 def load_ranked_jobs(client) -> List[Dict[str, Any]]:
-    """Transform RankedJobs + ScrapedJobs into the flat dict format
-    expected by match_single_user / _match_items.
+    """Transform RankedJobs into the flat dict format for match_single_user / _match_items.
 
-    Key mapping:
-      - essential_skills_origin_uuids ← llm_classified_skills.essential[].tabiya_skill_id
-      - optional_skills_origin_uuids  ← llm_classified_skills.optional[].tabiya_skill_id
-      - attributes                    ← llm_job_attributes.attributes
-      - title / location / employer   ← ScrapedJobs (joined via job_id)
+    Uses the same mapping as app.database.build_job_dict_from_ranked.
     """
+    from app.config import MONGO_JOBS_COLLECTION
+    from app.database import RANKED_JOBS_ACTIVE_FILTER, build_job_dict_from_ranked
+
     db = client["KenyaJobs"]
-
-    # Pre-load ScrapedJobs for joining
-    scraped_map: Dict[str, dict] = {}
-    for s in db["ScrapedJobs"].find():
-        scraped_map[str(s["_id"])] = s
-
-    jobs = []
-    for rd in db["RankedJobs"].find():
-        job_id = str(rd.get("job_id", ""))
-        scraped = scraped_map.get(job_id, {})
-
-        # Extract Tabiya skill IDs from llm_classified_skills
-        lcs = rd.get("llm_classified_skills", {})
-        essential_ids = [
-            s["tabiya_skill_id"]
-            for s in lcs.get("essential", [])
-            if s.get("tabiya_skill_id")
-        ]
-        optional_ids = [
-            s["tabiya_skill_id"]
-            for s in lcs.get("optional", [])
-            if s.get("tabiya_skill_id")
-        ]
-
-        # Extract attributes from llm_job_attributes
-        llm_attrs = rd.get("llm_job_attributes", {})
-        attributes = llm_attrs.get("attributes", {})
-
-        # Determine location — ScrapedJobs is authoritative
-        location = scraped.get("location") or ""
-
-        job = {
-            "uuid": job_id,
-            "opportunity_title": scraped.get("title", "Unknown"),
-            "location": location,
-            "city": location,
-            "province": location,
-            "employer": scraped.get("employer"),
-            "employment_type": scraped.get("employment_type"),
-            "salary_text": scraped.get("salary_text"),
-            "closing_date": scraped.get("closing_date"),
-            "contract_type": scraped.get("employment_type", "full_time"),
-            "url": scraped.get("application_url"),
-            "essential_skills_origin_uuids": essential_ids,
-            "optional_skills_origin_uuids": optional_ids,
-            "skill_groups_origin_uuids": [],
-            "attributes": attributes,
-            "opportunity_description": scraped.get("description", ""),
-        }
-        jobs.append(job)
+    jobs: List[Dict[str, Any]] = []
+    for rd in db[MONGO_JOBS_COLLECTION].find(RANKED_JOBS_ACTIVE_FILTER):
+        built = build_job_dict_from_ranked(rd)
+        if built is not None:
+            jobs.append(built)
 
     return jobs
 
@@ -298,7 +251,7 @@ def analyze_result(result: dict, jobs: list):
 def main():
     client = get_mongo_client()
 
-    print("Loading RankedJobs + ScrapedJobs...")
+    print("Loading RankedJobs...")
     jobs = load_ranked_jobs(client)
     logger.info(f"Loaded {len(jobs)} jobs from RankedJobs")
 

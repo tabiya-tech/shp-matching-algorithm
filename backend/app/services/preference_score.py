@@ -1,7 +1,8 @@
 import math
 import re
+
 # src/preference_scorer.py
-from app.config import PREFERENCE_CONFIG
+from app.config import PREFERENCE_CONFIG, PREFERENCE_LEGACY_SCORE_SCALE, PREFERENCE_SIGMOID_NUMERATOR
 
 
 class PreferenceScorer:
@@ -34,7 +35,9 @@ class PreferenceScorer:
         # Dynamic sigmoid scaling: sigmoid(max_raw * factor) ≈ 0.98
         # so a perfect match on all enabled attributes reaches ~0.98.
         max_positive_sum = sum(abs(s["beta"]) for s in self._enabled_attrs.values())
-        self._sigmoid_factor = 4.0 / max_positive_sum if max_positive_sum > 0 else 2.0
+        self._sigmoid_factor = (
+            PREFERENCE_SIGMOID_NUMERATOR / max_positive_sum if max_positive_sum > 0 else 2.0
+        )
 
     @staticmethod
     def _humanize_label(value: str):
@@ -137,8 +140,7 @@ class PreferenceScorer:
                 "wa_score_sum": round(wa_score_sum, 4),
             })
 
-        SCALING_FACTOR_LEGACY = 0.2
-        scaled_sum_legacy = raw_score_sum * SCALING_FACTOR_LEGACY
+        scaled_sum_legacy = raw_score_sum * PREFERENCE_LEGACY_SCORE_SCALE
 
         # --- u_hat: sigmoid-normalised utility in (0, 1) ---
         # Scaling factor is computed at init from enabled attributes so that

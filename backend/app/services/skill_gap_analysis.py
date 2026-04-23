@@ -6,8 +6,12 @@ Identifies skills that would be most useful for a user to learn based on:
 2. Number of jobs that would be unlocked or improved by learning the skill
 """
 
+import time
 import numpy as np
 from typing import List, Dict, Optional, Set
+
+def _ms(t0: float) -> float:
+    return (time.perf_counter() - t0) * 1000.0
 
 
 def analyze_skill_gaps(
@@ -17,6 +21,7 @@ def analyze_skill_gaps(
     skill_labels: Dict[str, str],
     top_k: int = 5,
     resolve_id=None,
+    timing_out: Optional[Dict] = None,
 ) -> List[Dict]:
     """
     Analyzes skill gaps for a user by finding skills that:
@@ -36,6 +41,9 @@ def analyze_skill_gaps(
         List of dicts with skill_id, skill_label, proximity_score, 
         job_unlock_count, and reasoning
     """
+    t_total = time.perf_counter()
+    uid = str(user_profile.get("user_id", "?"))
+    n_jobs = len(all_jobs)
     _resolve = resolve_id if resolve_id is not None else (lambda x: x)
 
     # 1. Extract user's existing skills (resolved to internal IDs)
@@ -52,8 +60,19 @@ def analyze_skill_gaps(
             user_skill_labels[resolved] = label
     
     if not user_skill_ids:
+        if timing_out is not None:
+            timing_out.update(
+                {
+                    "total_ms": _ms(t_total),
+                    "n_recommendations": 0,
+                    "n_candidates": 0,
+                    "n_jobs": n_jobs,
+                    "top_k": top_k,
+                    "skip_reason": "no_resolvable_user_skills",
+                }
+            )
         return []
-    
+
     # 2. Collect all candidate skills from all jobs, resolved to internal IDs
     candidate_skills: Set[str] = set()
     # Track original counts per resolved ID across jobs
@@ -69,8 +88,20 @@ def analyze_skill_gaps(
     candidate_skills -= user_skill_ids
     
     if not candidate_skills:
+        if timing_out is not None:
+            timing_out.update(
+                {
+                    "total_ms": _ms(t_total),
+                    "n_recommendations": 0,
+                    "n_candidates": 0,
+                    "n_user_skills": len(user_skill_ids),
+                    "n_jobs": n_jobs,
+                    "top_k": top_k,
+                    "skip_reason": "no_candidates_after_user_set",
+                }
+            )
         return []
-    
+
     # 3. Compute proximity score for each candidate
     user_mat = engine._rows(list(user_skill_ids))
     user_skill_ids_list = list(user_skill_ids)
@@ -151,4 +182,16 @@ def analyze_skill_gaps(
             "reasoning": reasoning
         })
     
+    total_ms = _ms(t_total)
+    if timing_out is not None:
+        timing_out.update(
+            {
+                "total_ms": total_ms,
+                "n_recommendations": len(recommendations),
+                "n_candidates": len(candidate_skills),
+                "n_jobs": n_jobs,
+                "top_k": top_k,
+                "skip_reason": None,
+            }
+        )
     return recommendations

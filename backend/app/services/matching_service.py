@@ -1,10 +1,19 @@
 from __future__ import annotations
 
-import logging
-from typing import Any, Dict, Optional
+import asyncio
+import time
+from typing import Any, Dict, List, Optional
 
-from app.config import DEMAND_SCORE_MAPPING, GLOBAL_WEIGHTS, SCORING_MODE
+from app.config import (
+    DEMAND_SCORE_MAPPING,
+    GLOBAL_WEIGHTS,
+    MATCH_TOP_K_OCCUPATIONS,
+    MATCH_TOP_K_OPPORTUNITIES,
+    MATCH_TOP_K_SKILL_GAPS,
+    SCORING_MODE,
+)
 from app.database import get_all_jobs, get_all_occupations
+from app.match_timing_log import log_match_step
 from app.services.preference_score import PreferenceScorer
 from app.services.skill_gap_analysis import analyze_skill_gaps
 from app.services.skill_score import SkillScorer
@@ -34,7 +43,11 @@ def _split_pref_details(pref_details: list) -> tuple:
             standard.append(d)
     return standard, wa_bws
 
-logger = logging.getLogger(__name__)
+
+def _ms(t0: float) -> float:
+    """Elapsed milliseconds since t0 = time.perf_counter()."""
+    return (time.perf_counter() - t0) * 1000.0
+
 
 def _job_matches_user_location(job: Dict[str, Any], user: Dict[str, Any]) -> bool:
     """Lenient location match.
@@ -245,19 +258,52 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
     }
 
 
-def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k: int = 10):
+def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k: int = 10) -> tuple[list, dict]:
     """
     Match user against items (opportunities or occupations) and return top recommendations.
+
+    Returns (recommendations, timing_meta). timing_meta includes per-stage ms for
+    u_hat (preference), skill+feasibility (embedding pair feeding p_hat), and
+    p_hat (SuccessPropensityScorer) in multiplicative mode.
 
     Supports two scoring modes (controlled by config.SCORING_MODE):
       - "multiplicative": final_score = u_hat * p_hat  (paper-aligned)
       - "additive":       final_score = w1*S_skills + w2*S_pref + w3*S_demand  (legacy)
     """
-    # Filter by location
+    uid = str(user.get("user_id", "?"))
+    n_in = len(items)
+
+    t0 = time.perf_counter()
     items = [item for item in items if _job_matches_user_location(item, user)]
+    filter_ms = _ms(t0)
+
+    empty_timing: dict = {
+        "item_type": item_type,
+        "n_in": n_in,
+        "n_after_filter": 0,
+        "filter_ms": filter_ms,
+        "n_scored": 0,
+        "scoring_mode": SCORING_MODE,
+        "u_hat_ms": 0.0,
+        "skill_feasibility_ms": 0.0,
+        "p_hat_ms": 0.0,
+        "legacy_skill_ms": 0.0,
+        "legacy_demand_ms": 0.0,
+        "total_scoring_ms": 0.0,
+        "format_recommendations_ms": 0.0,
+    }
 
     if not items:
-        return []
+        log_match_step(
+            "matching_service",
+            "match_items (no matches after location filter)",
+            user_id=uid,
+            item_type=item_type,
+            n_in=n_in,
+            n_after_filter=0,
+            filter_ms=filter_ms,
+        )
+        return [], empty_timing
 
     scoring_mode = SCORING_MODE
 
@@ -267,20 +313,29 @@ def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k:
         from app.services.demand_score import DemandScorer
         _demand_scorer = DemandScorer()
 
+    t_score = time.perf_counter()
+    sum_u = 0.0
+    sum_sk = 0.0
+    sum_p = 0.0
+    sum_leg_s = 0.0
+    sum_leg_d = 0.0
+    n_scored = 0
     # Calculate scores for all items
-    recommendations = []
+    recommendations: List[dict] = []
     for item in items:
-        # --- Skill diagnostics (always computed for explainability) ---
-        skill = scorer_skill.calculate_score(user, item)
-
-        # --- Preference / utility ---
+        n_scored += 1
+        t_u = time.perf_counter()
         pref = scorer_pref.calculate_score(user, item)
+        sum_u += _ms(t_u)
 
         if scoring_mode == "multiplicative":
-            # --- Feasibility signals (Node2Vec-based, geometric mean) ---
-            feasibility = scorer_skill.calculate_feasibility(user, item)
-            # --- Success propensity (p_hat) ---
+            # Single embedding / matmul pass for U + feasibility (p_hat)
+            t_sk = time.perf_counter()
+            skill, feasibility = scorer_skill.score_utility_and_feasibility(user, item)
+            sum_sk += _ms(t_sk)
+            t_p = time.perf_counter()
             p_hat_result = scorer_success.calculate_score(user, item, feasibility)
+            sum_p += _ms(t_p)
 
             u_hat = pref.get("u_hat", 0.5)
             p_hat = p_hat_result.get("p_hat", 0.0)
@@ -299,8 +354,13 @@ def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k:
                 "demand_label": p_hat_result.get("demand_label", "Unknown"),
             })
         else:
-            # Legacy additive mode
+            # Legacy additive: skill utility only (no feasibility / p_hat)
+            t_s = time.perf_counter()
+            skill = scorer_skill.calculate_score(user, item)
+            sum_leg_s += _ms(t_s)
+            t_d = time.perf_counter()
             demand = _demand_scorer.calculate_score(item)
+            sum_leg_d += _ms(t_d)
 
             w1 = GLOBAL_WEIGHTS["w1_skills"]
             w2 = GLOBAL_WEIGHTS["w2_preference"]
@@ -348,49 +408,136 @@ def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k:
     else:
         recommendations.sort(key=lambda x: x["score"], reverse=True)
 
-    top = recommendations[:top_k]
+    # Keep only top_k so we release large per-item dicts (skill_details, p_hat) for the rest
+    recommendations = recommendations[:top_k]
+    total_scoring_ms = _ms(t_score)
 
+    t_fmt = time.perf_counter()
     # Format based on item type
     formatter = _format_occupation if item_type == "occupation" else _format_opportunity
-    return [formatter(r["item"], i, r) for i, r in enumerate(top, 1)]
+    out = [formatter(r["item"], i, r) for i, r in enumerate(recommendations, 1)]
+    format_recommendations_ms = _ms(t_fmt)
+
+    timing: dict = {
+        "item_type": item_type,
+        "n_in": n_in,
+        "n_after_filter": n_scored,
+        "filter_ms": filter_ms,
+        "n_scored": n_scored,
+        "scoring_mode": scoring_mode,
+        "u_hat_ms": round(sum_u, 2),
+        "skill_feasibility_ms": round(sum_sk, 2),
+        "p_hat_ms": round(sum_p, 2),
+        "legacy_skill_ms": round(sum_leg_s, 2),
+        "legacy_demand_ms": round(sum_leg_d, 2),
+        "total_scoring_ms": round(total_scoring_ms, 2),
+        "format_recommendations_ms": round(format_recommendations_ms, 2),
+    }
+    return out, timing
 
 
-async def match_single_user(user: dict):
+def match_user_with_data(
+    user: dict,
+    jobs: List[dict],
+    occupations: List[dict],
+) -> dict:
+    """Synchronous matching using pre-fetched job and occupation lists (CPU-bound; run in a thread from async)."""
     user_id = user.get("user_id")
     if not user_id:
         raise ValueError("user must include user_id")
 
-    # Fetch all jobs and occupations from the database
-    jobs = await get_all_jobs()
-    logger.info(f"fetched {len(jobs)} jobs to match against")
-    occupations = await get_all_occupations()
-    logger.info(f"fetched {len(occupations)} occupations to match against")
+    uid = str(user_id)
+    t_total = time.perf_counter()
 
     if not jobs and not occupations:
+        log_match_step(
+            "matching_service",
+            "match_user_with_data (empty input)",
+            user_id=uid,
+            n_jobs=0,
+            n_occ=0,
+            total_ms=_ms(t_total),
+        )
         return {
-            "user_id": str(user_id),
+            "user_id": uid,
             "occupation_recommendations": [],
             "opportunity_recommendations": [],
             "skill_gap_recommendations": [],
         }
 
-    # Match against opportunities and occupations
-    opportunity_recommendations = _match_items(user, jobs, item_type="opportunity", top_k=5)
-    occupation_recommendations = _match_items(user, occupations, item_type="occupation", top_k=5)
+    t0 = time.perf_counter()
+    opportunity_recommendations, opp_timing = _match_items(
+        user, jobs, item_type="opportunity", top_k=MATCH_TOP_K_OPPORTUNITIES
+    )
+    t_opp = _ms(t0)
 
-    # Analyze skill gaps (use all jobs for better analysis)
+    t0 = time.perf_counter()
+    occupation_recommendations, occ_timing = _match_items(
+        user, occupations, item_type="occupation", top_k=MATCH_TOP_K_OCCUPATIONS
+    )
+    t_occ = _ms(t0)
+
+    t0 = time.perf_counter()
+    gap_stats: dict = {}
     skill_gaps = analyze_skill_gaps(
         user,
         jobs,
         scorer_skill.engine,
         scorer_skill.skill_labels,
-        top_k=5,
+        top_k=MATCH_TOP_K_SKILL_GAPS,
         resolve_id=scorer_skill._resolve_id,
+        timing_out=gap_stats,
+    )
+    t_gaps = _ms(t0)
+
+    total_ms = _ms(t_total)
+
+    def _prefix_keys(d: dict, prefix: str) -> dict:
+        return {f"{prefix}_{k}": v for k, v in d.items()}
+
+    gap_fields = {k: v for k, v in gap_stats.items() if v is not None}
+    log_match_step(
+        "matching_service",
+        "recommendation phases (u_hat, skill+feas, p_hat, skill gaps)",
+        user_id=uid,
+        scoring_mode=opp_timing.get("scoring_mode"),
+        opportunity_phase_ms=t_opp,
+        **_prefix_keys(opp_timing, "opp"),
+        occupation_phase_ms=t_occ,
+        **_prefix_keys(occ_timing, "occ"),
+        skill_gap_phase_ms=t_gaps,
+        n_jobs_for_skill_gap=len(jobs),
+        **{f"gap_{k}": v for k, v in gap_fields.items()},
+    )
+    log_match_step(
+        "matching_service",
+        "match_user_with_data (phase totals vs pipeline)",
+        user_id=uid,
+        n_jobs=len(jobs),
+        n_occupation_rows=len(occupations),
+        opportunities_ms=t_opp,
+        occupations_ms=t_occ,
+        skill_gaps_ms=t_gaps,
+        match_pipeline_total_ms=total_ms,
     )
 
     return {
-        "user_id": str(user_id),
+        "user_id": uid,
         "occupation_recommendations": occupation_recommendations,
         "opportunity_recommendations": opportunity_recommendations,
         "skill_gap_recommendations": skill_gaps,
     }
+
+
+async def match_single_user(
+    user: dict,
+    jobs: Optional[List[dict]] = None,
+    occupations: Optional[List[dict]] = None,
+) -> dict:
+    if jobs is None:
+        jobs = await get_all_jobs()
+    if occupations is None:
+        occupations = await get_all_occupations()
+
+    out = await asyncio.to_thread(match_user_with_data, user, jobs, occupations)
+    return out
