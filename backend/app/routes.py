@@ -6,11 +6,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException
 
 from app.schemas import MatchRequest, MatchResponse
-from app.database import (
-    DATABASE_NAME,
-    get_all_jobs_with_timing,
-    get_all_occupations_with_timing,
-)
+from app.database import get_all_jobs_with_timing, get_all_occupations_with_timing
 from app.match_timing_log import log_match_step
 from app.services.matching_service import match_user_with_data
 
@@ -49,8 +45,8 @@ async def match(payload: List[MatchRequest]):
 
         # Mongo ping runs at app startup (warmup_on_startup), not here — avoids multi-second noise per request.
         t_fetch = time.perf_counter()
-        (jobs, jm), (occ, om) = await asyncio.gather(
-            get_all_jobs_with_timing(),
+        (jobs, _), (occ, _) = await asyncio.gather(
+            get_all_jobs_with_timing(users=users),
             get_all_occupations_with_timing(),
         )
         fetch_parallel_wall_ms = _ms(t_fetch)
@@ -59,17 +55,6 @@ async def match(payload: List[MatchRequest]):
         results = await asyncio.gather(*tasks)
         scoring_ms = _ms(t_score)
 
-        log_match_step(
-            "http /match",
-            "data & connection (infrastructure)",
-            n_users=n_users,
-            mongo_db_name=DATABASE_NAME,
-            # Jobs: MONGO_JOBS_COLLECTION (enriched); is_active true; listing fields in classifier_metadata
-            **{f"jobs_{k}": v for k, v in jm.items()},
-            # Occupations (local JSON, cached after first load)
-            **{f"occ_{k}": v for k, v in om.items()},
-            fetch_parallel_wall_ms=fetch_parallel_wall_ms,
-        )
         log_match_step(
             "http /match",
             "request (summary)",

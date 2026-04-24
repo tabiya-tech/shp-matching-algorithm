@@ -1,6 +1,3 @@
-# Scoring, paths, and tunables. Override via environment (see .env.example).
-# ---------------------------------------------------------------------------
-
 from __future__ import annotations
 
 import os
@@ -36,11 +33,26 @@ def _i(key: str, default: int) -> int:
     return int(v)
 
 
+def _b(key: str, default: bool) -> bool:
+    v = (os.getenv(key) or "").strip().lower()
+    if not v:
+        return default
+    return v in ("1", "true", "yes", "on")
+
+
 # ---------------------------------------------------------------------------
 # Mongo — job source (enriched collection from migration / reranker)
 # ---------------------------------------------------------------------------
 # Default: RankedJobsEnriched (see scripts/enrich_ranked_jobs_to_new_collection.py). Set to RankedJobs for legacy.
 MONGO_JOBS_COLLECTION: str = _s("MONGO_JOBS_COLLECTION", "RankedJobsEnriched")
+
+# HTTP /match: when set, load at most N jobs with is_active + (remote OR per-user location),
+# as a superset of matching_service._job_matches_user_location. Set to 0 to disable
+# the extra filter and load all active jobs (scripts, back-compat).
+JOBS_RETRIEVAL_FILTER: bool = _b("JOBS_RETRIEVAL_FILTER", True)
+JOBS_RETRIEVAL_LIMIT: int = _i("JOBS_RETRIEVAL_LIMIT", 10_000)
+# Mongo find() inclusion projection (fields used by build_job_dict_from_ranked). Set 0 to load full documents.
+JOBS_FIND_USE_PROJECTION: bool = _b("JOBS_FIND_USE_PROJECTION", True)
 
 
 # ---------------------------------------------------------------------------
@@ -64,10 +76,21 @@ MATCH_TOP_K_OPPORTUNITIES: int = _i("MATCH_TOP_K_OPPORTUNITIES", 5)
 MATCH_TOP_K_OCCUPATIONS: int = _i("MATCH_TOP_K_OCCUPATIONS", 5)
 MATCH_TOP_K_SKILL_GAPS: int = _i("MATCH_TOP_K_SKILL_GAPS", 5)
 
+# When false, skip _job_matches_user_location in _match_items (opportunities and occupations).
+# Mongo prefilter is separate: JOBS_RETRIEVAL_FILTER. Default true keeps current behaviour.
+MATCH_APPLY_LOCATION_FILTER: bool = _b("MATCH_APPLY_LOCATION_FILTER", True)
+
 # ---------------------------------------------------------------------------
 # Success propensity  (p_hat = G * E^alpha * R^beta * M^gamma)
 # ---------------------------------------------------------------------------
 GATE_SIMILARITY_THRESHOLD: float = _f("GATE_SIMILARITY_THRESHOLD", 0.35)
+# Response filtering threshold for scored skill outputs:
+# - essential_skill_matches.similarity in opportunities/occupations
+# - skill_gap_recommendations.proximity_score
+MATCH_RESPONSE_SKILL_MIN_SCORE: float = _f(
+    "MATCH_RESPONSE_SKILL_MIN_SCORE",
+    GATE_SIMILARITY_THRESHOLD,
+)
 
 SUCCESS_PROPENSITY_CONFIG: Dict[str, Any] = {
     "alpha_essential": _f("PHAT_ALPHA_ESSENTIAL", 0.5),

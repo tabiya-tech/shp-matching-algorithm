@@ -7,6 +7,8 @@ from typing import Any, Dict, List, Optional
 from app.config import (
     DEMAND_SCORE_MAPPING,
     GLOBAL_WEIGHTS,
+    MATCH_APPLY_LOCATION_FILTER,
+    MATCH_RESPONSE_SKILL_MIN_SCORE,
     MATCH_TOP_K_OCCUPATIONS,
     MATCH_TOP_K_OPPORTUNITIES,
     MATCH_TOP_K_SKILL_GAPS,
@@ -47,6 +49,23 @@ def _split_pref_details(pref_details: list) -> tuple:
 def _ms(t0: float) -> float:
     """Elapsed milliseconds since t0 = time.perf_counter()."""
     return (time.perf_counter() - t0) * 1000.0
+
+
+def _filter_essential_skill_matches(match_details: dict) -> list[dict]:
+    """Keep only essential skill matches whose similarity passes response threshold."""
+    essential = match_details.get("essential_skill_matches", [])
+    return [
+        m for m in essential
+        if float(m.get("similarity", 0.0)) >= MATCH_RESPONSE_SKILL_MIN_SCORE
+    ]
+
+
+def _filter_skill_gap_recommendations(skill_gaps: list[dict]) -> list[dict]:
+    """Keep only skill-gap rows whose proximity passes response threshold."""
+    return [
+        g for g in skill_gaps
+        if float(g.get("proximity_score", 0.0)) >= MATCH_RESPONSE_SKILL_MIN_SCORE
+    ][:MATCH_TOP_K_SKILL_GAPS]
 
 
 def _job_matches_user_location(job: Dict[str, Any], user: Dict[str, Any]) -> bool:
@@ -173,6 +192,7 @@ def _format_opportunity(item: dict, rank: int, recommendation: dict) -> dict:
             recommendation.get("demand_score", 0.5),
             recommendation.get("demand_label", "Unknown"),
         )
+    essential_matches = _filter_essential_skill_matches(match_details)
 
     return {
         "uuid": item.get("uuid"),
@@ -200,7 +220,7 @@ def _format_opportunity(item: dict, rank: int, recommendation: dict) -> dict:
         "final_score": round(float(recommendation["score"]), 4),
         "score_breakdown": breakdown,
         "matched_skills": {
-            "essential_skill_matches": match_details.get("essential_skill_matches", []),
+            "essential_skill_matches": essential_matches,
             "optional_exact_matches": match_details.get("optional_exact_matches", []),
             "skill_group_matches": match_details.get("skill_group_matches", []),
         },
@@ -231,6 +251,7 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
             recommendation.get("demand_score", 0.5),
             recommendation.get("demand_label", "Unknown"),
         )
+    essential_matches = _filter_essential_skill_matches(match_details)
 
     return {
         "uuid": item.get("uuid"),
@@ -249,7 +270,7 @@ def _format_occupation(item: dict, rank: int, recommendation: dict) -> dict:
         "final_score": round(float(recommendation["score"]), 4),
         "score_breakdown": breakdown,
         "matched_skills": {
-            "essential_skill_matches": match_details.get("essential_skill_matches", []),
+            "essential_skill_matches": essential_matches,
             "optional_exact_matches": match_details.get("optional_exact_matches", []),
             "skill_group_matches": match_details.get("skill_group_matches", []),
         },
@@ -274,7 +295,8 @@ def _match_items(user: dict, items: list, item_type: str = "opportunity", top_k:
     n_in = len(items)
 
     t0 = time.perf_counter()
-    items = [item for item in items if _job_matches_user_location(item, user)]
+    if MATCH_APPLY_LOCATION_FILTER:
+        items = [item for item in items if _job_matches_user_location(item, user)]
     filter_ms = _ms(t0)
 
     empty_timing: dict = {
@@ -478,7 +500,6 @@ def match_user_with_data(
     t_occ = _ms(t0)
 
     t0 = time.perf_counter()
-    gap_stats: dict = {}
     skill_gaps = analyze_skill_gaps(
         user,
         jobs,
@@ -486,29 +507,13 @@ def match_user_with_data(
         scorer_skill.skill_labels,
         top_k=MATCH_TOP_K_SKILL_GAPS,
         resolve_id=scorer_skill._resolve_id,
-        timing_out=gap_stats,
+        timing_out=None,
     )
+    skill_gaps = _filter_skill_gap_recommendations(skill_gaps)
     t_gaps = _ms(t0)
 
     total_ms = _ms(t_total)
 
-    def _prefix_keys(d: dict, prefix: str) -> dict:
-        return {f"{prefix}_{k}": v for k, v in d.items()}
-
-    gap_fields = {k: v for k, v in gap_stats.items() if v is not None}
-    log_match_step(
-        "matching_service",
-        "recommendation phases (u_hat, skill+feas, p_hat, skill gaps)",
-        user_id=uid,
-        scoring_mode=opp_timing.get("scoring_mode"),
-        opportunity_phase_ms=t_opp,
-        **_prefix_keys(opp_timing, "opp"),
-        occupation_phase_ms=t_occ,
-        **_prefix_keys(occ_timing, "occ"),
-        skill_gap_phase_ms=t_gaps,
-        n_jobs_for_skill_gap=len(jobs),
-        **{f"gap_{k}": v for k, v in gap_fields.items()},
-    )
     log_match_step(
         "matching_service",
         "match_user_with_data (phase totals vs pipeline)",

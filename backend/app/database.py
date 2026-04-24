@@ -1,13 +1,20 @@
+import json
 import logging
 import os
-import json
+import re
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Sequence
 
 from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
-from app.config import MONGO_JOBS_COLLECTION, OCCUPATION_JSON_PATH
+from app.config import (
+    JOBS_FIND_USE_PROJECTION,
+    JOBS_RETRIEVAL_FILTER,
+    JOBS_RETRIEVAL_LIMIT,
+    MONGO_JOBS_COLLECTION,
+    OCCUPATION_JSON_PATH,
+)
 
 load_dotenv()
 
@@ -18,7 +25,17 @@ DATABASE_NAME = os.getenv("MONGO_DB_NAME")
 if not MONGO_URL:
     raise ValueError("MONGO_URL environment variable is not set")
 
-client = AsyncIOMotorClient(MONGO_URL)
+_mongo_sel_ms = int((os.getenv("MONGO_SERVER_SELECTION_TIMEOUT_MS") or "30000").strip() or "30000")
+_mongo_max_pool = int((os.getenv("MONGO_MAX_POOL_SIZE") or "50").strip() or "50")
+_mongo_min_pool = int((os.getenv("MONGO_MIN_POOL_SIZE") or "0").strip() or "0")
+_mongo_client_kwargs: Dict[str, Any] = {
+    "serverSelectionTimeoutMS": _mongo_sel_ms,
+    "maxPoolSize": max(1, _mongo_max_pool),
+}
+if _mongo_min_pool > 0:
+    _mongo_client_kwargs["minPoolSize"] = _mongo_min_pool
+
+client = AsyncIOMotorClient(MONGO_URL, **_mongo_client_kwargs)
 db = client[DATABASE_NAME]
 
 logger = logging.getLogger(__name__)
@@ -123,6 +140,30 @@ def get_database():
 # Recommended index: { "is_active": 1 } (plus compounds if you add more filters)
 RANKED_JOBS_ACTIVE_FILTER: Dict[str, Any] = {"is_active": True}
 
+# Ranked / enriched job docs: listing fields on classifier_metadata (see build_job_dict_from_ranked).
+_M_CITY = "classifier_metadata.city"
+_M_COUNTY = "classifier_metadata.county"
+
+# Inclusion projection for job find (must stay aligned with build_job_dict_from_ranked).
+RANKED_JOB_FIND_PROJECTION: Dict[str, int] = {
+    "job_id": 1,
+    "is_active": 1,
+    "classifier_metadata.city": 1,
+    "classifier_metadata.county": 1,
+    "classifier_metadata.title": 1,
+    "classifier_metadata.employer": 1,
+    "classifier_metadata.employment_type": 1,
+    "classifier_metadata.salary": 1,
+    "classifier_metadata.closing_date": 1,
+    "classifier_metadata.application_url": 1,
+    "classifier_metadata.job_description": 1,
+    "classifier_metadata.description": 1,
+    "llm_classified_skills": 1,
+    "llm_job_attributes": 1,
+    "onet_work_activities": 1,
+    "skill_groups_origin_uuids": 1,
+}
+
 
 def _ms(t0: float) -> float:
     return (time.perf_counter() - t0) * 1000.0
@@ -132,6 +173,92 @@ def _str_or_empty(v: Any) -> str:
     if v is None:
         return ""
     return str(v).strip() if isinstance(v, str) else str(v)
+
+
+def _norm_loc_value(v: Any) -> str:
+    """Casefold + strip, aligned with matching_service._norm for city/province."""
+    if v is None:
+        return ""
+    s = str(v).strip()
+    return s.casefold() if s else ""
+
+
+def _remote_substring_ors() -> List[Dict[str, Any]]:
+    r = "remote"
+    return [
+        {_M_CITY: {"$regex": r, "$options": "i"}},
+        {_M_COUNTY: {"$regex": r, "$options": "i"}},
+    ]
+
+
+def _field_contains_substr_regex(field: str, needle_cf: str) -> Optional[Dict[str, Any]]:
+    if not needle_cf:
+        return None
+    return {field: {"$regex": re.escape(needle_cf), "$options": "i"}}
+
+
+def _expr_haystack_contains_mongo_subfield(
+    haystack_casefold: str, dollar_field: str
+) -> Optional[Dict[str, Any]]:
+    """True when haystack (user string) contains the job’s city/county (Python: job in user).
+
+    Requires a non-empty job field: MongoDB matches an empty substring at index 0 for
+    ``$indexOfCP``, which would incorrectly match every document if city/county were missing.
+    """
+    if not haystack_casefold:
+        return None
+    needle = {"$ifNull": [{"$toLower": dollar_field}, ""]}
+    return {
+        "$expr": {
+            "$and": [
+                {"$gt": [{"$strLenCP": needle}, 0]},
+                {"$gte": [{"$indexOfCP": [haystack_casefold, needle]}, 0]},
+            ]
+        }
+    }
+
+
+def _location_or_clauses_for_one_user(user: dict) -> List[Dict[str, Any]]:
+    """Superset of matching_service._job_matches_user_location, on classifier_metadata fields."""
+    uc = _norm_loc_value(user.get("city"))
+    up = _norm_loc_value(user.get("province"))
+    ors: List[Dict[str, Any]] = list(_remote_substring_ors())
+    if not uc or not up:
+        return ors
+    for field in (_M_CITY, _M_COUNTY):
+        f_c = _field_contains_substr_regex(field, uc)
+        if f_c is not None:
+            ors.append(f_c)
+        f_p = _field_contains_substr_regex(field, up)
+        if f_p is not None:
+            ors.append(f_p)
+    for hay, fpath in (
+        (uc, "$classifier_metadata.city"),
+        (uc, "$classifier_metadata.county"),
+        (up, "$classifier_metadata.city"),
+        (up, "$classifier_metadata.county"),
+    ):
+        ex = _expr_haystack_contains_mongo_subfield(hay, fpath)
+        if ex is not None:
+            ors.append(ex)
+    return ors
+
+
+def build_mongo_filter_active_and_location(
+    users: Sequence[dict],
+) -> Optional[Dict[str, Any]]:
+    """
+    is_active and (OR of all per-user location clauses). None if the caller should
+    use active-only (no user context or empty list).
+    """
+    if not users:
+        return None
+    parts: List[Dict[str, Any]] = []
+    for u in users:
+        parts.extend(_location_or_clauses_for_one_user(u))
+    if not parts:
+        return RANKED_JOBS_ACTIVE_FILTER
+    return {"$and": [RANKED_JOBS_ACTIVE_FILTER, {"$or": parts}]}
 
 
 def build_job_dict_from_ranked(rd: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -206,25 +333,47 @@ def build_job_dict_from_ranked(rd: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     }
 
 
-async def get_all_jobs():
+async def get_all_jobs(users: Optional[Sequence[dict]] = None):
     """Load jobs from ``MONGO_JOBS_COLLECTION`` (enriched rows: onet WA + skill groups on document)."""
-    out, _ = await get_all_jobs_with_timing()
+    out, _ = await get_all_jobs_with_timing(users=users)
     return out
 
 
-async def get_all_jobs_with_timing():
+async def get_all_jobs_with_timing(users: Optional[Sequence[dict]] = None):
     """Same as get_all_jobs; returns (jobs, timing_dict) for observability.
 
     Reads from ``MONGO_JOBS_COLLECTION`` (default ``RankedJobsEnriched``). Only documents with
     top-level ``is_active`` equal to true are loaded.
 
+    If ``JOBS_RETRIEVAL_FILTER`` is true and ``users`` is non-empty, the query also ORs
+    per-user location clauses (superset of ``_job_matches_user_location`` on
+    ``classifier_metadata``), sorts by ``_id`` descending, and applies ``JOBS_RETRIEVAL_LIMIT``.
+    With no ``users`` (or filter off), behavior matches the previous active-only ``find`` with no
+    sort or cap.
+
     timing_dict keys:
-      mongo_ranked_find_ms, python_build_jobs_ms, n_ranked_raw, n_jobs, n_skipped_inactive, total_ms
+      mongo_ranked_find_ms, python_build_jobs_ms, n_ranked_raw, n_jobs, n_skipped_inactive, total_ms,
+      jobs_retrieval_filter_applied, jobs_find_use_projection
     """
     t_total = time.perf_counter()
     t0 = time.perf_counter()
-    ranked_cursor = db[MONGO_JOBS_COLLECTION].find(RANKED_JOBS_ACTIVE_FILTER)
-    ranked_docs = [d async for d in ranked_cursor]
+    filt: Dict[str, Any] = RANKED_JOBS_ACTIVE_FILTER
+    retrieval_applied = False
+    if JOBS_RETRIEVAL_FILTER and users:
+        built = build_mongo_filter_active_and_location(users)
+        if built is not None and built != RANKED_JOBS_ACTIVE_FILTER:
+            filt = built
+            retrieval_applied = True
+    col = db[MONGO_JOBS_COLLECTION]
+    if JOBS_FIND_USE_PROJECTION:
+        cursor = col.find(filt, RANKED_JOB_FIND_PROJECTION)
+    else:
+        cursor = col.find(filt)
+    if retrieval_applied:
+        cursor = cursor.sort([("_id", -1)])
+        if JOBS_RETRIEVAL_LIMIT > 0:
+            cursor = cursor.limit(JOBS_RETRIEVAL_LIMIT)
+    ranked_docs = [d async for d in cursor]
     mongo_ranked_find_ms = _ms(t0)
 
     t0 = time.perf_counter()
@@ -253,6 +402,8 @@ async def get_all_jobs_with_timing():
         "n_jobs": len(jobs),
         "n_skipped_inactive": skipped,
         "get_all_jobs_total_ms": total_ms,
+        "jobs_retrieval_filter_applied": retrieval_applied,
+        "jobs_find_use_projection": JOBS_FIND_USE_PROJECTION,
     }
 
 
