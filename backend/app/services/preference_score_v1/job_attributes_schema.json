@@ -1,0 +1,49 @@
+{
+  "_doc": "DCE attribute schema for the unified preference scorer. Each attribute's `levels` are ordered REFERENCE (ladder 0) -> TARGET (ladder 1). The user's preference_vector[attr] = sigmoid(beta of the TARGET level vs the reference), so beta_hat = logit(v) > 0 means the user prefers the target level. Level ids are the canonical job-side `selected_level_id` values emitted by the occupations DB / llm_job_attributes; resolve_schema_level_id matches them directly (no alias needed). Ordering choices are validated by the directional tests in backend/tests/test_dce_utility.py.",
+  "attributes": [
+    {
+      "name": "earnings_per_month",
+      "label": "Monthly Earnings",
+      "reference_level_id": "earn_15k",
+      "target_note": "continuous earnings; higher = target. v>0.5 => prefers higher pay.",
+      "levels": [
+        {"id": "earn_15k", "label": "~15k"},
+        {"id": "earn_30k", "label": "~30k"},
+        {"id": "earn_50k", "label": "~50k"},
+        {"id": "earn_70k", "label": "~70k"}
+      ]
+    },
+    {
+      "name": "career_growth",
+      "label": "Career Growth",
+      "reference_level_id": "growth_low",
+      "target_note": "value encodes growth_high part-worth. v>0.5 => prefers strong growth.",
+      "levels": [
+        {"id": "growth_low", "label": "Few prospects"},
+        {"id": "growth_med", "label": "Some prospects"},
+        {"id": "growth_high", "label": "Strong prospects"}
+      ]
+    },
+    {
+      "name": "physical_demand",
+      "label": "Physical Demand & Risk",
+      "reference_level_id": "phys_heavy",
+      "target_note": "CONFIRMED via Compass elicitation (schema_loader.extract_term_features + agent._sync_*): the physical_demand_phys_heavy feature is flipped (direction=negative), so the matcher value encodes preference for LIGHT/SAFE work: v>0.5 => prefers light. Hence target=phys_light (ladder 1), reference=phys_heavy (ladder 0): a light job rewards a light-preferring user; a heavy job is the 0 baseline.",
+      "levels": [
+        {"id": "phys_heavy", "label": "Heavy / risky"},
+        {"id": "phys_light", "label": "Light / safe"}
+      ]
+    },
+    {
+      "name": "social_interaction",
+      "label": "Social Interaction",
+      "reference_level_id": "soc_alone",
+      "target_note": "reference=alone; v>0.5 means preference for more interaction vs alone (no direction flip). CAVEAT: under the current Compass->matcher field mapping the matcher's social_interaction value is typically left neutral (0.5) — the elicited social signal routes to task_content/social_meaning, which have no job-side attribute — so this usually contributes 0. Also the pilot found peers (+0.36) > customers (+0.08), so the single alone->peers->customers ladder is an approximation of a non-monotone preference.",
+      "levels": [
+        {"id": "soc_alone", "label": "Work alone"},
+        {"id": "soc_peers", "label": "With peers"},
+        {"id": "soc_customers", "label": "With customers"}
+      ]
+    }
+  ]
+}

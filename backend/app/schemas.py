@@ -10,23 +10,29 @@ class SkillsVector(BaseModel):
     top_skills: List[Skill] = Field(default_factory=list)
 
 class PreferenceVector(BaseModel):
-    earnings_per_month: float
-    task_content: Optional[float] = 0.0
-    physical_demand: float
-    work_flexibility: Optional[float] = 0.0
-    social_interaction: float
-    career_growth: float
-    social_meaning: Optional[float] = 0.0
+    # All fields optional: a consumer may send a subset. Missing/0.5 = neutral in the DCE contract
+    # (0.5 = sigmoid(0) => recovered beta_hat = 0 => no contribution), so omitting a preference
+    # simply means "no signal" rather than a dislike.
+    earnings_per_month: float = 0.5
+    task_content: Optional[float] = 0.5
+    physical_demand: float = 0.5
+    work_flexibility: Optional[float] = 0.5
+    social_interaction: float = 0.5
+    career_growth: float = 0.5
+    social_meaning: Optional[float] = 0.5
     bws_scores: Optional[dict] = None
     top_10_bws: Optional[List[str]] = None
 
 class MatchRequest(BaseModel):
+    # Every field is optional so future consumers can send a subset and still get a valid response.
+    # Omitting location ("") relaxes the job location prefilter (and triggers the occupation
+    # random-county fallback); omitting preferences yields a neutral preference vector.
     user_id: Optional[str] = None
-    city: str
-    province: str
+    city: str = ""
+    province: str = ""
     skills_vector: SkillsVector = Field(default_factory=SkillsVector)
     skill_groups_origin_uuids: List[str] = Field(default_factory=list)
-    preference_vector: PreferenceVector
+    preference_vector: PreferenceVector = Field(default_factory=PreferenceVector)
     any_post_secondary_educ: Optional[int] = None
     number_post_secondary_educ: Optional[int] = None
     total_duration_postsec: Optional[float] = None
@@ -98,10 +104,18 @@ class MatchedWorkActivity(BaseModel):
     norm_importance: float
     norm_level: float
     wa_contribution: float
+    # Additive-RUM diagnostics (BWS_INTEGRATION_MODE="additive_rum")
+    weight: Optional[float] = None  # ŵ_c = WA_Importance / Σ WA_Importance (Σ = 1)
+    beta: Optional[float] = None    # β_c = user BWS part-worth for this activity
 
 class WorkActivityBWS(BaseModel):
     wa_score_sum: float = 0.0
     details: List[MatchedWorkActivity] = Field(default_factory=list)
+    # Additive-RUM diagnostics
+    wa_aggregation: Optional[str] = None
+    n_work_activities: Optional[int] = None
+    V_task: Optional[float] = None
+    V_task_hat: Optional[float] = None
 
 class OpportunityRecommendation(BaseModel):
     uuid: str
