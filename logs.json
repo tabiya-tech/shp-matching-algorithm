@@ -1,0 +1,1319 @@
+[
+  {
+    "request": {
+      "user_id": "youth_220101890310862",
+      "city": "Mathare",
+      "province": "Nairobi",
+      "skills_vector": {
+        "top_skills": [
+          {
+            "preferredLabel": "install electricity sockets",
+            "originUUID": "c227cfde-0602-4a88-9429-de1d2e28b337",
+            "proficiency": 0.9291
+          },
+          {
+            "preferredLabel": "repair electronic components",
+            "originUUID": "617fea9f-3dc3-4fde-9016-403c743f9219",
+            "proficiency": 0.9128
+          },
+          {
+            "preferredLabel": "install electric switches",
+            "originUUID": "e4e5e783-7b2e-478c-a85c-33f98d6e438e",
+            "proficiency": 0.9109
+          },
+          {
+            "preferredLabel": "project management",
+            "originUUID": "5247a6ce-6ed0-4fb3-b121-758921dcc44e",
+            "proficiency": 0.907
+          },
+          {
+            "preferredLabel": "electrical engineering",
+            "originUUID": "bae98a32-9803-41da-b977-bad7044bccbd",
+            "proficiency": 0.9042
+          },
+          {
+            "preferredLabel": "electricity",
+            "originUUID": "7021ee9e-9e7e-4a61-864c-811998e1c767",
+            "proficiency": 0.8969
+          },
+          {
+            "preferredLabel": "perform project management",
+            "originUUID": "518bae5f-23cd-4d9d-8f7b-fccdf988a57c",
+            "proficiency": 0.8948
+          },
+          {
+            "preferredLabel": "use diagnostic tools for electronic repairs",
+            "originUUID": "c50be35d-13b7-4227-bdc9-296b6ada5925",
+            "proficiency": 0.8841
+          },
+          {
+            "preferredLabel": "test railway signalling equipment",
+            "originUUID": "564badd5-cfeb-42e4-853f-e50ec78ec13c",
+            "proficiency": 0.8438
+          },
+          {
+            "preferredLabel": "maintain railway signal equipment",
+            "originUUID": "32a61be6-f549-44e7-9f11-559b9c5c3ce4",
+            "proficiency": 0.8416
+          },
+          {
+            "preferredLabel": "install electricity meter",
+            "originUUID": "132b96ca-7533-413b-80f2-867b56ab85f4",
+            "proficiency": 0.7713
+          },
+          {
+            "preferredLabel": "disassemble mobile devices",
+            "originUUID": "224918a8-c392-49bb-bb52-ab3f8f105c7f",
+            "proficiency": 0.7671
+          },
+          {
+            "preferredLabel": "install circuit breakers",
+            "originUUID": "631a9fb4-14f1-4fa7-bd8e-1b38f0fef9a3",
+            "proficiency": 0.7501
+          },
+          {
+            "preferredLabel": "maintain microelectronics",
+            "originUUID": "1a3121a9-0f51-4497-9bdf-fb4f83118765",
+            "proficiency": 0.7451
+          },
+          {
+            "preferredLabel": "make electrical calculations",
+            "originUUID": "2ffa823c-79b8-43b4-a346-67c66dcd9cdb",
+            "proficiency": 0.7433
+          },
+          {
+            "preferredLabel": "design electrical systems",
+            "originUUID": "a5c34614-5da9-492f-96ba-11386f1a2670",
+            "proficiency": 0.7335
+          },
+          {
+            "preferredLabel": "ensure safety in electrical power operations",
+            "originUUID": "fed3a463-b9db-4881-9b08-0639ea052f55",
+            "proficiency": 0.7325
+          },
+          {
+            "preferredLabel": "create project specifications",
+            "originUUID": "08f1d4ab-2a52-4fc9-af88-28ab5919edac",
+            "proficiency": 0.7318
+          },
+          {
+            "preferredLabel": "develop product design",
+            "originUUID": "7b1c5904-d5e8-45a0-a59c-5a47abc31d36",
+            "proficiency": 0.7268
+          },
+          {
+            "preferredLabel": "interpret technical information for electronic repair work",
+            "originUUID": "7956c0a8-9385-4b80-b0f2-5b95038a51bf",
+            "proficiency": 0.7263
+          },
+          {
+            "preferredLabel": "manage engineering project",
+            "originUUID": "6a66e1ca-ac4c-4f44-b4eb-83c2d8dc5500",
+            "proficiency": 0.7236
+          },
+          {
+            "preferredLabel": "modern power signalling systems",
+            "originUUID": "52c12bf5-278a-484f-81f9-a384174a721b",
+            "proficiency": 0.7094
+          },
+          {
+            "preferredLabel": "test sensors",
+            "originUUID": "a2caa6fc-b108-4f01-9a28-8c1d5a73c406",
+            "proficiency": 0.7015
+          },
+          {
+            "preferredLabel": "write signalling reports",
+            "originUUID": "f9a0c649-6029-4edb-9c34-dfda7201d53e",
+            "proficiency": 0.6966
+          }
+        ]
+      },
+      "skill_groups_origin_uuids": [],
+      "preference_vector": {
+        "earnings_per_month": 0.6114726979096196,
+        "task_content": 0.0,
+        "physical_demand": 0.5,
+        "work_flexibility": 0.5,
+        "social_interaction": 0.5,
+        "career_growth": 0.7047956038995566,
+        "social_meaning": 0.0,
+        "bws_scores": {
+          "4.A.2.b.3": 2.7408094479477145,
+          "4.A.3.b.4": 2.4028380850014592,
+          "4.A.1.b.2": 2.35217820516756,
+          "4.A.2.a.4": 2.2781897449372757,
+          "4.A.4.a.5": 1.865074450032404,
+          "4.A.4.a.4": 1.655723676120315,
+          "4.A.2.b.2": 1.344040346124049,
+          "4.A.4.b.3": 1.3396843053447578,
+          "4.A.4.c.2": 0.9495031105556272,
+          "4.A.3.a.3": 0.8667738051540643,
+          "4.A.4.c.1": 0.6712549030074191,
+          "4.A.2.b.4": 0.6434876499401144,
+          "4.A.1.b.1": 0.4049158057291054,
+          "4.A.4.b.4": 0.2613684691234635,
+          "4.A.4.a.8": 0.15736114432731593,
+          "4.A.3.a.1": 0.09690875519615211,
+          "4.A.2.b.6": 0.06787066869283925,
+          "4.A.4.b.6": 0.05858857951809655,
+          "4.A.3.a.4": 0.016507989893331555,
+          "4.A.4.a.7": -0.12065428997859146,
+          "4.A.4.a.3": -0.16674458622387717,
+          "4.A.4.c.3": -0.17701770428165323,
+          "4.A.4.b.5": -0.2068257679578882,
+          "4.A.1.b.3": -0.21428897022656165,
+          "4.A.3.b.6": -0.32577657746519273,
+          "4.A.1.a.1": -0.37096153590532305,
+          "4.A.2.a.2": -0.6732088530596114,
+          "4.A.4.a.1": -0.673377600438224,
+          "4.A.2.b.1": -0.9322972685387075,
+          "4.A.3.b.1": -1.211540818560423,
+          "4.A.4.a.2": -1.4259167042875887,
+          "4.A.2.a.1": -1.4606202783936537,
+          "4.A.2.b.5": -1.692660582130766,
+          "4.A.3.a.2": -2.3879257917946215,
+          "4.A.2.a.3": -2.5328052688951654,
+          "4.A.1.a.2": -2.786392908236209,
+          "4.A.4.a.6": -2.8140636354390156
+        },
+        "top_10_bws": [
+          "4.A.2.b.3",
+          "4.A.3.b.4",
+          "4.A.1.b.2",
+          "4.A.2.a.4",
+          "4.A.4.a.5",
+          "4.A.4.a.4",
+          "4.A.2.b.2",
+          "4.A.4.b.3",
+          "4.A.4.c.2",
+          "4.A.3.a.3",
+          "4.A.4.c.1",
+          "4.A.2.b.4",
+          "4.A.1.b.1",
+          "4.A.4.b.4",
+          "4.A.4.a.8",
+          "4.A.3.a.1",
+          "4.A.2.b.6",
+          "4.A.4.b.6",
+          "4.A.3.a.4",
+          "4.A.4.a.7",
+          "4.A.4.a.3",
+          "4.A.4.c.3",
+          "4.A.4.b.5",
+          "4.A.1.b.3",
+          "4.A.3.b.6",
+          "4.A.1.a.1",
+          "4.A.2.a.2",
+          "4.A.4.a.1",
+          "4.A.2.b.1",
+          "4.A.3.b.1",
+          "4.A.4.a.2",
+          "4.A.2.a.1",
+          "4.A.2.b.5",
+          "4.A.3.a.2",
+          "4.A.2.a.3",
+          "4.A.1.a.2",
+          "4.A.4.a.6"
+        ]
+      },
+      "any_post_secondary_educ": 1,
+      "number_post_secondary_educ": 3,
+      "total_duration_postsec": 17.0
+    },
+    "response": {
+      "user_id": "youth_220101890310862",
+      "occupation_recommendations": [
+        {
+          "uuid": "3113_Nairobi",
+          "originUuid": "3113",
+          "rank": 1,
+          "occupation_label": "Electrical engineering technician",
+          "province": "Nairobi",
+          "is_eligible": true,
+          "justification": "Strong match on your electrical engineering, electricity, manage engineering project, test railway signalling equipment, repair electronic components, install electric switches, test sensors, write signalling reports and disassemble mobile devices skills. It fits your preferences for monthly earnings (~70k) and career growth (Strong prospects). This role is in very high demand.",
+          "occupation_description": "Electrical engineering technicians perform technical tasks to aid in electrical engineering research and in the design, manufacture, assembly, construction, operation, maintenance and repair of electrical equipment, facilities and distribution systems.",
+          "salary_range": "~70k",
+          "typical_tasks": [
+            "providing technical assistance in research on and development of electrical equipment and facilities, or testing prototypes",
+            "designing and preparing blueprints of electrical installations and circuitry according to the specifications given",
+            "preparing detailed estimates of quantities and costs of materials and labour required for manufacture and installation, according to the specifications given",
+            "monitoring technical aspects of the manufacture, installation, utilization, maintenance and repair of electrical systems and equipment to ensure satisfactory performance and compliance with specifications and regulations",
+            "planning installation methods, checking completed installation for safety and controls or undertaking the initial running of the new electrical equipment or systems",
+            "assembling, installing, testing, calibrating, modifying and repairing electrical equipment and installations to conform with regulations and safety requirements"
+          ],
+          "career_path_next_steps": [],
+          "final_score": 0.8148,
+          "score_breakdown": {
+            "u_hat": 0.8983,
+            "p_hat": 0.9071,
+            "p_hat_components": null,
+            "total_skill_utility": 0.574,
+            "skill_components": {
+              "loc": null,
+              "ess": 0.574,
+              "opt": 0.5805,
+              "grp": null
+            },
+            "skill_diagnostics": null,
+            "skill_penalty_applied": 0.5789,
+            "preference_score": 0.8983,
+            "preference_score_legacy": 0.8983,
+            "demand_score": 1.0,
+            "demand_label": "Very High Expected Demand"
+          },
+          "matched_skills": {
+            "essential_skill_matches": [
+              {
+                "job_skill_id": "687671b5ebd2bf665349b02d",
+                "job_skill_label": "electric motors",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5189,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b385",
+                "job_skill_label": "electrical engineering",
+                "best_user_skill_id": "687671b5ebd2bf665349b385",
+                "best_user_skill_label": "electrical engineering",
+                "similarity": 1.0,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349c8ab",
+                "job_skill_label": "metrology",
+                "best_user_skill_id": "687671b5ebd2bf665349b385",
+                "best_user_skill_label": "electrical engineering",
+                "similarity": 0.1865,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b8be",
+                "job_skill_label": "electrical discharge",
+                "best_user_skill_id": "687671b9ebd2bf665349bfae",
+                "best_user_skill_label": "install circuit breakers",
+                "similarity": 0.1675,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bb89",
+                "job_skill_label": "electrical power safety regulations",
+                "best_user_skill_id": "687671b5ebd2bf665349b460",
+                "best_user_skill_label": "use diagnostic tools for electronic repairs",
+                "similarity": 0.2456,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349c64d",
+                "job_skill_label": "electronics",
+                "best_user_skill_id": "687671bdebd2bf665349d66f",
+                "best_user_skill_label": "repair electronic components",
+                "similarity": 0.9057,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349cdc1",
+                "job_skill_label": "test electronic units",
+                "best_user_skill_id": "687671bdebd2bf665349d66f",
+                "best_user_skill_label": "repair electronic components",
+                "similarity": 0.827,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349cd7d",
+                "job_skill_label": "electric drives",
+                "best_user_skill_id": "687671b5ebd2bf665349ac90",
+                "best_user_skill_label": "write signalling reports",
+                "similarity": 0.227,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d0be",
+                "job_skill_label": "electrical testing methods",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.7275,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b427",
+                "job_skill_label": "assemble electrical components",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.9797,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671beebd2bf665349dc27",
+                "job_skill_label": "interpret electrical diagrams",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.9186,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d021",
+                "job_skill_label": "liaise with engineers",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4847,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bddb",
+                "job_skill_label": "oceanography",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5624,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b3c6",
+                "job_skill_label": "test electrical equipment",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.8063,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b798",
+                "job_skill_label": "align components",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4144,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b093",
+                "job_skill_label": "read assembly drawings",
+                "best_user_skill_id": "687671bdebd2bf665349d1bf",
+                "best_user_skill_label": "perform project management",
+                "similarity": 0.2474,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ac76",
+                "job_skill_label": "perform risk analysis",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4372,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d8dd",
+                "job_skill_label": "ensure conformity to specifications",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6057,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349af75",
+                "job_skill_label": "electrical equipment regulations",
+                "best_user_skill_id": "687671bdebd2bf665349cfae",
+                "best_user_skill_label": "install electric switches",
+                "similarity": 0.7825,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d0bb",
+                "job_skill_label": "electricity",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 1.0,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d560",
+                "job_skill_label": "ensure material compliance",
+                "best_user_skill_id": "687671b5ebd2bf665349af93",
+                "best_user_skill_label": "ensure safety in electrical power operations",
+                "similarity": 0.1556,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b414",
+                "job_skill_label": "develop preventive maintenance procedures for instruments",
+                "best_user_skill_id": "687671b5ebd2bf665349ad5c",
+                "best_user_skill_label": "create project specifications",
+                "similarity": 0.2083,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b96b",
+                "job_skill_label": "technical drawings",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.588,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bb11",
+                "job_skill_label": "wear appropriate protective gear",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5601,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349cbbd",
+                "job_skill_label": "read engineering drawings",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6069,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d4f0",
+                "job_skill_label": "apply health and safety standards",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4542,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349cefc",
+                "job_skill_label": "abide by regulations on banned materials",
+                "best_user_skill_id": "687671b9ebd2bf665349c335",
+                "best_user_skill_label": "maintain microelectronics",
+                "similarity": 0.3235,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349cb74",
+                "job_skill_label": "operate surveying instruments",
+                "best_user_skill_id": "687671b9ebd2bf665349bb13",
+                "best_user_skill_label": "make electrical calculations",
+                "similarity": 0.599,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d912",
+                "job_skill_label": "electrical machines",
+                "best_user_skill_id": "687671bdebd2bf665349cfae",
+                "best_user_skill_label": "install electric switches",
+                "similarity": 0.2716,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d76b",
+                "job_skill_label": "prepare production prototypes",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6005,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b24f",
+                "job_skill_label": "maintain electrical equipment",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.7992,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bca8",
+                "job_skill_label": "read standard blueprints",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5321,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349daa5",
+                "job_skill_label": "monitor electric generators",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6879,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349c46f",
+                "job_skill_label": "quality standards",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4765,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349cbf0",
+                "job_skill_label": "environmental engineering",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4822,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349a9da",
+                "job_skill_label": "quality assurance procedures",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5057,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349c019",
+                "job_skill_label": "assemble electromechanical systems",
+                "best_user_skill_id": "687671b9ebd2bf665349bdde",
+                "best_user_skill_label": "test sensors",
+                "similarity": 0.574,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bed3",
+                "job_skill_label": "engineering processes",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5881,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b6d4",
+                "job_skill_label": "energy performance of buildings",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5625,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ab4e",
+                "job_skill_label": "monitor machine operations",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6873,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b309",
+                "job_skill_label": "design drawings",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6094,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349c368",
+                "job_skill_label": "calibrate electronic instruments",
+                "best_user_skill_id": "687671bdebd2bf665349d66f",
+                "best_user_skill_label": "repair electronic components",
+                "similarity": 0.8783,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349cc17",
+                "job_skill_label": "promote innovative infrastructure design",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5097,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349dacb",
+                "job_skill_label": "renewable energy technologies",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6885,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b143",
+                "job_skill_label": "troubleshoot",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.541,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349c799",
+                "job_skill_label": "design electric power systems",
+                "best_user_skill_id": "687671b5ebd2bf665349ac90",
+                "best_user_skill_label": "write signalling reports",
+                "similarity": 0.1893,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ae7e",
+                "job_skill_label": "measure electrical characteristics",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.6516
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349aa31",
+                "job_skill_label": "apply soldering techniques",
+                "best_user_skill_id": "687671bdebd2bf665349d66f",
+                "best_user_skill_label": "repair electronic components",
+                "similarity": 0.5891,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b435",
+                "job_skill_label": "conduct quality control analysis",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4845,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ab07",
+                "job_skill_label": "prepare pieces for joining",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5557,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b465",
+                "job_skill_label": "adjust engineering designs",
+                "best_user_skill_id": "687671b9ebd2bf665349bb13",
+                "best_user_skill_label": "make electrical calculations",
+                "similarity": 0.1913,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349cc71",
+                "job_skill_label": "check system parameters against reference values",
+                "best_user_skill_id": "687671b9ebd2bf665349bdde",
+                "best_user_skill_label": "test sensors",
+                "similarity": 0.1545,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b63d",
+                "job_skill_label": "test electromechanical systems",
+                "best_user_skill_id": "687671b9ebd2bf665349bdde",
+                "best_user_skill_label": "test sensors",
+                "similarity": 0.5727,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d13a",
+                "job_skill_label": "fasten components",
+                "best_user_skill_id": "687671b9ebd2bf665349bdde",
+                "best_user_skill_label": "test sensors",
+                "similarity": 0.1809,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bced",
+                "job_skill_label": "instrument performance elements",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.634,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671baebd2bf665349c906",
+                "job_skill_label": "report defective manufacturing materials",
+                "best_user_skill_id": "687671b5ebd2bf665349ac90",
+                "best_user_skill_label": "write signalling reports",
+                "similarity": 0.8037,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bd0c",
+                "job_skill_label": "manage engineering project",
+                "best_user_skill_id": "687671b9ebd2bf665349bd0c",
+                "best_user_skill_label": "manage engineering project",
+                "similarity": 1.0,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b119",
+                "job_skill_label": "record test data",
+                "best_user_skill_id": "687671b5ebd2bf665349ac90",
+                "best_user_skill_label": "write signalling reports",
+                "similarity": 0.4913,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d84c",
+                "job_skill_label": "electrical wiring diagrams",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.853,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d390",
+                "job_skill_label": "assist scientific research",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.5886,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ace5",
+                "job_skill_label": "electricity principles",
+                "best_user_skill_id": "687671bdebd2bf665349d66f",
+                "best_user_skill_label": "repair electronic components",
+                "similarity": 0.7836,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b527",
+                "job_skill_label": "perform test run",
+                "best_user_skill_id": "687671b9ebd2bf665349bdde",
+                "best_user_skill_label": "test sensors",
+                "similarity": 0.8067,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d6b2",
+                "job_skill_label": "electrical equipment components",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.8807,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d9aa",
+                "job_skill_label": "operate soldering equipment",
+                "best_user_skill_id": "687671bdebd2bf665349d66f",
+                "best_user_skill_label": "repair electronic components",
+                "similarity": 0.8264,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ac8f",
+                "job_skill_label": "energy",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.4131,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349b77e",
+                "job_skill_label": "hydroelectricity",
+                "best_user_skill_id": "687671beebd2bf665349dbd8",
+                "best_user_skill_label": "develop product design",
+                "similarity": 0.1973,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349bf25",
+                "job_skill_label": "use testing equipment",
+                "best_user_skill_id": "687671bdebd2bf665349d8e4",
+                "best_user_skill_label": "test railway signalling equipment",
+                "similarity": 0.9117,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349c2d3",
+                "job_skill_label": "communicate test results to other departments",
+                "best_user_skill_id": "687671b5ebd2bf665349ac90",
+                "best_user_skill_label": "write signalling reports",
+                "similarity": 0.7838,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349ab9d",
+                "job_skill_label": "electronic equipment standards",
+                "best_user_skill_id": "687671bdebd2bf665349cfae",
+                "best_user_skill_label": "install electric switches",
+                "similarity": 0.8238,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d0bf",
+                "job_skill_label": "electric generators",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.6871,
+                "meets_threshold": true
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349abb0",
+                "job_skill_label": "inspect quality of products",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4341,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349afa4",
+                "job_skill_label": "electromechanics",
+                "best_user_skill_id": "687671b9ebd2bf665349bdde",
+                "best_user_skill_label": "test sensors",
+                "similarity": 0.5764,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349d140",
+                "job_skill_label": "operate scientific measuring equipment",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.4853,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b5ebd2bf665349a9a4",
+                "job_skill_label": "energy transformation",
+                "best_user_skill_id": "687671b5ebd2bf665349b385",
+                "best_user_skill_label": "electrical engineering",
+                "similarity": 0.3132,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671bdebd2bf665349cd70",
+                "job_skill_label": "use measurement instruments",
+                "best_user_skill_id": "687671bdebd2bf665349d0bb",
+                "best_user_skill_label": "electricity",
+                "similarity": 0.5234,
+                "meets_threshold": false
+              },
+              {
+                "job_skill_id": "687671b9ebd2bf665349c27e",
+                "job_skill_label": "energy efficiency",
+                "best_user_skill_id": "687671b5ebd2bf665349ad28",
+                "best_user_skill_label": "disassemble mobile devices",
+                "similarity": 0.7046,
+                "meets_threshold": true
+              }
+            ],
+            "optional_exact_matches": [
+              {
+                "skill_id": "687671b9ebd2bf665349c1f3",
+                "skill_label": "install automation components"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b6f7",
+                "skill_label": "assemble electronic units"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b1f3",
+                "skill_label": "assemble sensors"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349af70",
+                "skill_label": "3D printing process"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c6d8",
+                "skill_label": "maintain test equipment"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b690",
+                "skill_label": "inspect facility sites"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d6f5",
+                "skill_label": "replace large components"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349da04",
+                "skill_label": "automation technology"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349da33",
+                "skill_label": "operate 3D computer graphics software"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349bef2",
+                "skill_label": "maintain robotic equipment"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349cdb6",
+                "skill_label": "design prototypes"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c6ad",
+                "skill_label": "3D modelling"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c06e",
+                "skill_label": "use CAM software"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b43e",
+                "skill_label": "printing techniques"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349ab3b",
+                "skill_label": "maintain records of maintenance interventions"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349bdde",
+                "skill_label": "test sensors"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349af93",
+                "skill_label": "ensure safety in electrical power operations",
+                "meets_threshold": true
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d1bf",
+                "skill_label": "perform project management"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349cf7f",
+                "skill_label": "apply technical communication skills"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c188",
+                "skill_label": "use wire processing machinery"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349ad3e",
+                "skill_label": "inspect electrical supplies"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c073",
+                "skill_label": "robotic components"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349be65",
+                "skill_label": "sensors"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349aa62",
+                "skill_label": "materials science"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c30a",
+                "skill_label": "power electronics"
+              },
+              {
+                "skill_id": "687671baebd2bf665349cc41",
+                "skill_label": "use CAD software"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b445",
+                "skill_label": "industrial software"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c7cd",
+                "skill_label": "ICT software specifications"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d745",
+                "skill_label": "robotics"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b40d",
+                "skill_label": "oversee logistics of finished products"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349aa64",
+                "skill_label": "business intelligence"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c332",
+                "skill_label": "assemble machines"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c3b3",
+                "skill_label": "maintain electronic systems"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349ce30",
+                "skill_label": "cloud technologies"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d5b9",
+                "skill_label": "maintain electromechanical equipment"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d213",
+                "skill_label": "program firmware"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c8ef",
+                "skill_label": "CAD software"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c5e3",
+                "skill_label": "write technical reports"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c017",
+                "skill_label": "use wire hand tools"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d1b1",
+                "skill_label": "keep records of work progress"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349cf0a",
+                "skill_label": "perform minor repairs to equipment"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349b9f2",
+                "skill_label": "use specialised tools in electric repairs"
+              },
+              {
+                "skill_id": "687671b9ebd2bf665349c21b",
+                "skill_label": "CAE software"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d282",
+                "skill_label": "electrical wiring plans"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b749",
+                "skill_label": "printing materials"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c53a",
+                "skill_label": "switching devices"
+              },
+              {
+                "skill_id": "687671bdebd2bf665349d1d7",
+                "skill_label": "write inspection reports"
+              },
+              {
+                "skill_id": "687671baebd2bf665349c671",
+                "skill_label": "bend wire"
+              },
+              {
+                "skill_id": "687671beebd2bf665349db01",
+                "skill_label": "write calibration report"
+              },
+              {
+                "skill_id": "687671b5ebd2bf665349b5b6",
+                "skill_label": "manufacture of electrical wire products"
+              }
+            ],
+            "skill_group_matches": []
+          },
+          "matched_preferences": [
+            {
+              "attribute": "earnings_per_month",
+              "job_value": "earn_70k",
+              "job_value_label": "~70k",
+              "user_weight": 0.6115,
+              "beta": 0.4535,
+              "encoded_value": 1.0,
+              "contribution": 0.4535,
+              "matched": true
+            },
+            {
+              "attribute": "career_growth",
+              "job_value": "growth_high",
+              "job_value_label": "Strong prospects",
+              "user_weight": 0.7048,
+              "beta": 0.8702,
+              "encoded_value": 1.0,
+              "contribution": 0.8702,
+              "matched": true
+            },
+            {
+              "attribute": "physical_demand",
+              "job_value": "phys_heavy",
+              "job_value_label": "Heavy / risky",
+              "user_weight": 0.5,
+              "beta": 0.0,
+              "encoded_value": 0.0,
+              "contribution": 0.0,
+              "matched": false
+            },
+            {
+              "attribute": "social_interaction",
+              "job_value": "soc_peers",
+              "job_value_label": "With peers",
+              "user_weight": 0.5,
+              "beta": 0.0,
+              "encoded_value": 0.5,
+              "contribution": 0.0,
+              "matched": false
+            }
+          ],
+          "matched_work_activities": {
+            "wa_score_sum": 0.1784,
+            "details": [
+              {
+                "wa_code": "4.A.2.a.1",
+                "wa_label": "Judging the Qualities of Objects, Services, or People",
+                "user_bws": -1.4606202783936537,
+                "wa_importance": 3.2,
+                "wa_level": 3.74,
+                "norm_importance": 0.64,
+                "norm_level": 0.5343,
+                "wa_contribution": -0.030384,
+                "weight": 0.020802,
+                "beta": -1.4606
+              },
+              {
+                "wa_code": "4.A.1.b.2",
+                "wa_label": "Inspecting Equipment, Structures, or Materials",
+                "user_bws": 2.35217820516756,
+                "wa_importance": 3.88,
+                "wa_level": 4.26,
+                "norm_importance": 0.776,
+                "norm_level": 0.6086,
+                "wa_contribution": 0.059328,
+                "weight": 0.025223,
+                "beta": 2.3522
+              },
+              {
+                "wa_code": "4.A.3.b.6",
+                "wa_label": "Documenting/Recording Information",
+                "user_bws": -0.32577657746519273,
+                "wa_importance": 3.91,
+                "wa_level": 4.49,
+                "norm_importance": 0.782,
+                "norm_level": 0.6414,
+                "wa_contribution": -0.00828,
+                "weight": 0.025418,
+                "beta": -0.3258
+              },
+              {
+                "wa_code": "4.A.4.b.3",
+                "wa_label": "Training and Teaching Others",
+                "user_bws": 1.3396843053447578,
+                "wa_importance": 3.27,
+                "wa_level": 3.75,
+                "norm_importance": 0.654,
+                "norm_level": 0.5357,
+                "wa_contribution": 0.028478,
+                "weight": 0.021257,
+                "beta": 1.3397
+              },
+              {
+                "wa_code": "4.A.4.a.2",
+                "wa_label": "Communicating with Supervisors, Peers, or Subordinates",
+                "user_bws": -1.4259167042875887,
+                "wa_importance": 4.02,
+                "wa_level": 4.58,
+                "norm_importance": 0.804,
+                "norm_level": 0.6543,
+                "wa_contribution": -0.037263,
+                "weight": 0.026133,
+                "beta": -1.4259
+              },
+              {
+                "wa_code": "4.A.2.b.3",
+                "wa_label": "Updating and Using Relevant Knowledge",
+                "user_bws": 2.7408094479477145,
+                "wa_importance": 3.91,
+                "wa_level": 5.16,
+                "norm_importance": 0.782,
+                "norm_level": 0.7371,
+                "wa_contribution": 0.069665,
+                "weight": 0.025418,
+                "beta": 2.7408
+              },
+              {
+                "wa_code": "4.A.4.b.4",
+                "wa_label": "Guiding, Directing, and Motivating Subordinates",
+                "user_bws": 0.2613684691234635,
+                "wa_importance": 2.77,
+                "wa_level": 2.9,
+                "norm_importance": 0.554,
+                "norm_level": 0.4143,
+                "wa_contribution": 0.004706,
+                "weight": 0.018007,
+                "beta": 0.2614
+              },
+              {
+                "wa_code": "4.A.4.c.3",
+                "wa_label": "Monitoring and Controlling Resources",
+                "user_bws": -0.17701770428165323,
+                "wa_importance": 2.7,
+                "wa_level": 3.18,
+                "norm_importance": 0.54,
+                "norm_level": 0.4543,
+                "wa_contribution": -0.003107,
+                "weight": 0.017552,
+                "beta": -0.177
+              },
+              {
+                "wa_code": "4.A.3.b.1",
+                "wa_label": "Working with Computers",
+                "user_bws": -1.211540818560423,
+                "wa_importance": 4.42,
+                "wa_level": 4.52,
+                "norm_importance": 0.884,
+                "norm_level": 0.6457,
+                "wa_contribution": -0.034811,
+                "weight": 0.028733,
+                "beta": -1.2115
+              },
+              {
+                "wa_code": "4.A.4.a.7",
+                "wa_label": "Resolving Conflicts and Negotiating with Others",
+                "user_bws": -0.12065428997859146,
+                "wa_importance": 2.6,
+                "wa_level": 3.02,
+                "norm_importance": 0.52,
+                "norm_level": 0.4314,
+                "wa_contribution": -0.002039,
+                "weight": 0.016902,
+                "beta": -0.1207
+              },
+              {
+                "wa_code": "4.A.1.a.1",
+                "wa_label": "Getting Information",
+                "user_bws": -0.37096153590532305,
+                "wa_importance": 4.19,
+                "wa_level": 3.82,
+                "norm_importance": 0.838,
+                "norm_level": 0.5457,
+                "wa_contribution": -0.010104,
+                "weight": 0.027238,
+                "beta": -0.371
+              },
+              {
+                "wa_code": "4.A.2.b.1",
+                "wa_label": "Making Decisions and Solving Problems",
+                "user_bws": -0.9322972685387075,
+                "wa_importance": 4.24,
+                "wa_level": 4.67,
+                "norm_importance": 0.848,
+                "norm_level": 0.6671,
+                "wa_contribution": -0.025697,
+                "weight": 0.027563
+              },
+              {
+                "wa_code": "4.A.3.a.2",
+                "wa_label": "Handling and Moving Objects",
+                "user_bws": -2.3879257917946215,
+                "wa_importance": 2.93,
+                "wa_level": 4.05,
+                "beta": 2.2782,
+                "norm_importance": 0.716
+              },
+              {
+                "user_bws": -0.32577657746519273,
+                "weight": 0.021062
+              },
+              {
+                "user_bws": 1.344040346124049,
+                "beta": -1.2115,
+                "norm_level": 0.6357,
+                "wa_label": "Inspecting Equipment, Structures, or Materials",
+                "wa_level": 2.86
+              },
+              {
+                "beta": 2.2782,
+                "wa_importance": 2.77
+              },
+              {
+                "beta": -0.177,
+                "wa_level": 3.81,
+                "weight": 0.026653,
+                "wa_label": "Handling and Moving Objects"
+              },
+              {
+                "weight": 0.025093,
+                "wa_label": "Thinking Creatively",
+                "wa_contribution": -0.034087
+              }
+            ]
+          }
+        },
+        {
+          "justification": "Strong match on your interpret technical information for electronic repair work, repair electronic components and disassemble mobile devices skills. It fits your preferences for monthly earnings (~70k) and career growth (Strong prospects). This role is in extremely high demand.",
+          "demand_score": 1.0,
+          "best_user_skill_id": "687671b5ebd2bf665349ad28"
+        },
+        {
+          "best_user_skill_id": "687671b5ebd2bf665349ad28",
+          "job_skill_id": "687671b5ebd2bf665349b2a7",
+          "meets_threshold": true,
+          "skill_id": "687671b4ebd2bf665349a6c6"
+        }
+      ]
+    }
+  }
+]
